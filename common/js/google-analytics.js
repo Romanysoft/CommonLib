@@ -50,8 +50,8 @@
 
               }catch(e){console.error(e);}
               
-              //ga('send', 'pageview', );
-              ga('send',{hitType:'pageview', page: location.pathname});
+              ga('send', 'pageview');
+              //ga('send',{hitType:'pageview', page: location.pathname});
               
               
         } catch (err) {
