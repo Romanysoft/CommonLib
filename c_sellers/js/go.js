@@ -143,8 +143,8 @@
                 fnc_findLinkID(_lowerHref);
 
                 //////////////////////////////////////////////////////////////////////
-                ga('ec:linkID', foundLinkID);
-                ga('ec:productInfo', {
+                ga('ec:setAction', 'getLinkID', {linkID:foundLinkID});
+                ga('ec:addProduct', {
                     id: foundProductID,
                     name: foundProdutName,
                     linkID: foundLinkID
