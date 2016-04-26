@@ -14,6 +14,35 @@
 
     $(document).ready(function() {
         try {
+
+            //-------------------------------------------------
+            //loading....
+            try {
+                var opts = {
+                    lines: 13, // loading光暈長條的數量
+                    length: 7, // 光暈長條的長度
+                    width: 4, // 光暈長條的寬度
+                    radius: 10, // 整個圓形的半徑
+                    corners: 1, // 光暈長條的圓角
+                    rotate: 0, // loading動畫的旋展度數 (因為本身已經動態旋轉了所以這個沒什麼調整必要)
+                    color: '#000', // 顏色
+                    speed: 1, // 速度
+                    trail: 60, // 動作餘暉的百分比
+                    shadow: false, // 是否渲染出陰影
+                    hwaccel: false, // 是否啟用硬體加速
+                    className: 'spinner', // 給loading添加的class樣式名稱
+                    zIndex: 2e9, // z軸的層級 (預設2000000000)
+                    top: 'auto', // top相對定位 
+                    left: 'auto' // left相對定位
+                };
+                var target = document.getElementById('loading'); //loading為自定義ID要和HTML中的ID相同
+                var spinner = new Spinner(opts).spin(target);
+
+            } catch (e) {
+                console.log(e);
+            }
+
+
             //-------------------------------------------------
             // trace sheller information
             ga('create', 'UA-54045904-5', 'auto');
@@ -139,14 +168,13 @@
 
             //go url
             var baseUrl = _lowerHref.replace(orgUrlRplace.toLowerCase(), destUrl);
-            
-            
-            if(baseUrl.toLowerCase().indexOf(orgUrlRplace.toLowerCase()) == -1
-              && baseUrl.toLowerCase() !== _lowerHref){
+
+
+            if (baseUrl.toLowerCase().indexOf(orgUrlRplace.toLowerCase()) == -1 && baseUrl.toLowerCase() !== _lowerHref) {
                 baseUrl = baseUrl.replace('&quantity=', '?quantity=');
                 window.location.href = baseUrl;
             }
-            
+
         } catch (err) {
             console.error(err);
         }
