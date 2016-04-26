@@ -173,7 +173,7 @@
                         hitType: 'event',
                         eventCategory: foundProductID + " ## " +foundProdutName,
                         eventAction: 'gotoPurchase',
-                        eventLabel: (new Date()).toUTCString()
+                        eventLabel: foundProdutName + " || " + (new Date()).toUTCString()
                     });
 
                     if("" !== $.trim(foundLinkID)){
@@ -181,13 +181,13 @@
                             hitType: 'event',
                             eventCategory: foundLinkID,
                             eventAction: 'gotoPurchase',
-                            eventLabel: (new Date()).toUTCString()
+                            eventLabel: foundProdutName + " || " + (new Date()).toUTCString()
                         });
                         ga('send', {
                             hitType: 'event',
                             eventCategory: foundLinkID + " ## " + foundProdutName,
                             eventAction: 'traceLinkIDProduct',
-                            eventLabel: (new Date()).toUTCString()
+                            eventLabel: foundProdutName + " || " + (new Date()).toUTCString()
                         });
                     }
 
