@@ -109,6 +109,15 @@
 
                     },
                     _linkIdList = [ //
+                        //// --- 01
+                        "RF201501221800RT",
+                        "RF201502221800RT",
+                        "RF201503221800RT",
+                        "RF201504221800RT",
+                        "RF201505221800RT",
+                        "RF201506221800RT",
+                        
+                        //// --- 02
                         "RF201603221800PTJ",
                         "RF201604071748PTJ"
                     ]
@@ -196,8 +205,8 @@
 
                 //------------------------------------------------
                 //build redircet url.
-                //eg. org: http://romanysoft.github.io/CommonLib/sellers.html?pid=55399-1&quantity=1&linkid=RF001
-                //    dest: https://shopper.mycommerce.com/checkout/cart/add/55399-1?quantity=1&linkid=RF001
+                //eg. org: http://romanysoft.github.io/CommonLib/sellers.html?pid=55399-1&quantity=1&linkid=RF201603221800PTJ
+                //    dest: https://shopper.mycommerce.com/checkout/cart/add/55399-1?quantity=1&linkid=RF201603221800PTJ
                 var destUrl = "https://shopper.mycommerce.com/checkout/cart/add/",
                     orgUrlRplace = "http://romanysoft.github.io/CommonLib/sellers.html?pid=";
 
