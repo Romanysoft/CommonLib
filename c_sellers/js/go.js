@@ -155,24 +155,18 @@
                     //////////////////////////////////////////////////////////////
                     ga('send', {
                         hitType: 'event',
-                        eventCategory: 'Video',
-                        eventAction: 'play',
-                        eventLabel: foundProdutName
+                        eventCategory: 'Order',
+                        eventAction: 'trace',
+                        eventLabel: foundProductID + " ## " +foundProdutName
                     });
 
                     ga('send', {
                         hitType: 'event',
-                        eventCategory: 'Video',
-                        eventAction: 'stop',
+                        eventCategory: 'Order',
+                        eventAction: 'trace',
                         eventLabel: foundLinkID
                     });
 
-                    ga('send', {
-                        hitType: 'event',
-                        eventCategory: 'Video',
-                        eventAction: 'stop',
-                        eventLabel: foundProductID
-                    });
                 } catch (e) {
                     console.error(e);
                 }
