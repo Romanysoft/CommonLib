@@ -9,7 +9,7 @@
         a.async = 1;
         a.src = g;
         m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics_debug.js', 'ga');
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
 
     $(document).ready(function() {
@@ -45,7 +45,9 @@
 
             //-------------------------------------------------
             // trace sheller information
-            window.ga_debug = {trace: true};
+//            window.ga_debug = {
+//                trace: true
+//            };
             ga('create', 'UA-54045904-5', 'auto');
             ga(function(tracker) {
                 console.log(tracker.get('clientId'));
@@ -149,28 +151,34 @@
                     // process
                     fnc_findProductName(_lowerHref);
                     fnc_findLinkID(_lowerHref);
-
-                    //////////////////////////////////////////////////////////////////////
-                    ga('ec:setAction', 'getLinkID', {
-                        linkID: foundLinkID
+                    
+                    //////////////////////////////////////////////////////////////
+                    ga('send', {
+                        hitType: 'event',
+                        eventCategory: 'Video',
+                        eventAction: 'play',
+                        eventLabel: foundProdutName
                     });
-                    ga('ec:addProduct', {
-                        id: foundProductID,
-                        name: foundProdutName,
-                        linkID: foundLinkID
-                    })
 
+                    ga('send', {
+                        hitType: 'event',
+                        eventCategory: 'Video',
+                        eventAction: 'stop',
+                        eventLabel: foundLinkID
+                    });
+
+                    ga('send', {
+                        hitType: 'event',
+                        eventCategory: 'Video',
+                        eventAction: 'stop',
+                        eventLabel: foundProductID
+                    });
                 } catch (e) {
                     console.error(e);
                 }
 
-                ga('send',{
-                    hitType: 'event',
-                    eventCategory: 'Video',
-                    eventAction: 'play',
-                    eventLabel: foundProdutName  
-                });
-                
+
+
                 ga('send', {
                     hitType: 'pageview',
                     page: location.pathname
