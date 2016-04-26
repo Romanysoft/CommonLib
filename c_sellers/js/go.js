@@ -156,22 +156,29 @@
                     ga('send', {
                         hitType: 'event',
                         eventCategory: 'OrderProduct',
-                        eventAction: 'trace',
+                        eventAction: 'traceProduct',
                         eventLabel: foundProductID + " ## " +foundProdutName
+                    });
+                    
+                    ga('send', {
+                        hitType: 'event',
+                        eventCategory: foundProductID + " ## " +foundProdutName,
+                        eventAction: 'gotoPurchase',
+                        eventLabel: (new Date()).toUTCString()
                     });
 
                     if("" !== $.trim(foundLinkID)){
                         ga('send', {
                             hitType: 'event',
                             eventCategory: foundLinkID,
-                            eventAction: 'open',
+                            eventAction: 'gotoPurchase',
                             eventLabel: (new Date()).toUTCString()
                         });
                         ga('send', {
                             hitType: 'event',
-                            eventCategory: 'OrderLinkID',
-                            eventAction: 'trace',
-                            eventLabel: foundLinkID + " ## " + foundProdutName
+                            eventCategory: foundLinkID + " ## " + foundProdutName,
+                            eventAction: 'traceLinkIDProduct',
+                            eventLabel: (new Date()).toUTCString()
                         });
                     }
 
