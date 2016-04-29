@@ -217,10 +217,6 @@
 
                 if (baseUrl.toLowerCase().indexOf(orgUrlRplace.toLowerCase()) == -1 && baseUrl.toLowerCase() !== _lowerHref) {
                     baseUrl = baseUrl.replace('&quantity=', '?quantity=');
-//                    var orderWin = window.open(baseUrl);
-//                    orderWin.focus();
-//                    window.close();
-                    
                     window.location.href = baseUrl;
                 }
             };
