@@ -32,7 +32,7 @@
                     hwaccel: false, // 是否啟用硬體加速
                     className: 'spinner', // 給loading添加的class樣式名稱
                     zIndex: 2e9, // z軸的層級 (預設2000000000)
-                    top: 'auto', // top相對定位 
+                    top: 'auto', // top相對定位
                     left: 'auto' // left相對定位
                 };
                 var target = document.getElementById('loading'); //loading為自定義ID要和HTML中的ID相同
@@ -61,6 +61,9 @@
                     _mac = " for Mac",
                     _win = "  for Windows",
                     _linux = " for Linux",
+                    foundProductID = "",
+                    foundProdutName = "",
+                    foundLinkID = "",
                     _productsMap = {
                         "55399-1": "SpeedTest" + _mac,
                         "55399-2": "BarcodeUV" + _mac,
@@ -117,7 +120,7 @@
                         "RF201505221800RT",
                         "RF201506221800RT",
                         "AnnreChen",
-                        
+
                         //// --- 02
                         "RF201603221800PTJ",
                         "RF201604071748PTJ"
@@ -127,8 +130,6 @@
 
                     //eg. https://shopper.mycommerce.com/checkout/cart/new/55399-17
                     // find product
-                    var foundProductID = "",
-                        foundProdutName = "";
                     var fnc_findProductName = function(_lowerHref) {
                         $.each(Object.keys(_productsMap), function(i, item) {
                             var _lowerItem = item.toLowerCase();
@@ -144,7 +145,6 @@
 
 
                     // find linkId,
-                    var foundLinkID = "";
                     var fnc_findLinkID = function(_lowerHref) {
                         var found = false;
                         $.each(_linkIdList, function(i, item) {
@@ -161,7 +161,7 @@
                     // process
                     fnc_findProductName(_lowerHref);
                     fnc_findLinkID(_lowerHref);
-                    
+
                     //////////////////////////////////////////////////////////////
                     ga('send', {
                         hitType: 'event',
@@ -169,7 +169,7 @@
                         eventAction: 'traceProduct',
                         eventLabel: foundProductID + " ## " +foundProdutName
                     });
-                    
+
                     ga('send', {
                         hitType: 'event',
                         eventCategory: foundProductID + " ## " +foundProdutName,
@@ -197,8 +197,6 @@
                     console.error(e);
                 }
 
-
-
                 ga('send', {
                     hitType: 'pageview',
                     page: location.pathname
@@ -217,7 +215,13 @@
 
                 if (baseUrl.toLowerCase().indexOf(orgUrlRplace.toLowerCase()) == -1 && baseUrl.toLowerCase() !== _lowerHref) {
                     baseUrl = baseUrl.replace('&quantity=', '?quantity=');
-                    window.location.href = baseUrl;
+
+                    if(foundProductID == ""){
+                        window.location.href = "https://shopper.mycommerce.com/checkout/cart/add/55399-1?quantity=1";
+                    }else{
+                        window.location.href = baseUrl;
+                    }
+
                 }
             };
 
