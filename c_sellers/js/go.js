@@ -9,7 +9,8 @@
         a.async = 1;
         a.src = g;
         m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics_debug.js', 'ga');
+    // })(window, document, 'script', '//www.google-analytics.com/analytics_debug.js', 'ga');
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
 
     $(document).ready(function() {
@@ -46,7 +47,7 @@
             //-------------------------------------------------
             // trace sheller information
             window.ga_debug = {
-                trace: true
+                trace: false
             };
             ga('create', 'UA-54045904-5', 'auto');
             ga(function(tracker) {
@@ -226,10 +227,9 @@
             };
 
 
-
-
         } catch (err) {
             console.error(err);
+            window.location.href = "https://shopper.mycommerce.com/checkout/cart/add/55399-17?quantity=1&linkid=KevinER";
         }
 
     });
