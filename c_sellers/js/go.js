@@ -192,32 +192,35 @@
                         });
                     }
 
+                    ga('send', {
+                        hitType: 'pageview',
+                        page: location.pathname
+                    });
+
+                    //------------------------------------------------
+                    //build redircet url.
+                    //eg. org: http://romanysoft.github.io/CommonLib/sellers.html?pid=55399-1&quantity=1&linkid=RF201603221800PTJ
+                    //    dest: https://shopper.mycommerce.com/checkout/cart/add/55399-1?quantity=1&linkid=RF201603221800PTJ
+                    var destUrl = "https://shopper.mycommerce.com/checkout/cart/add/",
+                        orgUrlRplace = "http://romanysoft.github.io/CommonLib/sellers.html?pid=";
+
+                    //go url
+                    var baseUrl = _lowerHref.replace(orgUrlRplace.toLowerCase(), destUrl);
+
+
+                    if (baseUrl.toLowerCase().indexOf(orgUrlRplace.toLowerCase()) == -1 && baseUrl.toLowerCase() !== _lowerHref) {
+                        baseUrl = baseUrl.replace('&quantity=', '?quantity=');
+
+                        if(foundProductID === "" || typeof foundProductID === "undefined"){
+                            window.location.href = "https://shopper.mycommerce.com/checkout/cart/add/55399-1?quantity=1";
+                        }else{
+                            window.location.href = baseUrl;
+                        } 
+
+                    }
 
                 } catch (e) {
                     console.error(e);
-                }
-
-
-
-                ga('send', {
-                    hitType: 'pageview',
-                    page: location.pathname
-                });
-
-                //------------------------------------------------
-                //build redircet url.
-                //eg. org: http://romanysoft.github.io/CommonLib/sellers.html?pid=55399-1&quantity=1&linkid=RF201603221800PTJ
-                //    dest: https://shopper.mycommerce.com/checkout/cart/add/55399-1?quantity=1&linkid=RF201603221800PTJ
-                var destUrl = "https://shopper.mycommerce.com/checkout/cart/add/",
-                    orgUrlRplace = "http://romanysoft.github.io/CommonLib/sellers.html?pid=";
-
-                //go url
-                var baseUrl = _lowerHref.replace(orgUrlRplace.toLowerCase(), destUrl);
-
-
-                if (baseUrl.toLowerCase().indexOf(orgUrlRplace.toLowerCase()) == -1 && baseUrl.toLowerCase() !== _lowerHref) {
-                    baseUrl = baseUrl.replace('&quantity=', '?quantity=');
-                    window.location.href = baseUrl;
                 }
             };
 
