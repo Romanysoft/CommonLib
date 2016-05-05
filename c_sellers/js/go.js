@@ -114,6 +114,9 @@
     };
 
 
+    /**
+     * 配置有ga的时候
+     *  */
     function process_when_has_ga() {
         try {
             // trace sheller information
@@ -168,18 +171,7 @@
                 } catch (e) {
                     console.error(e);
                 } finally {
-                    //go url
-                    var baseUrl = _lowerHref.replace(orgUrlRplace.toLowerCase(), destUrl);
-                    if (baseUrl.toLowerCase().indexOf(orgUrlRplace.toLowerCase()) == -1 && baseUrl.toLowerCase() !== _lowerHref) {
-                        baseUrl = baseUrl.replace('&quantity=', '?quantity=');
-
-                        if (foundProductID == "") {
-                            window.location.href = "https://shopper.mycommerce.com/checkout/cart/add/55399-1?quantity=1";
-                        } else {
-                            window.location.href = baseUrl;
-                        }
-
-                    }
+                    direct_change_baseUrl();
                 }
             }
 
@@ -195,7 +187,37 @@
 
     }
 
+    /**
+     * 处理订单重新定位的问题
+     *  */
+    function direct_change_baseUrl() {
+        var hasChanged = false;
+        try {
+            var baseUrl = _lowerHref.replace(orgUrlRplace.toLowerCase(), destUrl);
+            if (baseUrl.toLowerCase().indexOf(orgUrlRplace.toLowerCase()) == -1 && baseUrl.toLowerCase() !== _lowerHref) {
+                baseUrl = baseUrl.replace('&quantity=', '?quantity=');
 
+                if (foundProductID == "") {
+                    hasChanged = true;
+                    window.location.href = "https://shopper.mycommerce.com/checkout/cart/add/55399-1?quantity=1";
+                } else {
+                    hasChanged = true;
+                    window.location.href = baseUrl;
+                }
+            } 
+        } catch (error) {
+            hasChanged = false;
+            console.log(error);
+        }
+
+        if (!hasChanged) {
+            // 导航到官方网站
+            window.location.href = "//www.romanysoft.com";
+        }
+
+    }
+
+   
     /**
      * 配置Loading UI 控件
      *  */
@@ -228,9 +250,7 @@
         }
     }
 
-
-
-
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
         i[r] = i[r] || function() {
@@ -252,7 +272,11 @@
         //Step1: 配置Loading 控件
         configSpinUI();
         //Step2: 如果含有ga对象，启动google分析
-        if (ga) process_when_has_ga();
+        if (ga) {
+            process_when_has_ga();
+        } else {
+            direct_change_baseUrl();
+        }
     });
 
 })();
