@@ -72,7 +72,6 @@
         _lowerHref = _href.toLowerCase();
 
 
-
     //------------------------------------------------
     //build redircet url.
     //eg. org: http://romanysoft.github.io/CommonLib/sellers.html?pid=55399-1&quantity=1&linkid=RF201603221800PTJ
@@ -95,7 +94,6 @@
                 found = true;
                 return false;
             }
-
         });
     };
 
@@ -139,18 +137,24 @@
              *  */
             function _coreHandler(params) {
                 try {
+                    
+                    var _lang = "MEME";
+                    try{
+                        _lang = navigator.language;
+                    }catch(e){}
+                    
                     //////////////////////////////////////////////////////////////
                     ga('send', {
                         hitType: 'event',
                         eventCategory: 'OrderProduct',
-                        eventAction: 'traceProduct',
+                        eventAction: 'traceProduct' + "--" + _lang,
                         eventLabel: foundProductID + " ## " + foundProdutName
                     });
 
                     ga('send', {
                         hitType: 'event',
                         eventCategory: foundProductID + " ## " + foundProdutName,
-                        eventAction: 'gotoPurchase',
+                        eventAction: 'gotoPurchase' + "--" + _lang
                         eventLabel: foundProdutName + " || " + (new Date()).toUTCString()
                     });
 
@@ -158,13 +162,13 @@
                         ga('send', {
                             hitType: 'event',
                             eventCategory: foundLinkID,
-                            eventAction: 'gotoPurchase',
+                            eventAction: 'gotoPurchase' + "--" + _lang,
                             eventLabel: foundProdutName + " || " + (new Date()).toUTCString()
                         });
                         ga('send', {
                             hitType: 'event',
                             eventCategory: foundLinkID + " ## " + foundProdutName,
-                            eventAction: 'traceLinkIDProduct',
+                            eventAction: 'traceLinkIDProduct' + "--" + _lang,
                             eventLabel: foundProdutName + " || " + (new Date()).toUTCString()
                         });
                     }
