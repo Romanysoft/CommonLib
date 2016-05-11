@@ -3,8 +3,9 @@
     var _href = window.location.href,
         _mac = " for Mac",
         _win = "  for Windows",
-        _linux = " for Linux",
-        found = false,
+        _linux = " for Linux";
+    
+    var found = false,
         foundProductID = "",
         foundProdutName = "",
         foundLinkID = "",
@@ -154,7 +155,7 @@
                     ga('send', {
                         hitType: 'event',
                         eventCategory: foundProductID + " ## " + foundProdutName,
-                        eventAction: 'gotoPurchase' + "--" + _lang
+                        eventAction: 'gotoPurchase' + "--" + _lang,
                         eventLabel: foundProdutName + " || " + (new Date()).toUTCString()
                     });
 
