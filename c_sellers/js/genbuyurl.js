@@ -73,9 +73,6 @@
        
         $('#btn-saveLinkID').on('click', function(){
            _curLinkID = $('#input-linkID').val();    
-           if(checkLinkIDisExist()){
-              alert("工号已经保存：" + _curLinkID);
-           }
         });
                 
         $('#btn-gen-onebuyurl').on('click', function(){
