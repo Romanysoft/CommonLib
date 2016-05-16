@@ -1,4 +1,4 @@
-(function() {
+(function($) {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     var _href = window.location.href,
         _mac = " for Mac",
@@ -9,67 +9,8 @@
         foundProductID = "",
         foundProdutName = "",
         foundLinkID = "",
-        _productsMap = {
-            "55399-1": "SpeedTest" + _mac,
-            "55399-2": "BarcodeUV" + _mac,
-            "55399-3": "BarcodePro" + _mac,
-            "55399-4": "AN PDF" + _mac,
-            "55399-5": "Color Converter" + _mac,
-            "55399-6": "CSSDesigner" + _mac,
-            "55399-8": "GraphSketcher" + _mac,
-            "55399-9": "CSVKiller" + _mac,
-            "55399-10": "TryToMp3" + _mac,
-            "55399-11": "TryToAVI" + _mac,
-            "55399-12": "TryToAC3" + _mac,
-            "55399-13": "TryToMPG" + _mac,
-            "55399-14": "TryToWav" + _mac,
-            "55399-15": "TryToSWF" + _mac,
-            "55399-16": "ImageMinify" + _mac,
-            "55399-17": "DataStorm" + _mac,
-            "55399-18": "Batch File Translater" + _mac,
-            "55399-19": "5BR3C" + _mac,
-            "55399-20": "ExifImage" + _mac,
-            "55399-21": "SRT2" + _mac,
-            "55399-22": "TryToFLV" + _mac,
-            "55399-23": "TryToMp4" + _mac,
-            "55399-24": "TryToAAC" + _mac,
-            "55399-25": "TryToAIFF" + _mac,
-            "55399-26": "TryToALAC" + _mac,
-            "55399-27": "TryToAMR" + _mac,
-            "55399-28": "TryToOGG" + _mac,
-            "55399-29": "TryToOpus" + _mac,
-            "55399-30": "TryToWMA" + _mac,
-            "55399-31": "Css Sprite Helper" + _win,
-            "55399-32": "MarkdownD" + _mac,
-            "55399-33": "SudokuMM" + _mac,
-            "55399-34": "Try to translate" + _mac,
-            "55399-35": "CurrencyCalc" + _mac,
-            "55399-36": "LET" + _mac,
-            "55399-37": "MarkdownD" + _win,
-            "55399-38": "MarkdownD" + _linux,
-            "55399-39": "Try to translate" + _win,
-            "55399-40": "Try to translate" + _linux,
-            "55399-41": "DataStorm" + _win,
-            "55399-42": "DataStorm" + _linux,
-            "55399-43": "XLS2csv" + _mac,
-            "55399-44": "CSSDesigner" + _win,
-            "55399-45": "CSSDesigner" + _linux,
-
-        },
-        _linkIdList = [ //
-            //// --- 01
-            "RF201501221800RT",
-            "RF201502221800RT",
-            "RF201503221800RT",
-            "RF201504221800RT",
-            "RF201505221800RT",
-            "RF201506221800RT",
-            "AnnreChen",
-
-            //// --- 02
-            "RF201603221800PTJ",
-            "RF201604071748PTJ"
-        ],
+        _productsMap = $.RTY_productsMap,
+        _linkIdList = $.RTY_linkIDs,
         _lowerHref = _href.toLowerCase();
 
 
@@ -91,7 +32,9 @@
             var _lowerItem = item.toLowerCase();
             if (_lowerHref.indexOf(_lowerItem) > -1) {
                 foundProductID = item;
-                foundProdutName = _productsMap[item];
+                
+                var productObj = _productsMap[item];
+                foundProdutName = productObj.name;
                 found = true;
                 return false;
             }
@@ -284,4 +227,4 @@
         }
     });
 
-})();
+})($ || jQuery);

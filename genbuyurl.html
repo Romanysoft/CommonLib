@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>产品代理购买链接生成工具</title>
+    <link rel="stylesheet" href="common/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link href="common/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+</head>
+
+<body>
+<!--  导航栏  -->
+<nav class="navbar navbar-default navbar-static-top navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span> Romanysoft</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" id="input-linkID" class="form-control" placeholder="请输入自己的工号">
+        </div>
+        <button id="btn-saveLinkID" class="btn btn-info">确定</button>
+      </form>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#nav-product-info">开放代理销售产品明细 <span class="sr-only">(current)</span></a></li>
+        <li><a href="#nav-product-af">代理购买链接</a></li>
+        <li><a href="//romanysoft.github.io/NotePublish/">销售产品中文介绍</a></li>  
+        <li><a href="//minisoft.logdown.com/archives" target="_blank">共享产品博客</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="panel panel-default" style="min-height: 64px !important;">
+</div>    
+<div id="main-content" class="panel panel-default">
+  <div class="panel-body">
+      <div id="nav-product-info" class="panel panel-success">
+      </div>
+      <div id="nav-product-af" class="panel panel-info">
+      </div>      
+  </div>
+</div>
+    
+
+
+    <script id="tmpl-nav-product-info" type="text/html">
+          <div class="panel-heading">开放代理销售产品明细 <span class="badge">{{productList.length}}</span></div>
+          <div class="panel-body">
+            <div class="content-allproduct">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-2">产品名称</div>
+                    <div class="col-md-1">定价($美元)</div>
+                    <div class="col-md-3">产品网站</div>
+                </div>
+                {{each productList as productObj}}
+                 <div class="row" style="padding: 16px;">
+                    <div class="col-md-1">
+                        {{ if productObj.home !== "" }}
+                            <img src="{{productObj.home + '/images/logo_64.png'}}" style="width:32px">
+                        {{ /if}}
+                     </div>
+                    <div class="col-md-2"><a href="{{productObj.home}}" target="_blank">{{productObj.name}}</a></div>
+                    <div class="col-md-1"><span style="color: red;">{{productObj.prices}}</span></div>
+                    <div class="col-md-3"><a href="{{productObj.home}}" target="_blank">{{productObj.home}}</a></div>
+                </div>
+                {{/each}}
+            </div>              
+          </div>
+    </script>    
+    
+    <script id="tmpl-nav-product-af" type="text/html">
+          <div class="panel-heading">代理购买链接生成</div>
+          <div class="panel-body">
+            <div class="content-product-af">
+                <div class="panel">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="input-group">
+                              <span class="input-group-addon" id="basic-product">指定产品</span>
+                              <select name="product" id="product-selector" class="form-control" aria-describedby="basic-product">
+                                  {{each productList as productObj}}
+                                  <option data-productId="{{productObj.id}}">{{productObj.name}}</option>
+                                  {{/each}}
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                      <button type="button" id="btn-gen-onebuyurl" class="btn btn-primary">生成代理购买链接</button>
+                      <button type="button" id="btn-gen-allbuyurls" class="btn btn-default">生成所有产品的代理购买链接</button>
+                      <button type="button" id="btn-clear" class="btn btn-default">清空</button>
+                </div>   
+                <div class="panel">
+                    <textarea id="output-buyurls" class="form-control" style="min-height: 400px !important;">
+                    </textarea>
+                </div>
+
+            </div>                
+          </div>
+    </script> 
+        
+    <!-- js -->
+    <script src="common/js/jquery-1.12.3.min.js"></script>
+    <script src="common/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script src="common/jquery-ui/jquery-ui.min.js"></script>
+    <script src="common/artTemplate/3.0/template.js"></script>
+    <script src="c_sellers/js/products.js"></script>
+    <script src="c_sellers/js/genbuyurl.js"></script>
+</body>
+
+</html>
