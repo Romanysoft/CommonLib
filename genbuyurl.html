@@ -100,7 +100,9 @@
                               <span class="input-group-addon" id="basic-product">指定产品</span>
                               <select name="product" id="product-selector" class="form-control" aria-describedby="basic-product">
                                   {{each productList as productObj}}
-                                  <option data-productId="{{productObj.id}}">{{productObj.name}}</option>
+                                  <option data-productId="{{productObj.id}}">
+                                      {{productObj.name}}
+                                  </option>
                                   {{/each}}
                               </select>
                             </div>
