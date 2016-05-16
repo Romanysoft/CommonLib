@@ -46,8 +46,8 @@
                      "产品标识：" + productObj.id,
                      "产品名称：" + productObj.name,
                      "定价($)："  + productObj.prices,
-                     "产品购买跟踪链接：" + comSellersUrl_base + productObj.id + "&quantity=1&linkid=" + _curLinkID,
-                     "订单处理跟踪链接：" + mycommerceUrl_base + productObj.id + "?quantity=1&linkid=" + _curLinkID
+                     "产品购买跟踪链接[主要]：" + comSellersUrl_base + productObj.id + "&quantity=1&linkid=" + _curLinkID,
+                     "订单处理跟踪链接[备用]：" + mycommerceUrl_base + productObj.id + "?quantity=1&linkid=" + _curLinkID
                  ];
                  
                  $.each(_msgList, function(i, msg){
