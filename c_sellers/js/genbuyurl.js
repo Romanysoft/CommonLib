@@ -27,6 +27,7 @@
         ////////////////////////////////////////////////////////////////////////////
        
         function checkLinkIDisExist(){
+           _curLinkID = $('#input-linkID').val(); 
            if($.trim(_curLinkID) === ""){
               alert("请输入自己的工号，并确保正确");
               $('#input-linkID').focusin();
