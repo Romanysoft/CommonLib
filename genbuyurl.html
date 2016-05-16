@@ -26,16 +26,10 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" id="input-linkID" class="form-control" placeholder="请输入自己的工号">
-        </div>
-        <button id="btn-saveLinkID" type="submit" class="btn btn-info">确定</button>
-      </form>
       <ul class="nav navbar-nav">
         <li class="active"><a href="#nav-product-info">开放代理销售产品明细 <span class="sr-only">(current)</span></a></li>
         <li><a href="#nav-product-af">代理购买链接生成器</a></li>
-        <li><a href="//romanysoft.github.io/NotePublish/">销售产品中文介绍</a></li>  
+        <li><a href="//romanysoft.github.io/NotePublish/" target="_blank">销售产品中文介绍</a></li>  
         <li><a href="//minisoft.logdown.com/archives" target="_blank">共享产品博客</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -88,6 +82,19 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="input-group">
+                              <span class="input-group-addon"  id="basic-linkID">指定工号</span>
+                              <input type="text" id="input-linkID" aria-describedby="basic-linkID" class="form-control" placeholder="请输入自己的工号，工号作为代理ID">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <button id="btn-saveLinkID" type="submit" class="btn btn-info">确定</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="input-group">
                               <span class="input-group-addon" id="basic-product">指定产品</span>
                               <select name="product" id="product-selector" class="form-control" aria-describedby="basic-product">
                                   {{each productList as productObj}}
@@ -100,8 +107,8 @@
                 </div>
                 <div class="panel">
                       <button type="button" id="btn-gen-onebuyurl" class="btn btn-primary">生成代理购买链接</button>
-                      <button type="button" id="btn-gen-allbuyurls" class="btn btn-default">生成所有产品的代理购买链接</button>
-                      <button type="button" id="btn-clear" class="btn btn-default">清空</button>
+                      <button type="button" id="btn-gen-allbuyurls" class="btn btn-warning">生成所有产品的代理购买链接</button>
+                      <button type="button" id="btn-clear" class="btn btn-danger">清空</button>
                 </div>   
                 <div class="panel">
                     <textarea id="output-buyurls" class="form-control" style="min-height: 400px !important;">
