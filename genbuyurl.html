@@ -31,6 +31,7 @@
         <li><a href="#nav-product-af">代理购买链接生成器</a></li>
         <li><a href="//romanysoft.github.io/NotePublish/" target="_blank">销售产品中文介绍</a></li>  
         <li><a href="//minisoft.logdown.com/archives" target="_blank">共享产品博客</a></li>
+        <li><a href="#nav-tutorial-videos">教程视频</a></li>  
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -42,7 +43,9 @@
       <div id="nav-product-info" class="panel panel-success">
       </div>
       <div id="nav-product-af" class="panel panel-info">
-      </div>      
+      </div> 
+      <div id="nav-tutorial-videos" class="panel panel-warning">
+      </div>  
   </div>
 </div>
     
@@ -122,6 +125,28 @@
             </div>                
           </div>
     </script> 
+    
+    <script id="tmpl-nav-tutorial-videos" type="text/html">
+          <div class="panel-heading">教程视频<span class="badge">{{videos.Length}}</span></div>
+          <div class="panel-body">
+            <div class="content-allvidoes">
+                <div class="row" style="padding: 16px;">
+                    <div class="col-md-1">类别</div>
+                    <div class="col-md-3">视频名称</div>
+                    <div class="col-md-6">视频介绍</div>
+                    <div class="col-md-1">视频下载</div>
+                </div>
+                {{each videos as videoObj}}
+                 <div class="row" style="padding: 16px;">
+                    <div class="col-md-1"><small>{{videoObj.category}}</small> </div> 
+                    <div class="col-md-3"><strong>{{videoObj.name}}</strong></div>
+                    <div class="col-md-6">{{videoObj.description}}</div>
+                    <div class="col-md-1"><a href="{{videoObj.url}}" target="_blank">下载</a></div>
+                </div>
+                {{/each}}
+            </div>              
+          </div>
+    </script> 
         
     <!-- js -->
     <script src="common/js/jquery-1.12.3.min.js"></script>
@@ -129,6 +154,7 @@
     <script src="common/jquery-ui/jquery-ui.min.js"></script>
     <script src="common/artTemplate/3.0/template.js"></script>
     <script src="c_sellers/js/products.js"></script>
+    <script src="c_sellers/js/videos.js"></script>
     <script src="c_sellers/js/genbuyurl.js"></script>
 </body>
 

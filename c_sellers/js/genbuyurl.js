@@ -2,6 +2,7 @@
     var c$ = {};
     
     var _productsMap = $.RTY_productsMap;
+    var _videos = $.RTY_videos;
     var _curLinkID = "";
     
     c$.updateHomePage = function() {
@@ -23,6 +24,10 @@
         /// 更新代理购买链接生成部分
         htmlContent = template('tmpl-nav-product-af',{productList: productList});
         $('#nav-product-af').html(htmlContent);
+       
+        /// 更新视频教程
+        htmlContent = template('tmpl-nav-tutorial-videos',{videos: _videos});
+        $('#nav-tutorial-videos').html(htmlContent);
         
         ////////////////////////////////////////////////////////////////////////////
        
