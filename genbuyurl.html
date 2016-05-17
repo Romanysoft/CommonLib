@@ -144,16 +144,9 @@
                  <div class="row" style="padding: 16px;">
                     <div class="col-md-1"><small>{{videoObj.category}}</small> </div> 
                     <div class="col-md-3"><strong>{{videoObj.name}}</strong></div>
-                    <div class="col-md-4">
-                        <video class="video-js vjs-default-skin" controls
-                               preload="auto" width="240" height="132"
-                               data-setup='{}'>
-                            <source src="{{#videoObj.url}}" type='video/mp4'>
-                            <p class="vjs-no-js">
-                                To view this video please enable JavaScript, and consider upgrading to a web browser
-                                that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                            </p>
-                        </video>                        
+                    <div class="col-md-4">     
+                        <iframe width="280" height="157" src="{{videoObj.url}}" frameborder="0" allowfullscreen>
+                        </iframe>
                      </div>
                      <div class="col-md-4">{{videoObj.description}}</div>
                 </div>
