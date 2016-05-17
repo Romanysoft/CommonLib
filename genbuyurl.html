@@ -7,6 +7,10 @@
     <title>产品代理销售在线工具</title>
     <link rel="stylesheet" href="common/bootstrap-3.3.5-dist/css/bootstrap.min.css">
     <link href="common/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+    
+    <link href="common/video-js-5.9.0/video-js.min.css" rel="stylesheet">
+    <script src="common/video-js-5.9.0/ie8/videojs-ie8.min.js"></script>
+    <script src="common/video-js-5.9.0/video.min.js"></script>
 </head>
 
 <body>
@@ -133,15 +137,25 @@
                 <div class="row" style="padding: 16px;">
                     <div class="col-md-1">类别</div>
                     <div class="col-md-3">视频名称</div>
-                    <div class="col-md-6">视频介绍</div>
-                    <div class="col-md-1">视频下载</div>
+                    <div class="col-md-4">视频预览</div>
+                    <div class="col-md-4">视频介绍</div>
                 </div>
                 {{each videos as videoObj}}
                  <div class="row" style="padding: 16px;">
                     <div class="col-md-1"><small>{{videoObj.category}}</small> </div> 
                     <div class="col-md-3"><strong>{{videoObj.name}}</strong></div>
-                    <div class="col-md-6">{{videoObj.description}}</div>
-                    <div class="col-md-1"><a href="{{videoObj.url}}" target="_blank">下载</a></div>
+                    <div class="col-md-4">
+                        <video class="video-js vjs-default-skin" controls
+                               preload="auto" width="240" height="132"
+                               data-setup='{}'>
+                            <source src="{{#videoObj.url}}" type='video/mp4'>
+                            <p class="vjs-no-js">
+                                To view this video please enable JavaScript, and consider upgrading to a web browser
+                                that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                            </p>
+                        </video>                        
+                     </div>
+                     <div class="col-md-4">{{videoObj.description}}</div>
                 </div>
                 {{/each}}
             </div>              
