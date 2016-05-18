@@ -31,8 +31,18 @@
           description:"我们自己的小组，希望将你的好友都申请加入进来，方便推广", 
           url:"https://www.youtube.com/embed/0Bgbd6YIWmo"
         },
-            
-            
+        {
+          category:"FaceBook", 
+          name:"以CSSDesinger产品宣传邮件为例，介绍如何在小组内卖东西及发普通帖子.mp4", 
+          description:"以CSSDesinger产品宣传邮件为例，介绍如何在小组内卖东西及发普通帖子", 
+          url:"https://www.youtube.com/embed/T0V2nQyQjRE"
+        },    
+        {
+          category:"FaceBook", 
+          name:"基于CSSDesinger产品，介绍如何制定计划加速小组内推广.mp4", 
+          description:"基于CSSDesinger产品，介绍如何制定计划加速小组内推广.有计划的实施，让你的推广更有效果。", 
+          url:"https://www.youtube.com/embed/5VOH9vd-LkA"
+        },   
         ///////////////////////////////////////////////////////////////////////    
         {
           category:"Office", 
