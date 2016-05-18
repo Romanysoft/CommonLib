@@ -134,18 +134,20 @@
                 <div class="row" style="padding: 16px;">
                     <div class="col-md-1">类别</div>
                     <div class="col-md-3">视频名称</div>
-                    <div class="col-md-4">视频预览</div>
-                    <div class="col-md-4">视频介绍</div>
+                    <div class="col-md-2">视频连接</div>
+                    <div class="col-md-2">视频预览</div>
+                    <div class="col-md-2">视频介绍</div>
                 </div>
                 {{each videos as videoObj}}
                  <div class="row" style="padding: 16px;">
                     <div class="col-md-1"><small>{{videoObj.category}}</small> </div> 
                     <div class="col-md-3"><strong>{{videoObj.name}}</strong></div>
-                    <div class="col-md-4">     
+                    <div class="col-md-2"><a href="{{videoObj.url}}" target="_blank">{{videoObj.url}}</a></div> 
+                    <div class="col-md-2">     
                         <iframe width="280" height="157" src="{{videoObj.url}}" frameborder="0" allowfullscreen>
                         </iframe>
                      </div>
-                     <div class="col-md-4">{{videoObj.description}}</div>
+                     <div class="col-md-2">{{videoObj.description}}</div>
                 </div>
                 {{/each}}
             </div>              
