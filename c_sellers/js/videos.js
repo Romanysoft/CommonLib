@@ -43,6 +43,12 @@
           description:"基于CSSDesinger产品，介绍如何制定计划加速小组内推广.有计划的实施，让你的推广更有效果。", 
           url:"https://www.youtube.com/embed/5VOH9vd-LkA"
         },   
+        {
+          category:"FaceBook", 
+          name:"通过FaceBook的帖子收藏功能快速发帖.mp4", 
+          description:"这是一种加快让你发帖的方法", 
+          url:"https://www.youtube.com/embed/ICy7N-ndH08"
+        },       
         ///////////////////////////////////////////////////////////////////////    
         {
           category:"Office", 
