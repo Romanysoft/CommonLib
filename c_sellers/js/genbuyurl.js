@@ -36,6 +36,7 @@
         
         ////////////////////////////////////////////////////////////////////////////
        
+       
         function checkLinkIDisExist(){
            _curLinkID = $('#input-linkID').val(); 
            if($.trim(_curLinkID) === ""){
@@ -44,6 +45,7 @@
               return false;
            }
            
+           localStorage.setItem("lastLinkID", _curLinkID);
            return true;
         }
        
@@ -81,6 +83,9 @@
               $('#output-buyurls').text($('#output-buyurls').text() + contentMessage);
            
         }
+       
+        var lastLinkID = localStorage.getItem("lastLinkID") || "ian";
+        $('#input-linkID').val(lastLinkID); 
        
         $('#btn-saveLinkID').on('click', function(){
            _curLinkID = $('#input-linkID').val();    
