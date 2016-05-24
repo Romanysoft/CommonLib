@@ -15,8 +15,14 @@
         try {
             // all traceid  
             ga('create', 'UA-54045904-3', 'auto');
-
-
+            
+            var sys_lang = "default";
+            try{
+                sys_lang = navigator.language || "zh-CN[default]";
+            }catch(e){
+                console.error(e);
+            }
+            
             //-------------------------------------------------
 
             try {
@@ -29,7 +35,7 @@
                         hitType: 'event',
                         eventCategory: productName,
                         eventAction: 'gotoPurchase',
-                        eventLabel: (new Date()).toUTCString()
+                        eventLabel: sys_lang + "__" + (new Date()).toUTCString()
                     });
                 });
 
