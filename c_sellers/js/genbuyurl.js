@@ -3,6 +3,7 @@
     
     var _productsMap = $.RTY_productsMap;
     var _videos = $.RTY_videos;
+    var _shareTools = $.RTY_tools;
     var _curLinkID = "";
     
     c$.updateHomePage = function() {
@@ -28,6 +29,10 @@
         /// 更新视频教程
         htmlContent = template('tmpl-nav-tutorial-videos',{videos: _videos});
         $('#nav-tutorial-videos').html(htmlContent);
+      
+        /// 更新工具分享
+        htmlContent = template('tmpl-nav-share-tools',{tools: _shareTools});
+        $('#nav-share-tools').html(htmlContent);
         
         ////////////////////////////////////////////////////////////////////////////
        

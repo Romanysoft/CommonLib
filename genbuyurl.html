@@ -33,6 +33,7 @@
         <li><a href="//minisoft.logdown.com/archives" target="_blank"><span class="glyphicon glyphicon-tint"/> 产品推广博客</a></li>
         <li><a href="//admin.mycommerce.com/app/cp/login" target="_blank"><span class="glyphicon glyphicon-search"/> 销售订单查询</a></li>  
         <li><a href="#nav-tutorial-videos"><span class="glyphicon glyphicon-facetime-video"/> 教程视频</a></li>  
+        <li><a href="#nav-share-tools"><span class="glyphicon glyphicon-facetime-video"/>工具分享</a></li> 
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -47,6 +48,7 @@
       </div> 
       <div id="nav-tutorial-videos" class="panel panel-warning">
       </div>  
+      <div id="nav-share-tools" class="panel panel-warning"></div>
   </div>
 </div>
     
@@ -154,6 +156,28 @@
           </div>
     </script> 
         
+    <script id="tmpl-nav-share-tools" type="text/html">
+          <div class="panel-heading">工具分享<span class="badge">{{tools.Length}}</span></div>
+          <div class="panel-body">
+            <div class="content-allvidoes">
+                <div class="row" style="padding: 16px;">
+                    <div class="col-md-1">类别</div>
+                    <div class="col-md-3">工具简称</div>
+                    <div class="col-md-1">下载</div>
+                    <div class="col-md-7">介绍</div>
+                </div>
+                {{each tools as toolObj}}
+                 <div class="row" style="padding: 16px;">
+                    <div class="col-md-1"><small>{{toolObj.category}}</small> </div> 
+                    <div class="col-md-3"><strong>{{toolObj.name}}</strong></div>
+                    <div class="col-md-1"><a href="{{toolObj.url}}" target="_blank">下载</a></div> 
+                     <div class="col-md-7">{{toolObj.description}}</div>
+                </div>
+                {{/each}}
+            </div>              
+          </div>
+    </script> 
+  
     <!-- js -->
     <script src="common/js/jquery-1.12.3.min.js"></script>
     <script src="common/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
@@ -161,6 +185,7 @@
     <script src="common/artTemplate/3.0/template.js"></script>
     <script src="c_sellers/js/products.js"></script>
     <script src="c_sellers/js/videos.js"></script>
+    <script src="c_sellers/js/tools.js"></script>
     <script src="c_sellers/js/genbuyurl.js"></script>
 </body>
 
