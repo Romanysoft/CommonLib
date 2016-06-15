@@ -50,7 +50,7 @@
         }
        
         function common_gen_buyurl(obj){
-              var comSellersUrl_base = "http://romanysoft.github.io/CommonLib/sellers.html?pid=",
+              var comSellersUrl_base = "https://romanysoft.github.io/CommonLib/sellers.html?pid=",
                   mycommerceUrl_base = "https://shopper.mycommerce.com/checkout/cart/add/";
 
               function _preProductMsg(productObj){
