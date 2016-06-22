@@ -20,7 +20,7 @@
     //    dest: https://shopper.mycommerce.com/checkout/cart/add/55399-1?quantity=1&linkid=RF201603221800PTJ
     var destUrl = "https://shopper.mycommerce.com/checkout/cart/add/",
         orgUrlRplace = "https://romanysoft.github.io/CommonLib/sellers.html?pid=",
-        orgUrlRplace2 = "http://romanysoft.github.io/CommonLib/sellers.html?pid=",
+        orgUrlRplace2 = "http://romanysoft.github.io/CommonLib/sellers.html?pid=";
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /**
