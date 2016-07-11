@@ -49,6 +49,7 @@
             "55399-43": {name:"XLS2csv" + _mac, prices:"20", home:"https://romanysoft.github.io/XLS2csv/",  xxx:""},
             "55399-44": {name:"CSSDesigner" + _win, prices:"40", home:"https://romanysoft.github.io/CSSDesigner/",  xxx:""},
             "55399-45": {name:"CSSDesigner" + _linux, prices:"40", home:"https://romanysoft.github.io/CSSDesigner/",  xxx:""},
+            "55399-46": {name:"CSVEditorPro2" + _linux, prices:"39.99", home:"https://romanysoft.github.io/CSVEditorPro2/",  xxx:""},
     };
     
     
