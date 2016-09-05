@@ -50,6 +50,7 @@
             "55399-44": {name:"CSSDesigner" + _win, prices:"40", home:"https://romanysoft.github.io/CSSDesigner/",  xxx:""},
             "55399-45": {name:"CSSDesigner" + _linux, prices:"40", home:"https://romanysoft.github.io/CSSDesigner/",  xxx:""},
             "55399-46": {name:"CSVEditorPro2" + _mac, prices:"39.99", home:"https://romanysoft.github.io/CSVEditorPro2/",  xxx:""},
+            "55399-47": {name:"SpeedTest" + _win, prices:"5.99", home:"https://romanysoft.github.io/SpeedTest/",  xxx:""},
     };
     
     
