@@ -49,6 +49,15 @@
     });
     _U.data.push({
         type:_U.types[1], 
+        name:"Utility Softwares",  
+        url:"https://wamus-romanysoft.blogspot.com/", 
+        mail:"blogger.01.romanysoft.mail2@blogger.com",
+        traceid:"UA-82372746-3", 
+        ass:assObj,
+        partnerID:"A017" // 李晓斌
+    });    
+    _U.data.push({
+        type:_U.types[1], 
         name:"Soft World",  
         url:"https://soft-beta.blogspot.com/", 
         mail:"blogger.01.romanysoft.mail3@blogger.com",
@@ -59,12 +68,13 @@
     _U.data.push({
         type:_U.types[1], 
         name:"Utility Softwares",  
-        url:"https://wamus-romanysoft.blogspot.com/", 
-        mail:"blogger.01.romanysoft.mail2@blogger.com",
-        traceid:"UA-82372746-3", 
+        url:"https://discovery-romanysoft.blogspot.com/", 
+        mail:"blogger.01.romanysoft.mail4@blogger.com",
+        traceid:"UA-82372746-4", 
         ass:assObj,
-        partnerID:""
-    });
+        partnerID:"A018" // 朱小港
+    });    
+
 
 
 

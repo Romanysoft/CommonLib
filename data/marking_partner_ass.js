@@ -25,9 +25,9 @@
             qq:"qq",                      // QQ 
             email:"email",                // 电子邮件
             onJob:true,                   // 是否在职 
-            isPact:true,                  // 是否签订合同 
+            isPact:false,                 // 是否签订合同 
             pactDeadline:1,               // 合同有效期 默认为1年
-            lastSignedDate:20160901,      // 最近一次签订合同的时间
+            lastSignedDate:0,             // 最近一次签订合同的时间
             payWayType:_U.PayWayTypes[0], // 支付方式
             payWayAcount:"",              // 支付账户
             assOtherAcounts:{             // 关联的其他账号信息  
@@ -41,12 +41,113 @@
         return $.extend(o, data);
     };
 
+    /// 官方9月前，申请加入我们的兼职人员。这里只做简单记录，工资详细另结算。不在此系统中计算显示
+    _U.data.push(_U.tp({
+        id: "A001",
+        name:"赵铭",  
+        QQ:"1245880**",
+        email:"1245880**@qq.com"
+    }));     
+    _U.data.push(_U.tp({
+        id: "A002",
+        name:"赵铭",  
+        QQ:"17985528**",
+        email:"17985528**@qq.com"
+    }));     
+    _U.data.push(_U.tp({
+        id: "A003",
+        name:"高明德",  
+        QQ:"24592926**",
+        email:"24592926**@qq.com"
+    }));      
+    _U.data.push(_U.tp({
+        id: "A004",
+        name:"李丽清",  
+        QQ:"7660168**",
+        email:"7660168**@qq.com"
+    }));       
+    _U.data.push(_U.tp({
+        id: "A005",
+        name:"侯明",  
+        QQ:"5326202**",
+        email:"5326202**@qq.com"
+    }));     
+    _U.data.push(_U.tp({
+        id: "A006",
+        name:"孙建明",  
+        QQ:"3149014**",
+        email:"3149014**@qq.com"
+    }));     
+    _U.data.push(_U.tp({
+        id: "A007",
+        name:"谷晓东",  
+        QQ:"9748767**",
+        email:"9748767**@qq.com"
+    }));      
+    _U.data.push(_U.tp({
+        id: "A008",
+        name:"陈建义",  
+        QQ:"4717179**",
+        email:"4717179**@qq.com"
+    }));      
+    _U.data.push(_U.tp({
+        id: "A008",
+        name:"李丽",  
+        QQ:"5747875**",
+        email:"5747875**@qq.com"
+    }));    
+    _U.data.push(_U.tp({
+        id: "A009",
+        name:"王丹",  
+        QQ:"13580623**",
+        email:"13580623**@qq.com"
+    }));
+    _U.data.push(_U.tp({
+        id: "A010",
+        name:"徐伟",  
+        QQ:"15519755**",
+        email:"15519755**@qq.com"
+    }));
+    _U.data.push(_U.tp({
+        id: "A011",
+        name:"查群子",  
+        QQ:"2800186**",
+        email:"2800186**@qq.com"
+    }));    
+    _U.data.push(_U.tp({
+        id: "A012",
+        name:"任海燕",  
+        QQ:"841015**",
+        email:"841015**@qq.com"
+    })); 
+    _U.data.push(_U.tp({
+        id: "A013",
+        name:"胡小群",  
+        QQ:"9730421**",
+        email:"9730421**@qq.com"
+    }));      
+    _U.data.push(_U.tp({
+        id: "A014",
+        name:"杨锦锦",  
+        QQ:"2704513**",
+        email:"2704513**@qq.com"
+    })); 
+    _U.data.push(_U.tp({
+        id: "A015",
+        name:"张萍",  
+        QQ:"9532658**",
+        email:"9532658**@qq.com"
+    }));             
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// A + B + C 或 E + C 模式兼职人员
     /// 官方Blogger地址 lauer3912@gmail.com
     _U.data.push(_U.tp({
         id: "A016",
         name:"林东",  
         QQ:"1363196218",
         email:"1363196218@qq.com",
+        isPact:true,
         lastSignedDate:20160901,
         payWayType:_U.PayWayTypes[0],
         payWayAcount:"a15598123598",
@@ -71,6 +172,22 @@
             twitter:""    
         }
     }));    
+
+
+    _U.data.push(_U.tp({
+        id: "A018",
+        name:"朱小港",  
+        QQ:"2773803547",
+        email:"2773803547@qq.com",
+        lastSignedDate:20160901,
+        payWayType:_U.PayWayTypes[0],
+        payWayAcount:"",
+        assOtherAcounts:{             
+            gmail:"",
+            facebook:"",
+            twitter:""    
+        }
+    }));     
 
 
 
