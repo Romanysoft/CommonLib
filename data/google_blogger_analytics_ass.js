@@ -13,7 +13,7 @@
     /// 本单元的处理
     var _U = {};
 
-    _U.types = ["official", "blogger"]
+    _U.types = ["official", "blogger"]  // 博客的类型
     _U.data = [];
 
     /// 官方Blogger地址 lauer3912@gmail.com
@@ -36,7 +36,7 @@
     var assObj = {};
     assObj = {
         ass:"blogger.01.romanysoft@blogger.com",
-        assDir:"1-50.Bloggers",
+        assDir:"01-50.Bloggers",
     };
     _U.data.push({
         type:_U.types[1], 
@@ -45,7 +45,8 @@
         mail:"blogger.01.romanysoft.mail1@blogger.com",
         traceid:"UA-82372746-1", 
         ass:assObj,
-        partnerID:"A016" // 林东
+        partnerID:"A016", // 林东
+        oldPartners:[]    // 此博客以前的合作者  
     });
     _U.data.push({
         type:_U.types[1], 
@@ -54,7 +55,8 @@
         mail:"blogger.01.romanysoft.mail2@blogger.com",
         traceid:"UA-82372746-3", 
         ass:assObj,
-        partnerID:"A017" // 李晓斌
+        partnerID:"A017", // 李晓斌
+        oldPartners:[]    // 此博客以前的合作者  
     });    
     _U.data.push({
         type:_U.types[1], 
@@ -63,16 +65,18 @@
         mail:"blogger.01.romanysoft.mail3@blogger.com",
         traceid:"UA-82372746-2", 
         ass:assObj,
-        partnerID:"rs"  // 王娜
+        partnerID:"M.RF",  // 王娜
+        oldPartners:[]   // 此博客以前的合作者
     });
     _U.data.push({
         type:_U.types[1], 
-        name:"Utility Softwares",  
+        name:"Discovery",  
         url:"https://discovery-romanysoft.blogspot.com/", 
         mail:"blogger.01.romanysoft.mail4@blogger.com",
         traceid:"UA-82372746-4", 
         ass:assObj,
-        partnerID:"A018" // 朱小港
+        partnerID:"A018", // 朱小港
+        oldPartners:[]    // 此博客以前的合作者
     });    
 
 
