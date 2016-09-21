@@ -147,10 +147,19 @@
     }); 
 
 
-
-
     ////Stanford
     ////https://Stanford-romanysoft.blogspot.com/
+
+    _U.data.push({
+        type:_U.types[1], 
+        name:"Stanford",  
+        url:"https://Stanford-romanysoft.blogspot.com/", 
+        mail:"blogger.01.romanysoft.mail10@blogger.com",
+        traceid:"UA-82372746-10", 
+        ass:assObj,
+        partnerID:"",   // 
+        oldPartners:[]    // 此博客以前的合作者
+    });     
 
 
 
