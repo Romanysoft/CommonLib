@@ -79,8 +79,78 @@
         oldPartners:[]    // 此博客以前的合作者
     });    
 
+    ////Time and Date
+    ////https://timeanddate-romanysoft.blogspot.com/
+    _U.data.push({
+        type:_U.types[1], 
+        name:"Time and Date",  
+        url:"https://timeanddate-romanysoft.blogspot.com/", 
+        mail:"blogger.01.romanysoft.mail5@blogger.com",
+        traceid:"UA-82372746-5", 
+        ass:assObj,
+        partnerID:"",   // 
+        oldPartners:[]    // 此博客以前的合作者
+    }); 
 
 
+    ////Entrez
+    ////https://entrez-romanysoft.blogspot.com/
+    _U.data.push({
+        type:_U.types[1], 
+        name:"Entrez",  
+        url:"https://entrez-romanysoft.blogspot.com/", 
+        mail:"blogger.01.romanysoft.mail6@blogger.com",
+        traceid:"UA-82372746-6", 
+        ass:assObj,
+        partnerID:"",   // 
+        oldPartners:[]    // 此博客以前的合作者
+    });    
+
+
+    ////INRIA
+    ////https://inria-romanysoft.blogspot.com/
+    _U.data.push({
+        type:_U.types[1], 
+        name:"INRIA",  
+        url:"https://inria-romanysoft.blogspot.com/", 
+        mail:"blogger.01.romanysoft.mail7@blogger.com",
+        traceid:"UA-82372746-7", 
+        ass:assObj,
+        partnerID:"",   // 
+        oldPartners:[]    // 此博客以前的合作者
+    });  
+
+    ////SafariM
+    ////https://SafariM-romanysoft.blogspot.com/
+    _U.data.push({
+        type:_U.types[1], 
+        name:"SafariM",  
+        url:"https://SafariM-romanysoft.blogspot.com/", 
+        mail:"blogger.01.romanysoft.mail8@blogger.com",
+        traceid:"UA-82372746-8", 
+        ass:assObj,
+        partnerID:"",   // 
+        oldPartners:[]    // 此博客以前的合作者
+    }); 
+
+    ////National
+    ////https://National-romanysoft.blogspot.com/
+    _U.data.push({
+        type:_U.types[1], 
+        name:"National",  
+        url:"https://National-romanysoft.blogspot.com/", 
+        mail:"blogger.01.romanysoft.mail9@blogger.com",
+        traceid:"UA-82372746-9", 
+        ass:assObj,
+        partnerID:"",   // 
+        oldPartners:[]    // 此博客以前的合作者
+    }); 
+
+
+
+
+    ////Stanford
+    ////https://Stanford-romanysoft.blogspot.com/
 
 
 
