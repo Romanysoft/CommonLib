@@ -40,17 +40,97 @@
     /// 计算及统计支付情况
     _U.calculatePays = function(paysData, partnersData){
 
-        /// 定义计算C的方式
-        /// 定义计算E的方式
+        var resultsData = [];
 
-        
+        /// 获取自己的下线
+        function getLinePartners(id){
+            var linePartners = [];
+            $.each(partnersData, function(index, ele){
+                var referrer = ele.referrer;
+                if (referrer === id){
+                    linePartners.push(ele);
+                }
+            });
 
+            return linePartners;
+        }
+
+        /// 获取自己的信息
+        function getPartnerInfo(id){
+            var info = null;
+            $.each(partnersData, function(index, ele){
+                if (id === ele.id){
+                    info = ele;
+                }
+            });
+
+            return info;
+        }
+
+        /// 先整理格式化
+        $.each(paysData, function(index, ele){
+            ele.prices = 0.025;
+            ele.total_e = ele.visits * ele.prices;
+            ele.total_a = ele.total_e;
+            ele.total_c = 0;
+            ele.total = 0;
+        });
+
+        /// 获取下载总的提成
+        function getPartnersPay(payRecordObj, allPaysData){
+            var curPartnerPay = $.extend(payRecordObj, {});
+            var info = getPartnerInfo(curPartnerPay.id);
+            curPartnerPay.name = info.name;
+            curPartnerPay.referrer = info.referrer;
+
+
+            var linePartners = getLinePartners(curPartnerPay.id);
+            if (linePartners.length < 1){
+                if (info.payment === "E+C"){
+                    curPartnerPay.total = curPartnerPay.total_e + curPartnerPay.total_c;
+                } 
+            }else{
+                
+                var linePartnersPaysData = [];
+                $.each(linePartners, function(i, partner){
+                    $.each(allPaysData, function(i, rec){
+                        if(rec.id === partner.id){
+                            linePartnersPaysData.push(rec);
+                        }
+                    })
+                });
+
+                var sum = 0;
+                $.each(linePartnersPaysData, function(index, payObj){
+                    var linePartnerTotalPayObj = getPartnersPay(payObj, allPaysData);
+                    sum += linePartnerTotalPayObj.total;
+                });
+
+                curPartnerPay.total_c = sum * 0.15;
+                curPartnerPay.total = curPartnerPay.total_e + curPartnerPay.total_c;
+            }
+
+            return curPartnerPay; 
+        }
+
+        /// 
+        $.each(paysData, function(index, ele){
+            var newPaysRecord = getPartnersPay(ele, paysData);
+            resultsData.push(newPaysRecord);
+        });
+
+        return resultsData;
     };
 
     /// 更新数据
     _U.updateWith = function(yearMonth, partnersData){
         var t$ = this;
-        var jsfile = "data/pays/E+C_A+B+C/base_" + yearMonth + ".js"
+        var jsfile = "data/pays/E+C_A+B+C/base_" + yearMonth + ".js";
+        var grid = $('#pays-window > .pays-grid').data('kendoGrid');
+        while (grid.dataSource.total() > 0){
+            grid.dataSource.remove(grid.dataSource.at(0));
+        } 
+    
         $.getScript(jsfile).done(function(data, textStatus, jqxhr){
             var paysData = [];
             if($.RTYUtils.isString(data)){
@@ -59,6 +139,11 @@
             } 
    
             var resultData = t$.calculatePays(paysData, partnersData);
+        
+            $.each(resultData, function(index, obj){
+                grid.dataSource.add(obj);
+            })
+            
         });
     };
 
@@ -71,10 +156,10 @@
             if (!win.data("kendoWindow")){
                 win.kendoWindow({
                     actions: ["Pin","Close"],
-                    title: "支付记录(适用于薪资公开合作者)",
+                    title: "支付记录(适用于E+C模式)",
                     width: 1024,
                     position: {
-                        top: 120
+                        top: 60
                     },                    
                     resizable: true,
                     model:false
@@ -90,7 +175,13 @@
                     depth: "year",
 
                     // display month and year in the input
-                    format: "yyyy/MM"
+                    format: "yyyy/MM",
+
+                    change: function(){
+                        console.log("Change :: " + kendo.toString(this.value(), 'yyyyMM'));
+                        t$.reloadData(this.value());
+                    },
+                    value: new Date()
                 });
 
 
@@ -123,10 +214,7 @@
                         scrollable: true,
                         groupable:{
                             enabled: true,
-                            showFooter: true,
-                            messages: {
-                                empty: "拖拽你想分组的列到这里..."
-                            }
+                            showFooter: true
                         },
                         reorderable: true,
                         resizable: true,
@@ -146,23 +234,23 @@
                                 ]
                             },
                             {
-                                title: "E 部分 - 分享推广信息",
+                                title: "E 部分 - 分享信息",
                                 columns:[
                                     { field: "visits", title: "访问人数", width: "40px" },
-                                    { field: "prices", title: "元/人", format: "{0:c}", width: "36px" },
-                                    { field: "total_e", title: "E总计", format: "{0:c}", width: "40px" }
+                                    { field: "prices", title: "单价", format: "{0:c3}", width: "36px" },
+                                    { field: "total_e", title: "E总计", format: "{0:c3}", width: "40px" }
                                 ]
                             },
                             {
-                                title: "C 部分 - 推荐合作者提成",
+                                title: "C 部分 - 推荐提成",
                                 columns:[
-                                    { field: "total_c", title: "C总计",format: "{0:c}", width: "70px" }    
+                                    { field: "total_c", title: "C总计",format: "{0:c3}", width: "50px" }    
                                 ]
                             },
                             {
                                 title: "总计 = E + C",
                                 columns:[
-                                    { field: "total", title: "E+C", format: "{0:c}", width: "40px" }
+                                    { field: "total", title: "E+C", format: "{0:c3}", width: "40px" }
                                 ]
                             }
                             

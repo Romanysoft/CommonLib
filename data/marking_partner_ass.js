@@ -8,7 +8,7 @@
 
     _U.UserTypes = ["official", "blogger"];
     _U.PayWayTypes = ["微信", "支付宝", "银行卡"];
-    _U.Payments = ["P(前期合作)", "A+B+C模式", "E+C模式"];
+    _U.Payments = ["P", "A+B+C", "E+C"];
     _U.KeepSecret = ["保密", "公开"];
     _U.data = [];
 
