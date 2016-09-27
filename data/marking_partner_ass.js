@@ -9,6 +9,7 @@
     _U.UserTypes = ["official", "blogger"];
     _U.PayWayTypes = ["微信", "支付宝", "银行卡"];
     _U.Payments = ["P(前期合作)", "A+B+C模式", "E+C模式"];
+    _U.KeepSecret = ["保密", "公开"];
     _U.data = [];
 
     _U.tp = function(data){
@@ -25,6 +26,7 @@
             payment:_U.Payments[0],       // 合同约定结算方式
             payWayType:_U.PayWayTypes[0], // 支付方式
             payWayAcount:"",              // 支付账户
+            KeepSecret: _U.KeepSecret[0], // 薪资是否保密
             assOtherAcounts:{             // 关联的其他账号信息  
                 gmail:"",
                 facebook:"",
@@ -40,98 +42,98 @@
     _U.data.push(_U.tp({
         id: "A001",
         name:"李明哲",  
-        QQ:"1245880**",
-        email:"1245880**@qq.com"
+        QQ:"124588***",
+        email:"124588***@qq.com"
     }));     
     _U.data.push(_U.tp({
         id: "A002",
         name:"赵铭",  
-        QQ:"17985528**",
-        email:"17985528**@qq.com"
+        QQ:"1798552***",
+        email:"1798552***@qq.com"
     }));     
     _U.data.push(_U.tp({
         id: "A003",
         name:"高明德",  
-        QQ:"24592926**",
-        email:"24592926**@qq.com"
+        QQ:"2459292***",
+        email:"2459292***@qq.com"
     }));      
     _U.data.push(_U.tp({
         id: "A004",
         name:"李丽清",  
-        QQ:"7660168**",
-        email:"7660168**@qq.com"
+        QQ:"766016***",
+        email:"766016***@qq.com"
     }));       
     _U.data.push(_U.tp({
         id: "A005",
         name:"侯明",  
-        QQ:"5326202**",
-        email:"5326202**@qq.com"
+        QQ:"532620***",
+        email:"532620***@qq.com"
     }));     
     _U.data.push(_U.tp({
         id: "A006",
         name:"孙建明",  
-        QQ:"3149014**",
-        email:"3149014**@qq.com"
+        QQ:"314901***",
+        email:"314901***@qq.com"
     }));     
     _U.data.push(_U.tp({
         id: "A007",
         name:"谷晓东",  
-        QQ:"9748767**",
-        email:"9748767**@qq.com"
+        QQ:"974876***",
+        email:"974876***@qq.com"
     }));      
     _U.data.push(_U.tp({
         id: "A008",
         name:"陈建义",  
-        QQ:"4717179**",
-        email:"4717179**@qq.com"
+        QQ:"471717***",
+        email:"471717***@qq.com"
     }));      
     _U.data.push(_U.tp({
-        id: "A008",
-        name:"李丽",  
-        QQ:"5747875**",
-        email:"5747875**@qq.com"
+        id: "RF201603221800PTJ",
+        name:"王娜",  
+        QQ:"1315134***",
+        email:"1315134***@qq.com"
     }));    
     _U.data.push(_U.tp({
         id: "A009",
         name:"王丹",  
-        QQ:"13580623**",
-        email:"13580623**@qq.com"
+        QQ:"1358062***",
+        email:"1358062***@qq.com"
     }));
     _U.data.push(_U.tp({
         id: "A010",
         name:"徐伟",  
-        QQ:"15519755**",
-        email:"15519755**@qq.com"
+        QQ:"1551975***",
+        email:"1551975***@qq.com"
     }));
     _U.data.push(_U.tp({
         id: "A011",
         name:"查群子",  
-        QQ:"2800186**",
-        email:"2800186**@qq.com"
+        QQ:"280018***",
+        email:"280018***@qq.com"
     }));    
     _U.data.push(_U.tp({
         id: "A012",
         name:"任海燕",  
-        QQ:"841015**",
-        email:"841015**@qq.com"
+        QQ:"84101***",
+        email:"84101***@qq.com"
     })); 
     _U.data.push(_U.tp({
         id: "A013",
         name:"胡小群",  
-        QQ:"9730421**",
-        email:"9730421**@qq.com"
+        QQ:"973042***",
+        email:"973042***@qq.com"
     }));      
     _U.data.push(_U.tp({
         id: "A014",
         name:"杨锦锦",  
-        QQ:"2704513**",
-        email:"2704513**@qq.com"
+        QQ:"270451***",
+        email:"270451***@qq.com"
     })); 
     _U.data.push(_U.tp({
         id: "A015",
         name:"张萍",  
-        QQ:"9532658**",
-        email:"9532658**@qq.com"
+        QQ:"953265***",
+        email:"953265***@qq.com"
     }));             
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -140,13 +142,14 @@
     _U.data.push(_U.tp({
         id: "A016",
         name:"林东",  
-        QQ:"13631962**",
-        email:"13631962**@qq.com",
+        QQ:"1363196***",
+        email:"1363196***@qq.com",
         isPact:true,
         lastSignedDate:20160901,
         payWayType:_U.PayWayTypes[0],
         payWayAcount:"a15598123598",
         payment:_U.Payments[2], 
+        KeepSecret: _U.KeepSecret[1], // 薪资是否保密
         assOtherAcounts:{             
             gmail:"lindong0921@gmail.com",
             facebook:"",
@@ -157,12 +160,13 @@
     _U.data.push(_U.tp({
         id: "A017",
         name:"李晓斌",  
-        QQ:"1903342**",
-        email:"1903342**@qq.com",
+        QQ:"190334***",
+        email:"190334***@qq.com",
         lastSignedDate:20160901,
         payWayType:_U.PayWayTypes[0],
         payWayAcount:"li190334262",
         payment:_U.Payments[2], 
+        KeepSecret: _U.KeepSecret[1], // 薪资是否保密
         assOtherAcounts:{             
             gmail:"",
             facebook:"",
@@ -174,12 +178,13 @@
     _U.data.push(_U.tp({
         id: "A018",
         name:"朱小港",  
-        QQ:"27738035**",
-        email:"27738035**@qq.com",
+        QQ:"2773803***",
+        email:"2773803***@qq.com",
         lastSignedDate:20160901,
         payWayType:_U.PayWayTypes[0],
         payWayAcount:"",
         payment:_U.Payments[2], 
+        KeepSecret: _U.KeepSecret[1], // 薪资是否保密
         assOtherAcounts:{             
             gmail:"",
             facebook:"",
@@ -187,6 +192,78 @@
         },
         referrer:"A017"
     }));     
+
+    _U.data.push(_U.tp({
+        id: "A019",
+        name:"陈飞",  
+        QQ:"323067***",
+        email:"323067***@qq.com",
+        lastSignedDate:20160905,
+        payWayType:_U.PayWayTypes[0],
+        payWayAcount:"",
+        payment:_U.Payments[2], 
+        KeepSecret: _U.KeepSecret[1], // 薪资是否保密
+        assOtherAcounts:{             
+            gmail:"",
+            facebook:"",
+            twitter:""    
+        },
+        referrer:""
+    }));   
+
+    _U.data.push(_U.tp({
+        id: "A020",
+        name:"赵慧敏",  
+        QQ:"470856***",
+        email:"470856***@qq.com",
+        lastSignedDate:20160918,
+        payWayType:_U.PayWayTypes[0],
+        payWayAcount:"",
+        payment:_U.Payments[2], 
+        KeepSecret: _U.KeepSecret[1], // 薪资是否保密
+        assOtherAcounts:{             
+            gmail:"",
+            facebook:"",
+            twitter:""    
+        },
+        referrer:""
+    }));   
+
+    _U.data.push(_U.tp({
+        id: "A021",
+        name:"吴敏曦",  
+        QQ:"626087***",
+        email:"626087***@qq.com",
+        lastSignedDate:20160918,
+        payWayType:_U.PayWayTypes[0],
+        payWayAcount:"",
+        payment:_U.Payments[2], 
+        KeepSecret: _U.KeepSecret[1], // 薪资是否保密
+        assOtherAcounts:{             
+            gmail:"",
+            facebook:"",
+            twitter:""    
+        },
+        referrer:""
+    }));  
+
+    _U.data.push(_U.tp({
+        id: "A022",
+        name:"王哲",  
+        QQ:"175184***",
+        email:"175184***@qq.com",
+        lastSignedDate:20160918,
+        payWayType:_U.PayWayTypes[0],
+        payWayAcount:"",
+        payment:_U.Payments[2], 
+        KeepSecret: _U.KeepSecret[1], // 薪资是否保密
+        assOtherAcounts:{             
+            gmail:"",
+            facebook:"",
+            twitter:""    
+        },
+        referrer:""
+    }));   
 
     return _U;
 })();

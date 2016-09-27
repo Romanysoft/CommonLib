@@ -1,14 +1,8 @@
 /**
  * Created by Ian on 2016/9/16.
  */
-(function () {
-    window['RSData'] = window['RSData'] || {};
-    window.RSData.d$ = window.RSData.d$ || {};
-})();
 
 (function () {
-    var d$ = {};
-    d$ = $.extend(window.RSData.d$, {});
 
     /// 本单元的处理
     var _U = {};
@@ -46,6 +40,7 @@
         traceid:"UA-82372746-1", 
         ass:assObj,
         partnerID:"A016", // 林东
+        gmail:"",         // gmail邮箱  
         oldPartners:[]    // 此博客以前的合作者  
     });
     _U.data.push({
@@ -56,6 +51,7 @@
         traceid:"UA-82372746-3", 
         ass:assObj,
         partnerID:"A017", // 李晓斌
+        gmail:"",         // gmail邮箱 
         oldPartners:[]    // 此博客以前的合作者  
     });    
     _U.data.push({
@@ -66,6 +62,7 @@
         traceid:"UA-82372746-2", 
         ass:assObj,
         partnerID:"M.RF",  // 王娜
+        gmail:"",         // gmail邮箱 
         oldPartners:[]   // 此博客以前的合作者
     });
     _U.data.push({
@@ -76,6 +73,7 @@
         traceid:"UA-82372746-4", 
         ass:assObj,
         partnerID:"A018", // 朱小港
+        gmail:"",         // gmail邮箱 
         oldPartners:[]    // 此博客以前的合作者
     });    
 
@@ -88,7 +86,8 @@
         mail:"blogger.01.romanysoft.mail5@blogger.com",
         traceid:"UA-82372746-5", 
         ass:assObj,
-        partnerID:"",   // 
+        partnerID:"A019",   // 
+        gmail:"",         // gmail邮箱 
         oldPartners:[]    // 此博客以前的合作者
     }); 
 
@@ -102,7 +101,8 @@
         mail:"blogger.01.romanysoft.mail6@blogger.com",
         traceid:"UA-82372746-6", 
         ass:assObj,
-        partnerID:"",   // 
+        partnerID:"A020",   // 
+        gmail:"",         // gmail邮箱 
         oldPartners:[]    // 此博客以前的合作者
     });    
 
@@ -116,7 +116,8 @@
         mail:"blogger.01.romanysoft.mail7@blogger.com",
         traceid:"UA-82372746-7", 
         ass:assObj,
-        partnerID:"",   // 
+        partnerID:"A021",   // 
+        gmail:"",         // gmail邮箱 
         oldPartners:[]    // 此博客以前的合作者
     });  
 
@@ -129,7 +130,8 @@
         mail:"blogger.01.romanysoft.mail8@blogger.com",
         traceid:"UA-82372746-8", 
         ass:assObj,
-        partnerID:"",   // 
+        partnerID:"A022",   // 
+        gmail:"",         // gmail邮箱 
         oldPartners:[]    // 此博客以前的合作者
     }); 
 
@@ -143,6 +145,7 @@
         traceid:"UA-82372746-9", 
         ass:assObj,
         partnerID:"",   // 
+        gmail:"",         // gmail邮箱 
         oldPartners:[]    // 此博客以前的合作者
     }); 
 
@@ -158,11 +161,10 @@
         traceid:"UA-82372746-10", 
         ass:assObj,
         partnerID:"",   // 
+        gmail:"",         // gmail邮箱  
         oldPartners:[]    // 此博客以前的合作者
     });     
 
+    return _U;
 
-
-    d$["google_blogger_ass"] = _U;
-    window.RSData.d$ = $.extend(window.RSData.d$, d$);
 })();

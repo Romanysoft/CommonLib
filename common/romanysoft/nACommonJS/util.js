@@ -34,6 +34,20 @@
 
     (function($) {
         window['$'] = $ || {};
+        var b$ = {};
+        if(window.BS){
+            if(window.BS.b$){
+                b$ = window.BS.b$;
+            }
+        }
+
+        /// 统一设置ajax选项
+        try{
+            $.ajaxSetup({
+                timeout: 5*60*1000
+            });
+        }catch(e){}
+
 
         $.RTYWebHelper = {
             ua: function() {
@@ -226,11 +240,11 @@
         $.ConfigServer = {
             getDomain: function(use_debug) {
                 var debug = use_debug || $.enable_AppConfig_debug;
-                return debug == true ? "http://192.168.171.125:3000" : "http://www.romanysoft.com";
+                return debug == true ? "http://127.0.0.1:3000" : "http://www.romanysoft.com";
             },
             getMessageServer: function(use_debug) {
                 var debug = use_debug || $.enable_AppConfig_debug;
-                return debug == true ? "ws://192.168.171.129:3000/" :
+                return debug == true ? "ws://127.0.0.1:3000" :
                     "ws://www.romanysoft.com:8000";
             }
         };
@@ -458,7 +472,13 @@
 
         $.getp = function(url, data, no_cache, cb, no_cancel) {
             try {
-                var b$ = window.BS.b$;
+                var b$ = {};
+                if(window.BS){
+                    if(window.BS.b$){
+                        b$ = window.BS.b$;
+                    }
+                }
+
                 if (typeof data == 'function') {
                     cb = data;
                     data = {};
@@ -488,16 +508,26 @@
 
                 data = $.extend(data, {
                     cb: '$.setp(' + key + ')',
-                    app_name: b$.App.getAppName() || 'app_name',
-                    app_bundle_id: b$.App.getAppId() || 'app_id',
-                    app_sandbox_enable: b$.App.getSandboxEnable() || 0,
-                    isRegistered: b$.App.getIsRegistered() || 0,
-                    os: b$.App.getAppRunOnOS() || "",
-                    navigatorInfo: navigator.userAgent,
-                    userName: b$.App.getUserName() || "UNKNWON_ROMANYSOFT",
-                    serialNumber: b$.App.getSerialNumber() || "",
-                    version: b$.App.getAppVersion() || '2.0'
+                    navigatorInfo: navigator.userAgent
                 });
+
+                try{
+                    if(b$.App){
+                        data =  $.extend(data, {
+                            app_name: b$.App.getAppName() || 'app_name',
+                            app_bundle_id: b$.App.getAppId() || 'app_id',
+                            app_sandbox_enable: b$.App.getSandboxEnable() || 0,
+                            isRegistered: b$.App.getIsRegistered() || 0,
+                            os: b$.App.getAppRunOnOS() || "",
+                            userName: b$.App.getUserName() || "UNKNWON_ROMANYSOFT",
+                            serialNumber: b$.App.getSerialNumber() || "",
+                            version: b$.App.getAppVersion() || '2.0'
+                        });
+                    }
+                }catch(e){
+                    console.error(e)
+                }
+
 
                 $.getScript(url + (url.indexOf('?') == -1 ? '?' : '&') + $.param(data));
                 $.event.trigger('ajaxSend');
@@ -1664,11 +1694,12 @@
         };
 
         /// 封装通用的发送反馈的接口
-        $.feedbackInfoEx = function(subject, info, cb) {
+        $.feedbackInfoEx = function(subject, want2Email, info, cb) {
             console.log("--- $.feedbackInfoEx ---");
             $.getp($.ConfigServer.getDomain() + '/services/feedback_info_ex', {
                 language: navigator.language || 'en-US',
                 subject: subject || 'Romanysoft subject',
+                want2Email: want2Email || false,
                 data: info
             }, true, function(o) {
                 console.log("get_feedbackInfo_ex_feedback:" + $.obj2string(o));

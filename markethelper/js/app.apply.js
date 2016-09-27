@@ -75,8 +75,8 @@
                         dataTextField: "text",
                         dataValueField: "value",
                         dataSource: [
-                            { text: "女", value: "0" },
-                            { text: "男", value: "1" }
+                            { text: "女", value: "女" },
+                            { text: "男", value: "男" }
                         ],
                         index: 0
                     });
@@ -100,7 +100,7 @@
                             _U.cache.save();
 
                             /// 反馈给服务器
-                            $.feedbackInfoEx("MARKET_APPLY_FROM_RS", _U.cache.current, function(o){
+                            $.feedbackInfoEx("MARKET_APPLY_FROM_RS", true, _U.cache.current, function(o){
                                 if(o.success){
                                     alert('申请已经发送成功！请等待回复！');
                                 }    
