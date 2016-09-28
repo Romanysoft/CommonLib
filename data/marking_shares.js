@@ -48,25 +48,25 @@
     _U.data.push(_U.tp({
         name: "安卓手机FaceBook上推广方法.mp4",
         category: _U.category[3],
-        url:"https://github.com/Romanysoft/AppShareFile/raw/master/romanysoft_offices/marking/videos/安卓手机FaceBook上推广产品方法.mp4",
+        url:"https://github.com/Romanysoft/AppShareFile/raw/master/romanysoft_offices/marking/videos/安卓手机FaceBook上推广产品方法_720x480.mp4",
         comment:"安卓手机FaceBook上推广教程，包含步骤"
     }));                      
     _U.data.push(_U.tp({
         name: "安卓手机Twitter上推广产品方法.mp4",
         category: _U.category[3],
-        url:"https://github.com/Romanysoft/AppShareFile/raw/master/romanysoft_offices/marking/videos/安卓手机Twitter上推广产品方法.mp4",
+        url:"https://github.com/Romanysoft/AppShareFile/raw/master/romanysoft_offices/marking/videos/安卓手机Twitter上推广产品方法_720x480.mp4",
         comment:"安卓手机Twitter上推广教程，包含步骤"
     })); 
     _U.data.push(_U.tp({
         name: "苹果手机FaceBook上推广产品方法.mp4",
         category: _U.category[3],
-        url:"https://github.com/Romanysoft/AppShareFile/raw/master/romanysoft_offices/marking/videos/苹果手机FaceBook上推广产品方法.mp4",
+        url:"https://github.com/Romanysoft/AppShareFile/raw/master/romanysoft_offices/marking/videos/苹果手机FaceBook上推广产品方法_720x480.mp4",
         comment:"苹果手机FaceBook上推广教程，包含步骤"
     })); 
     _U.data.push(_U.tp({
         name: "苹果手机Twitter上推广产品方法.mp4",
         category: _U.category[3],
-        url:"https://github.com/Romanysoft/AppShareFile/raw/master/romanysoft_offices/marking/videos/苹果手机Twitter上推广产品方法.mp4",
+        url:"https://github.com/Romanysoft/AppShareFile/raw/master/romanysoft_offices/marking/videos/苹果手机Twitter上推广产品方法_720x480.mp4",
         comment:"苹果手机Twitter上推广教程，包含步骤"
     }));             
 

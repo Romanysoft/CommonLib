@@ -41,9 +41,10 @@
 
                 $.getScript("data/marking_shares.js").done(function(data, textStatus, jqxhr){
                     var dataList = [];
+                    var shareUnitObj = {};
                     if($.RTYUtils.isString(data)){
-                        var obj = eval(data);  
-                        dataList = obj.data;
+                        var shareUnitObj = eval(data);  
+                        dataList = shareUnitObj.data;
 
                         //格式化数据模型
 
@@ -84,7 +85,7 @@
                                 { field: "name", title: "名称", width: "100px" },
                                 // { field: "url", title: "链接", width: "150px" },
                                 { command: [{
-                                        name: "下载",
+                                        name: "查看",
                                         click: function(e) {
                                             // prevent page scroll position change
                                             e.preventDefault();
@@ -93,7 +94,14 @@
                                             // get the data bound to the current table row
                                             var data = this.dataItem(tr);
                                             console.log("Details for: " + data.url);
-                                            window.open(data.url, 'new_win');
+
+                                            if(data.category === shareUnitObj.category[3]){
+                                                _MC.send("app.showPlayerWindow", data);
+                                            }else{
+                                                window.open(data.url, 'new_win');
+                                            }
+
+                                            
                                         }
                                     }], title: "点击下载", width: "40px"
                                 },                                
