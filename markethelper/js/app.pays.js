@@ -156,8 +156,8 @@
             if (!win.data("kendoWindow")){
                 win.kendoWindow({
                     actions: ["Pin","Close"],
-                    title: "支付记录(适用于E+C模式)",
-                    width: 1024,
+                    title: "支付记录(适用于E+C模式) 每月15日结算上个月报酬",
+                    width: 1280,
                     position: {
                         top: 60
                     },                    
@@ -166,6 +166,40 @@
                 });
 
                 kendo.culture("zh-CN");
+                
+ 
+                function getCacleDate(){
+                        var curDate = new Date();
+                        var curYear = curDate.getFullYear();
+                        var curDays = curDate.getDate();
+                        var curMonth = curDate.getMonth();
+
+                        if(curDays >= 15){
+                            if(curMonth == 1){
+                                curMonth = 12;
+                                curYear = curYear - 1;
+                            }else{
+                                curMonth = curMonth - 1;
+                            }
+
+                            curDate.setDate(15);
+                            curDate.setMonth(curMonth);
+                            curDate.setFullYear(curYear); 
+                        }else{
+                            if(curMonth <= 2){
+                                curMonth = 10 + curMonth;
+                                curYear = curYear - 1;
+                            }else{
+                                curMonth = curMonth - 2;
+                            }
+
+                            curDate.setDate(15);
+                            curDate.setMonth(curMonth);
+                            curDate.setFullYear(curYear); 
+                        }
+
+                        return curDate;
+                }
 
                 $("#pays-monthpicker").kendoDatePicker({
                     // defines the start view
@@ -181,7 +215,7 @@
                         console.log("Change :: " + kendo.toString(this.value(), 'yyyyMM'));
                         t$.reloadData(this.value());
                     },
-                    value: new Date()
+                    value: getCacleDate()
                 });
 
 
@@ -200,7 +234,7 @@
                                         total_e: { type: "string" },
                                         total_c: { type: "string" },
                                         total: { type: "string" },
-                                        isPayed: {type: "boolean"}
+                                        payedState: {type: "string"}
                                     }
                                 }
                             },
@@ -234,10 +268,10 @@
                                 ]
                             },
                             {
-                                title: "E 部分 - 分享信息",
+                                title: "E 部分 - 分享信息 访问人数 * 元/人",
                                 columns:[
                                     { field: "visits", title: "访问人数", width: "40px" },
-                                    { field: "prices", title: "单价", format: "{0:c3}", width: "36px" },
+                                    { field: "prices", title: "元/人", format: "{0:c3}", width: "36px" },
                                     { field: "total_e", title: "E总计", format: "{0:c3}", width: "40px" }
                                 ]
                             },
@@ -252,14 +286,15 @@
                                 columns:[
                                     { field: "total", title: "E+C", format: "{0:c3}", width: "40px" }
                                 ]
-                            }
+                            },
+                            { field: "payedState", title: "支付状态", width: "40px" }
                             
                             
                         ]
                 });
 
                 /// 使用默认值
-                t$.reloadData();
+                t$.reloadData(getCacleDate());
             }
 
             var w = win.data('kendoWindow');

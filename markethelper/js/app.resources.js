@@ -33,7 +33,7 @@
                     title: "E+C模式资源分配记录",
                     width: 1024,
                     position: {
-                        top: 60
+                        top: 70
                     },                    
                     resizable: true,
                     model:false
@@ -84,7 +84,7 @@
                             columns: [
                                 { field: "name", title: "博客名称", width: "40px" },
                                 { field: "url", title: "博客网址", width: "50px" },
-                                { field: "partnerID", title: "合作者",  width: "30px" }
+                                { field: "partnerID", title: "关联工号",  width: "30px" }
                             ]
                     })
                 });

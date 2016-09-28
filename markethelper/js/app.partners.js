@@ -68,6 +68,7 @@
                                 pageSize: 20
                             },
                             height: 550,
+                            allowCopy: true,
                             scrollable: true,
                             groupable:{
                                 enabled: true,
