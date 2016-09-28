@@ -242,7 +242,7 @@
                                 {field: "payment", dir: "asc" },
                                 {field: "id", dir: "desc" }
                             ], 
-                            pageSize: 20
+                            pageSize: 50
                         },
                         height: 550,
                         scrollable: true,

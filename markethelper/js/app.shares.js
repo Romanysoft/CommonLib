@@ -66,7 +66,7 @@
                                 sort:[
                                     {field: "category", dir: "asc" }
                                 ], 
-                                pageSize: 20
+                                pageSize: 50
                             },
                             height: 550,
                             scrollable: true,

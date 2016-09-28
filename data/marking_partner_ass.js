@@ -7,7 +7,7 @@
     var _U = {};
 
     _U.UserTypes = ["official", "blogger"];
-    _U.PayWayTypes = ["微信", "支付宝", "银行卡"];
+    _U.PayWayTypes = ["支付宝", "微信", "银行卡"];
     _U.Payments = ["P", "A+B+C", "E+C"];
     _U.KeepSecret = ["保密", "公开"];
     _U.data = [];
@@ -43,96 +43,112 @@
         id: "A001",
         name:"李明哲",  
         QQ:"124588***",
+        payWayType:_U.PayWayTypes[2],        
         email:"124588***@qq.com"
     }));     
     _U.data.push(_U.tp({
         id: "A002",
         name:"赵铭",  
         QQ:"1798552***",
+        payWayType:_U.PayWayTypes[0], 
         email:"1798552***@qq.com"
     }));     
     _U.data.push(_U.tp({
         id: "A003",
         name:"高明德",  
         QQ:"2459292***",
+        payWayType:_U.PayWayTypes[2], 
         email:"2459292***@qq.com"
     }));      
     _U.data.push(_U.tp({
         id: "A004",
         name:"李丽清",  
         QQ:"766016***",
+        payWayType:_U.PayWayTypes[1], 
         email:"766016***@qq.com"
     }));       
     _U.data.push(_U.tp({
         id: "A005",
         name:"侯明",  
         QQ:"532620***",
+        payWayType:_U.PayWayTypes[2], 
         email:"532620***@qq.com"
     }));     
     _U.data.push(_U.tp({
         id: "A006",
         name:"孙建明",  
         QQ:"314901***",
+        payWayType:_U.PayWayTypes[2], 
         email:"314901***@qq.com"
     }));     
     _U.data.push(_U.tp({
         id: "A007",
         name:"谷晓东",  
         QQ:"974876***",
+        payWayType:_U.PayWayTypes[0], 
         email:"974876***@qq.com"
     }));      
     _U.data.push(_U.tp({
         id: "A008",
         name:"陈建义",  
         QQ:"471717***",
+        payWayType:_U.PayWayTypes[1], 
         email:"471717***@qq.com"
     }));      
     _U.data.push(_U.tp({
         id: "RF201603221800PTJ",
         name:"王娜",  
         QQ:"1315134***",
+        payWayType:_U.PayWayTypes[2],      
         email:"1315134***@qq.com"
     }));    
     _U.data.push(_U.tp({
         id: "A009",
         name:"王丹",  
         QQ:"1358062***",
+        payWayType:_U.PayWayTypes[1], 
         email:"1358062***@qq.com"
     }));
     _U.data.push(_U.tp({
         id: "A010",
         name:"徐伟",  
         QQ:"1551975***",
+        payWayType:_U.PayWayTypes[1], 
         email:"1551975***@qq.com"
     }));
     _U.data.push(_U.tp({
         id: "A011",
         name:"查群子",  
         QQ:"280018***",
+        payWayType:_U.PayWayTypes[0], 
         email:"280018***@qq.com"
     }));    
     _U.data.push(_U.tp({
         id: "A012",
         name:"任海燕",  
         QQ:"84101***",
+        payWayType:_U.PayWayTypes[1], 
         email:"84101***@qq.com"
     })); 
     _U.data.push(_U.tp({
         id: "A013",
         name:"胡小群",  
         QQ:"973042***",
+        payWayType:_U.PayWayTypes[1], 
         email:"973042***@qq.com"
     }));      
     _U.data.push(_U.tp({
         id: "A014",
         name:"杨锦锦",  
         QQ:"270451***",
+        payWayType:_U.PayWayTypes[1], 
         email:"270451***@qq.com"
     })); 
     _U.data.push(_U.tp({
         id: "A015",
         name:"张萍",  
         QQ:"953265***",
+        payWayType:_U.PayWayTypes[1], 
         email:"953265***@qq.com"
     }));             
 
@@ -146,7 +162,7 @@
         email:"1363196***@qq.com",
         isPact:true,
         lastSignedDate:20160901,
-        payWayType:_U.PayWayTypes[0],
+        payWayType:_U.PayWayTypes[1],
         payWayAcount:"a15598123598",
         payment:_U.Payments[2], 
         KeepSecret: _U.KeepSecret[1], // 薪资是否保密
@@ -199,7 +215,7 @@
         QQ:"323067***",
         email:"323067***@qq.com",
         lastSignedDate:20160905,
-        payWayType:_U.PayWayTypes[0],
+        payWayType:_U.PayWayTypes[1],
         payWayAcount:"",
         payment:_U.Payments[2], 
         KeepSecret: _U.KeepSecret[1], // 薪资是否保密
@@ -235,7 +251,7 @@
         QQ:"626087***",
         email:"626087***@qq.com",
         lastSignedDate:20160918,
-        payWayType:_U.PayWayTypes[0],
+        payWayType:_U.PayWayTypes[1],
         payWayAcount:"",
         payment:_U.Payments[2], 
         KeepSecret: _U.KeepSecret[1], // 薪资是否保密
@@ -253,7 +269,7 @@
         QQ:"175184***",
         email:"175184***@qq.com",
         lastSignedDate:20160918,
-        payWayType:_U.PayWayTypes[0],
+        payWayType:_U.PayWayTypes[1],
         payWayAcount:"",
         payment:_U.Payments[2], 
         KeepSecret: _U.KeepSecret[1], // 薪资是否保密

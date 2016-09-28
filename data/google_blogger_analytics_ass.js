@@ -11,20 +11,20 @@
     _U.data = [];
 
     /// 官方Blogger地址 lauer3912@gmail.com
-    _U.data.push({
-        type:_U.types[0], 
-        name:"OS World",  
-        url:"https://rtyutilitysoftwares.blogspot.com/", 
-        traceid:"", 
-        partnerID:"rs"
-    });
-    _U.data.push({
-        type:_U.types[0], 
-        name:"Romanysoft Blog", 
-        url:"https://romanysoft.blogspot.com/", 
-        traceid:"", 
-        partnerID:"rs"
-    });
+    // _U.data.push({
+    //     type:_U.types[0], 
+    //     name:"OS World",  
+    //     url:"https://rtyutilitysoftwares.blogspot.com/", 
+    //     traceid:"", 
+    //     partnerID:"rs"
+    // });
+    // _U.data.push({
+    //     type:_U.types[0], 
+    //     name:"Romanysoft Blog", 
+    //     url:"https://romanysoft.blogspot.com/", 
+    //     traceid:"", 
+    //     partnerID:"rs"
+    // });
 
     /// Blogger集群  blogger.01.romanysoft@gmail.com
     var assObj = {};

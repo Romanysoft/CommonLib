@@ -56,6 +56,7 @@
                                             QQ: { type: "string" },
                                             email: { type: "string" },
                                             payment: { type: "string" },
+                                            payWayType: { type: "string" },
                                             KeepSecret: { type: "string" },
                                             referrer: { type: "string" }
                                         }
@@ -65,7 +66,7 @@
                                     {field: "payment", dir: "asc" },
                                     {field: "id", dir: "desc" }
                                 ], 
-                                pageSize: 20
+                                pageSize: 50
                             },
                             height: 550,
                             allowCopy: true,
@@ -89,6 +90,7 @@
                                 { field: "QQ", title: "QQ", width: "50px" },
                                 { field: "email", title: "Email", width: "70px" },
                                 { field: "payment", title: "结算方式", width: "40px" },
+                                { field: "payWayType", title: "支付方式", width: "40px" },
                                 { field: "KeepSecret", title: "薪资保密", width: "40px" },
                                 { field: "referrer", title: "推荐人", width: "40px" }
                             ]

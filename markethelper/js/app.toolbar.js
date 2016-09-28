@@ -16,7 +16,7 @@
     _U.initToolbar = function () {
         var t$ = this;
 
-        var tplStr = '<div><img src="images/markethelper/logo_64.png" width="36"/><span>&nbsp;' + document.title+ ' (2016.10) </span></div>';
+        var tplStr = '<div><img src="images/markethelper/logo_64.png" width="36"/><span>&nbsp;' + document.title+ ' (2016.10 上线运行) </span></div>';
 
         $('#toolbar').kendoToolBar({
             items:[
