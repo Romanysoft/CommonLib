@@ -151,16 +151,13 @@
                 
             ];
 
-
-
-            //load resources
-            cc.LoaderScene.preload(resList, function () {
+            function runMainScene(){
                 var MainScene = cc.Scene.extend({
                     onEnter:function () {
                         this._super();
                         var index = -1, fontSize = 30;
 
-                        var action1 = new cc.ScaleTo(0.2, 0.7, 0.7);
+                        var action1 = new cc.ScaleTo(0.2, 0.6, 0.6);
                         var action2 = new cc.ScaleTo(0.5, 0.8, 0.8);
 
                         //// 设置事件监听器
@@ -318,7 +315,15 @@
                     }
                 });
                 cc.director.runScene(new MainScene());
-            }, this);
+            }
+
+
+            //load resources
+            // cc.LoaderScene.preload(resList, function () {
+
+            // }, this);
+
+            runMainScene();
         };
         cc.game.run("suface-cocoa");
     };
