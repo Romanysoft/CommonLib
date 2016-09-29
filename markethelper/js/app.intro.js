@@ -130,7 +130,7 @@
     /// 使用Cocos-2d 进行绘制
     _U.initWithCocos2d = function(e){
         document["ccConfig"] = {
-            "debugMode"     : 1,
+            "debugMode"     : 0,
             "showFPS"       : 0,
             "frameRate"     : 60,
             "id"            : "suface-cocoa",
@@ -140,23 +140,150 @@
         
         cc.game.onStart = function(){
 
+            var resList = [
+                "images/markethelper/intro/users_96px.png",
+                "images/markethelper/intro/Right_Arrow.png",
+                "images/markethelper/intro/Accept_database_96px.png",
+                "images/markethelper/intro/presentation_96px.png",
+                "images/markethelper/intro/Earning_statement.png",
+                
+            ];
+
+
+
             //load resources
-            cc.LoaderScene.preload(["images/markethelper/intro/HelloWorld.png"], function () {
-                var MyScene = cc.Scene.extend({
+            cc.LoaderScene.preload(resList, function () {
+                var MainScene = cc.Scene.extend({
                     onEnter:function () {
                         this._super();
-                        var size = cc.director.getWinSize();
-                        var sprite = cc.Sprite.create("images/markethelper/intro/HelloWorld.png");
-                        sprite.setPosition(size.width / 2, size.height / 2);
-                        sprite.setScale(0.8);
-                        this.addChild(sprite, 0);
+                        var index = -1, fontSize = 30;
 
-                        var label = cc.LabelTTF.create("Hello World", "Arial", 40);
-                        label.setPosition(size.width / 2, size.height / 2);
-                        this.addChild(label, 1);
+                        var action1 = new cc.ScaleTo(0.2, 0.7, 0.7);
+                        var action2 = new cc.ScaleTo(0.5, 0.8, 0.8);
+
+                        //// 设置事件监听器
+                        var listener_scene_click_effec = cc.EventListener.create({
+                             event: cc.EventListener.TOUCH_ONE_BY_ONE, 
+                             swallowTouches: true, 
+                             onTouchBegan: function (touch, event) {
+                                var target = event.getCurrentTarget();
+                                // 获取当前触摸点相对于按钮所在的坐标
+                                var locationInNode = target.convertToNodeSpace(touch.getLocation());    
+                                var s = target.getContentSize();
+                                var rect = cc.rect(0, 0, s.width, s.height);
+
+                                if (cc.rectContainsPoint(rect, locationInNode)) {        // 判断触摸点是否在按钮范围内
+                                    target.runAction(action1);
+                                    if(target.uitag === "Apply"){
+                                        _MC.send('app.showApplyWindow');
+                                    }else if(target.uitag === "Pays"){
+                                        _MC.send('app.showPayHistoryWindow');
+                                    }
+                                    return true;
+                                }
+                                return false;
+                             },
+                             onTouchMoved: function (touch, event) {
+                             },
+                             onTouchEnded: function (touch, event) {
+                                var target = event.getCurrentTarget();
+                                // 获取当前触摸点相对于按钮所在的坐标
+                                var locationInNode = target.convertToNodeSpace(touch.getLocation());    
+                                var s = target.getContentSize();
+                                var rect = cc.rect(0, 0, s.width, s.height);
+
+                                if (cc.rectContainsPoint(rect, locationInNode)) {        // 判断触摸点是否在按钮范围内
+                                    target.stopAction(action1);
+                                    target.runAction(action2);
+                                    return true;
+                                }
+                                return false;                                 
+                             }
+                        });
+
+                        var sprite, label;
+                        var size = cc.director.getWinSize();
+                        sprite = cc.Sprite.create("images/markethelper/intro/users_96px.png");
+                        sprite.setPosition(96, size.height  - 96);
+                        sprite.setScale(0.8);
+                        sprite.uitag = "Apply";
+                        this.addChild(sprite, ++index);
+                        cc.eventManager.addListener(listener_scene_click_effec, sprite);
+
+                        label = cc.LabelTTF.create("申请加入", "Arial", fontSize);
+                        label.setPosition(196, size.height  - 96);
+                        label.setFontFillColor(cc.color.BLACK);
+                        label.setScale(0.8);
+                        label.uitag = "Apply";
+                        this.addChild(label, ++index);
+                        cc.eventManager.addListener(listener_scene_click_effec.clone(), label); 
+
+                        sprite = cc.Sprite.create("images/markethelper/intro/Right_Arrow.png");
+                        sprite.setPosition(296, size.height  - 96);
+                        sprite.setScale(0.4);
+                        this.addChild(sprite, ++index);  
+
+                        sprite = cc.Sprite.create("images/markethelper/intro/Accept_database_96px.png");
+                        sprite.setPosition(408, size.height  - 96);
+                        sprite.setScale(0.8);
+                        sprite.uitag = "SendShare";
+                        this.addChild(sprite, ++index); 
+                        cc.eventManager.addListener(listener_scene_click_effec.clone(), sprite);    
+
+                        label = cc.LabelTTF.create("转发产品推广链接", "Arial", fontSize);
+                        label.setPosition(548, size.height  - 96);
+                        label.setFontFillColor(cc.color.BLACK);
+                        label.setScale(0.8);
+                        label.uitag = "SendShare";
+                        this.addChild(label, ++index); 
+                        cc.eventManager.addListener(listener_scene_click_effec.clone(), label);   
+
+                        sprite = cc.Sprite.create("images/markethelper/intro/Right_Arrow.png");
+                        sprite.setPosition(480, size.height  - 196);
+                        sprite.setRotation(90);
+                        sprite.setScale(0.4);
+                        this.addChild(sprite, ++index);    
+
+                        sprite = cc.Sprite.create("images/markethelper/intro/presentation_96px.png");
+                        sprite.setPosition(408, size.height  - 296);
+                        sprite.setScale(0.8);
+                        sprite.uitag = "UsersOfStatistics";
+                        this.addChild(sprite, ++index); 
+                        cc.eventManager.addListener(listener_scene_click_effec.clone(), sprite);  
+
+                        label = cc.LabelTTF.create("统计有多少人访问链接", "Arial", fontSize);
+                        label.setPosition(572, size.height  - 296);
+                        label.setFontFillColor(cc.color.BLACK);
+                        label.setScale(0.8);
+                        label.uitag = "UsersOfStatistics";
+                        this.addChild(label, ++index);  
+                        cc.eventManager.addListener(listener_scene_click_effec.clone(), label); 
+
+                        sprite = cc.Sprite.create("images/markethelper/intro/Right_Arrow.png");
+                        sprite.setPosition(512, size.height  - 372);
+                        sprite.setRotation(45);
+                        sprite.setScale(0.4);
+                        this.addChild(sprite, ++index);                                                                                                                                 
+
+                        sprite = cc.Sprite.create("images/markethelper/intro/Earning_statement.png");
+                        sprite.setPosition(556, size.height  - 456);
+                        sprite.setScale(0.8);
+                        sprite.uitag = "Pays";
+                        this.addChild(sprite, ++index);
+                        cc.eventManager.addListener(listener_scene_click_effec.clone(), sprite);  
+
+                        label = cc.LabelTTF.create("每月结算并支付报酬", "Arial", fontSize);
+                        label.setPosition(720, size.height  - 456);
+                        label.setFontFillColor(cc.color.BLACK);
+                        label.setScale(0.8);
+                        label.uitag = "Pays";
+                        this.addChild(label, ++index); 
+                        cc.eventManager.addListener(listener_scene_click_effec.clone(), label);     
+
+                     
                     }
                 });
-                cc.director.runScene(new MyScene());
+                cc.director.runScene(new MainScene());
             }, this);
         };
         cc.game.run("suface-cocoa");
@@ -165,7 +292,13 @@
     _U.launch = function (e) {
         var t$ = this;
         t$.loadTemplate(function(){
-            t$.initWithCocos2d(e);             
+            var useCocos = 1;
+            if(useCocos){
+                t$.initWithCocos2d(e)
+            }else{
+                t$.initWithKendo(e);
+            }
+                        
         });
 
     };

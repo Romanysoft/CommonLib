@@ -156,7 +156,7 @@
             if (!win.data("kendoWindow")){
                 win.kendoWindow({
                     actions: ["Pin","Close"],
-                    title: "支付记录(适用于E+C模式) 每月15日结算上个月报酬",
+                    title: "支付记录(适用于E+C模式) 每月15日前结算并支付上个月报酬",
                     width: 1280,
                     position: {
                         top: 60
