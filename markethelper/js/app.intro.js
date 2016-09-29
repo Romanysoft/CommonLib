@@ -143,9 +143,11 @@
             var resList = [
                 "images/markethelper/intro/users_96px.png",
                 "images/markethelper/intro/Right_Arrow.png",
-                "images/markethelper/intro/Accept_database_96px.png",
+                "images/markethelper/intro/share_96px.png",
                 "images/markethelper/intro/presentation_96px.png",
                 "images/markethelper/intro/Earning_statement.png",
+                "images/markethelper/intro/checklist_48px.png",
+                "images/markethelper/intro/increase_48px.png",
                 
             ];
 
@@ -178,6 +180,10 @@
                                         _MC.send('app.showApplyWindow');
                                     }else if(target.uitag === "Pays"){
                                         _MC.send('app.showPayHistoryWindow');
+                                    }else if(target.uitag === "Setups"){
+                                        _MC.send('app.showSetupsWindow');
+                                    }else if(target.uitag === "E+C_Mode"){
+                                        window.open("https://romanysoft.github.io/CommonLib/market-partners-ec");
                                     }
                                     return true;
                                 }
@@ -223,7 +229,7 @@
                         sprite.setScale(0.4);
                         this.addChild(sprite, ++index);  
 
-                        sprite = cc.Sprite.create("images/markethelper/intro/Accept_database_96px.png");
+                        sprite = cc.Sprite.create("images/markethelper/intro/share_96px.png");
                         sprite.setPosition(408, size.height  - 96);
                         sprite.setScale(0.8);
                         sprite.uitag = "SendShare";
@@ -278,9 +284,37 @@
                         label.setScale(0.8);
                         label.uitag = "Pays";
                         this.addChild(label, ++index); 
-                        cc.eventManager.addListener(listener_scene_click_effec.clone(), label);     
+                        cc.eventManager.addListener(listener_scene_click_effec.clone(), label);    
 
-                     
+                        sprite = cc.Sprite.create("images/markethelper/intro/checklist_48px.png");
+                        sprite.setPosition(96, size.height  - 296);
+                        sprite.setScale(0.8);
+                        sprite.uitag = "Setups";
+                        this.addChild(sprite, ++index);
+                        cc.eventManager.addListener(listener_scene_click_effec.clone(), sprite); 
+
+                        label = cc.LabelTTF.create("学习步骤", "Arial", fontSize - 12);
+                        label.setPosition(152, size.height  - 300);
+                        label.setFontFillColor(cc.color.BLACK);
+                        label.setScale(0.8);
+                        label.uitag = "Setups";
+                        this.addChild(label, ++index); 
+                        cc.eventManager.addListener(listener_scene_click_effec.clone(), label);    
+
+                        sprite = cc.Sprite.create("images/markethelper/intro/increase_48px.png");
+                        sprite.setPosition(96, size.height  - 360);
+                        sprite.setScale(0.8);
+                        sprite.uitag = "E+C_Mode";
+                        this.addChild(sprite, ++index);
+                        cc.eventManager.addListener(listener_scene_click_effec.clone(), sprite);                                               
+
+                        label = cc.LabelTTF.create("E+C模式", "Arial", fontSize - 12);
+                        label.setPosition(152, size.height  - 360);
+                        label.setFontFillColor(cc.color.BLACK);
+                        label.setScale(0.8);
+                        label.uitag = "E+C_Mode";
+                        this.addChild(label, ++index); 
+                        cc.eventManager.addListener(listener_scene_click_effec.clone(), label); 
                     }
                 });
                 cc.director.runScene(new MainScene());
