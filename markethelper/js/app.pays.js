@@ -174,7 +174,9 @@
                         var curDays = curDate.getDate();
                         var curMonth = curDate.getMonth();
 
-                        if(curDays >= 15){
+                        var nearDay = 1;
+
+                        if(curDays >= nearDay){
                             if(curMonth == 1){
                                 curMonth = 12;
                                 curYear = curYear - 1;
@@ -182,7 +184,7 @@
                                 curMonth = curMonth - 1;
                             }
 
-                            curDate.setDate(15);
+                            curDate.setDate(nearDay);
                             curDate.setMonth(curMonth);
                             curDate.setFullYear(curYear); 
                         }else{
@@ -193,7 +195,7 @@
                                 curMonth = curMonth - 2;
                             }
 
-                            curDate.setDate(15);
+                            curDate.setDate(nearDay);
                             curDate.setMonth(curMonth);
                             curDate.setFullYear(curYear); 
                         }
