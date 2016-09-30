@@ -174,7 +174,7 @@
                         var curDays = curDate.getDate();
                         var curMonth = curDate.getMonth();
 
-                        var nearDay = 1;
+                        var nearDay = 7;
 
                         if(curDays >= nearDay){
                             if(curMonth == 1){
