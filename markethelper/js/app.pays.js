@@ -71,7 +71,9 @@
         $.each(paysData, function(index, ele){
             ele.prices = 0.025;
             ele.total_e = ele.visits * ele.prices;
+            ele.total_e = ele.total_e > 10000 ? 10000 : ele.total_e; // E+C E最高1W
             ele.total_a = ele.total_e;
+            ele.total_a = ele.total_a > 2000 ? 2000 : ele.total_a;   // A+C A最高1W
             ele.total_c = 0;
             ele.total = 0;
         });
