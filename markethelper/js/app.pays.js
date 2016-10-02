@@ -176,30 +176,33 @@
                         var curDays = curDate.getDate();
                         var curMonth = curDate.getMonth();
 
-                        var nearDay = 7;
+                        var mustChange = false;
+                        if(mustChange){
+                            var nearDay = 7;
 
-                        if(curDays >= nearDay){
-                            if(curMonth == 1){
-                                curMonth = 12;
-                                curYear = curYear - 1;
+                            if(curDays >= nearDay){
+                                if(curMonth == 1){
+                                    curMonth = 12;
+                                    curYear = curYear - 1;
+                                }else{
+                                    curMonth = curMonth - 1;
+                                }
+
+                                curDate.setDate(nearDay);
+                                curDate.setMonth(curMonth);
+                                curDate.setFullYear(curYear); 
                             }else{
-                                curMonth = curMonth - 1;
-                            }
+                                if(curMonth <= 2){
+                                    curMonth = 10 + curMonth;
+                                    curYear = curYear - 1;
+                                }else{
+                                    curMonth = curMonth - 2;
+                                }
 
-                            curDate.setDate(nearDay);
-                            curDate.setMonth(curMonth);
-                            curDate.setFullYear(curYear); 
-                        }else{
-                            if(curMonth <= 2){
-                                curMonth = 10 + curMonth;
-                                curYear = curYear - 1;
-                            }else{
-                                curMonth = curMonth - 2;
+                                curDate.setDate(nearDay);
+                                curDate.setMonth(curMonth);
+                                curDate.setFullYear(curYear); 
                             }
-
-                            curDate.setDate(nearDay);
-                            curDate.setMonth(curMonth);
-                            curDate.setFullYear(curYear); 
                         }
 
                         return curDate;
