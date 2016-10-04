@@ -240,8 +240,8 @@
         $.ConfigServer = {
             getDomain: function(use_debug) {
                 var debug = use_debug || $.enable_AppConfig_debug;
-                var isHttps = 'https:' == document.location.protocol ? false : true;
-                var prex = isHttps ? 'https://' : 'http://'
+                var isHttps = 'https:' == document.location.protocol;
+                var prex = isHttps ? 'https://' : 'http://';
 
                 return debug == true ? (prex + "127.0.0.1:3000") :  (prex + "www.romanysoft.com");
             },
