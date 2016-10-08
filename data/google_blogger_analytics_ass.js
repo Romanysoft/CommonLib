@@ -144,7 +144,7 @@
         mail:"blogger.01.romanysoft.mail9@blogger.com",
         traceid:"UA-82372746-9", 
         ass:assObj,
-        partnerID:"",   // 
+        partnerID:"A023",   // 
         gmail:"",         // gmail邮箱 
         oldPartners:[]    // 此博客以前的合作者
     }); 

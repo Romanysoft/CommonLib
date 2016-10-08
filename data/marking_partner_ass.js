@@ -279,6 +279,24 @@
             twitter:""    
         },
         referrer:""
+    }));  
+
+    _U.data.push(_U.tp({
+        id: "A023",
+        name:"韩晓光",  
+        QQ:"30369***",
+        email:"30369***@qq.com",
+        lastSignedDate:20161008,
+        payWayType:_U.PayWayTypes[1],
+        payWayAcount:"",
+        payment:_U.Payments[2], 
+        KeepSecret: _U.KeepSecret[1], // 薪资是否保密
+        assOtherAcounts:{             
+            gmail:"",
+            facebook:"",
+            twitter:""    
+        },
+        referrer:""
     }));   
 
     return _U;
