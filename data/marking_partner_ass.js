@@ -292,7 +292,7 @@
         payment:_U.Payments[2], 
         KeepSecret: _U.KeepSecret[1], // 薪资是否保密
         assOtherAcounts:{             
-            gmail:"",
+            gmail:"hanxiaoguang1020@gmail.com",
             facebook:"",
             twitter:""    
         },
