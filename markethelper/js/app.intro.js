@@ -254,7 +254,7 @@
                         this.addChild(sprite, ++index); 
                         cc.eventManager.addListener(listener_scene_click_effec.clone(), sprite);  
 
-                        label = cc.LabelTTF.create("统计有多少人访问链接", "Arial", fontSize);
+                        label = cc.LabelTTF.create("按浏览用户数计算报酬", "Arial", fontSize);
                         label.setPosition(572, size.height  - 296);
                         label.setFontFillColor(cc.color.BLACK);
                         label.setScale(0.8);
