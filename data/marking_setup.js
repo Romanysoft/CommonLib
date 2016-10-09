@@ -44,12 +44,6 @@
 
     _U.data.push(_U.tp({
         order: ++index,
-        content: "注册Google（谷歌）邮箱。\n" +
-                 "注册网址：https://accounts.google.com/SignUp"
-    })); 
-
-    _U.data.push(_U.tp({
-        order: ++index,
         content: "注册FaceBook（脸谱）账号。\n" +
                  "注册网址: https://www.facebook.com"
     }));  
@@ -83,7 +77,7 @@
 
     _U.data.push(_U.tp({
         order: ++index,
-        content: "公司开放后台权限给你，可以查询有多少人浏览你分享的链接"
+        content: "你每日，每周，每月QQ邮箱会收到用户数统计邮件"
     }));         
 
                       

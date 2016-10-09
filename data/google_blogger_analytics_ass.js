@@ -145,7 +145,7 @@
         traceid:"UA-82372746-9", 
         ass:assObj,
         partnerID:"A023",   // 
-        gmail:"",         // gmail邮箱 
+        gmail:"hanxiaoguang1020@gmail.com",         // gmail邮箱 
         oldPartners:[]    // 此博客以前的合作者
     }); 
 
