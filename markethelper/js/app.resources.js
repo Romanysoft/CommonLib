@@ -56,13 +56,14 @@
                                     model: {
                                         fields: {
                                             partnerID: { type: "string" },
-                                            name: { type: "string" },
+                                            id: { type: "string" },
                                             url: { type: "string" }
                                         }
                                     }
                                 },
                                 sort:[
-                                    {field: "partnerID", dir: "asc" }
+                                    //{field: "partnerID", dir: "asc" },
+                                    {field: "id", dir: "desc" }
                                 ], 
                                 pageSize: 50
                             },
@@ -82,9 +83,9 @@
                                 numeric: false
                             },
                             columns: [
-                                { field: "name", title: "博客名称", width: "40px" },
-                                { field: "url", title: "博客网址", width: "50px" },
-                                { field: "partnerID", title: "关联工号",  width: "30px" }
+                                { field: "id", title: "编号", width: "20px" },
+                                { field: "url", title: "博客站点网址", width: "100px" },
+                                { field: "partnerID", title: "关联工号",  width: "20px" }
                             ]
                     })
                 });

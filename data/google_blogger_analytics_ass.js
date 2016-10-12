@@ -34,42 +34,39 @@
     };
     _U.data.push({
         type:_U.types[1], 
-        name:"OS World",  
-        url:"https://oschin-romanysoft.blogspot.com/", 
-        mail:"blogger.01.romanysoft.mail1@blogger.com",
+        id:"0001",  
+        url:"oschintweak.tumblr.com", 
         traceid:"UA-82372746-1", 
         ass:assObj,
-        partnerID:"A016", // 林东
-        gmail:"",         // gmail邮箱  
-        oldPartners:[]    // 此博客以前的合作者  
-    });
-    _U.data.push({
-        type:_U.types[1], 
-        name:"Utility Softwares",  
-        url:"https://wamus-romanysoft.blogspot.com/", 
-        mail:"blogger.01.romanysoft.mail2@blogger.com",
-        traceid:"UA-82372746-3", 
-        ass:assObj,
-        partnerID:"A017", // 李晓斌
-        gmail:"",         // gmail邮箱 
-        oldPartners:[]    // 此博客以前的合作者  
+        partnerID:"M.RF",  
+        gmail:"",         
+        oldPartners:[]   
     });    
     _U.data.push({
         type:_U.types[1], 
-        name:"Soft World",  
-        url:"https://soft-beta.blogspot.com/", 
-        mail:"blogger.01.romanysoft.mail3@blogger.com",
+        id:"0002",   
+        url:"softfreetry.tumblr.com", 
         traceid:"UA-82372746-2", 
         ass:assObj,
-        partnerID:"M.RF",  // 王娜
-        gmail:"",         // gmail邮箱 
-        oldPartners:[]   // 此博客以前的合作者
+        partnerID:"A016", 
+        gmail:"",          
+        oldPartners:[]    
     });
     _U.data.push({
         type:_U.types[1], 
-        name:"Discovery",  
-        url:"https://discovery-romanysoft.blogspot.com/", 
-        mail:"blogger.01.romanysoft.mail4@blogger.com",
+        id:"0003",  
+        url:"bigbigdatasoft.tumblr.com", 
+        traceid:"UA-82372746-3", 
+        ass:assObj,
+        partnerID:"A017", 
+        gmail:"",         
+        oldPartners:[]      
+    });    
+
+    _U.data.push({
+        type:_U.types[1], 
+        id:"0004",  
+        url:"whatsapptips.tumblr.com", 
         traceid:"UA-82372746-4", 
         ass:assObj,
         partnerID:"A018", // 朱小港
@@ -77,13 +74,10 @@
         oldPartners:[]    // 此博客以前的合作者
     });    
 
-    ////Time and Date
-    ////https://timeanddate-romanysoft.blogspot.com/
     _U.data.push({
         type:_U.types[1], 
-        name:"Time and Date",  
-        url:"https://timeanddate-romanysoft.blogspot.com/", 
-        mail:"blogger.01.romanysoft.mail5@blogger.com",
+        id:"0005",  
+        url:"provenuclear.tumblr.com", 
         traceid:"UA-82372746-5", 
         ass:assObj,
         partnerID:"A019",   // 
@@ -91,14 +85,10 @@
         oldPartners:[]    // 此博客以前的合作者
     }); 
 
-
-    ////Entrez
-    ////https://entrez-romanysoft.blogspot.com/
     _U.data.push({
         type:_U.types[1], 
-        name:"Entrez",  
-        url:"https://entrez-romanysoft.blogspot.com/", 
-        mail:"blogger.01.romanysoft.mail6@blogger.com",
+        id:"0006",  
+        url:"top10Tips.tumblr.com", 
         traceid:"UA-82372746-6", 
         ass:assObj,
         partnerID:"A020",   // 
@@ -106,14 +96,10 @@
         oldPartners:[]    // 此博客以前的合作者
     });    
 
-
-    ////INRIA
-    ////https://inria-romanysoft.blogspot.com/
     _U.data.push({
         type:_U.types[1], 
-        name:"INRIA",  
-        url:"https://inria-romanysoft.blogspot.com/", 
-        mail:"blogger.01.romanysoft.mail7@blogger.com",
+        id:"0007",  
+        url:"infograhictweak.tumblr.com", 
         traceid:"UA-82372746-7", 
         ass:assObj,
         partnerID:"A021",   // 
@@ -121,13 +107,10 @@
         oldPartners:[]    // 此博客以前的合作者
     });  
 
-    ////SafariM
-    ////https://SafariM-romanysoft.blogspot.com/
     _U.data.push({
         type:_U.types[1], 
-        name:"SafariM",  
-        url:"https://SafariM-romanysoft.blogspot.com/", 
-        mail:"blogger.01.romanysoft.mail8@blogger.com",
+        id:"0008",  
+        url:"safarimsoft.tumblr.com", 
         traceid:"UA-82372746-8", 
         ass:assObj,
         partnerID:"A022",   // 
@@ -135,13 +118,10 @@
         oldPartners:[]    // 此博客以前的合作者
     }); 
 
-    ////National
-    ////https://National-romanysoft.blogspot.com/
     _U.data.push({
         type:_U.types[1], 
-        name:"National",  
-        url:"https://National-romanysoft.blogspot.com/", 
-        mail:"blogger.01.romanysoft.mail9@blogger.com",
+        id:"0009",  
+        url:"national-romanysoft.tumblr.com", 
         traceid:"UA-82372746-9", 
         ass:assObj,
         partnerID:"A023",   // 
@@ -149,21 +129,27 @@
         oldPartners:[]    // 此博客以前的合作者
     }); 
 
-
-    ////Stanford
-    ////https://Stanford-romanysoft.blogspot.com/
-
     _U.data.push({
         type:_U.types[1], 
-        name:"Stanford",  
-        url:"https://Stanford-romanysoft.blogspot.com/", 
-        mail:"blogger.01.romanysoft.mail10@blogger.com",
+        id:"0010",  
+        url:"stanfordtweak.tumblr.com", 
         traceid:"UA-82372746-10", 
         ass:assObj,
         partnerID:"",   // 
         gmail:"",         // gmail邮箱  
         oldPartners:[]    // 此博客以前的合作者
-    });     
+    }); 
+
+    _U.data.push({
+        type:_U.types[1], 
+        id:"0011",  
+        url:"happybouquetdragonfan.tumblr.com", 
+        traceid:"UA-82372746-11", 
+        ass:assObj,
+        partnerID:"",   // 
+        gmail:"",         // gmail邮箱  
+        oldPartners:[]    // 此博客以前的合作者
+    });         
 
     return _U;
 
