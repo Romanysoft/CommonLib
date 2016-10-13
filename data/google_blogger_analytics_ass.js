@@ -32,16 +32,16 @@
         ass:"blogger.01.romanysoft@blogger.com",
         assDir:"01-50.Bloggers",
     };
-    _U.data.push({
-        type:_U.types[1], 
-        id:"0001",  
-        url:"oschintweak.tumblr.com", 
-        traceid:"UA-82372746-1", 
-        ass:assObj,
-        partnerID:"",  
-        gmail:"",         
-        oldPartners:[]   
-    });    
+    // _U.data.push({
+    //     type:_U.types[1], 
+    //     id:"0001",  
+    //     url:"oschintweak.tumblr.com", 
+    //     traceid:"UA-82372746-1", 
+    //     ass:assObj,
+    //     partnerID:"",  
+    //     gmail:"",         
+    //     oldPartners:[]   
+    // });    
     _U.data.push({
         type:_U.types[1], 
         id:"0002",   
