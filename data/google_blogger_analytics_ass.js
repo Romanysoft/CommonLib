@@ -38,7 +38,7 @@
         url:"oschintweak.tumblr.com", 
         traceid:"UA-82372746-1", 
         ass:assObj,
-        partnerID:"M.RF",  
+        partnerID:"",  
         gmail:"",         
         oldPartners:[]   
     });    
