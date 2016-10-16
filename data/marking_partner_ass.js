@@ -299,5 +299,23 @@
         referrer:""
     }));   
 
+    _U.data.push(_U.tp({
+        id: "A024",
+        name:"Idrees Waqar Safi",  
+        QQ:"",
+        email:"muhammadidrees1922@gmail.com",
+        lastSignedDate:20161008,
+        payWayType:_U.PayWayTypes[1],
+        payWayAcount:"fazalrahim1420@gmail.com",
+        payment:_U.Payments[2], 
+        KeepSecret: _U.KeepSecret[1], // 薪资是否保密
+        assOtherAcounts:{             
+            gmail:"muhammadidrees1922@gmail.com",
+            facebook:"",
+            twitter:""    
+        },
+        referrer:""
+    }));     
+
     return _U;
 })();
