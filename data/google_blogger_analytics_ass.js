@@ -58,9 +58,9 @@
         url:"bigbigdatasoft.tumblr.com", 
         traceid:"UA-82372746-3", 
         ass:assObj,
-        partnerID:"A017", 
+        partnerID:"", 
         gmail:"",         
-        oldPartners:[]      
+        oldPartners:["A017"]      
     });    
 
     _U.data.push({
@@ -69,9 +69,9 @@
         url:"whatsapptips.tumblr.com", 
         traceid:"UA-82372746-4", 
         ass:assObj,
-        partnerID:"A018", // 朱小港
+        partnerID:"", // 朱小港
         gmail:"",         // gmail邮箱 
-        oldPartners:[]    // 此博客以前的合作者
+        oldPartners:["A018"]    // 此博客以前的合作者
     });    
 
     _U.data.push({
@@ -80,9 +80,9 @@
         url:"provenuclear.tumblr.com", 
         traceid:"UA-82372746-5", 
         ass:assObj,
-        partnerID:"A019",   // 
+        partnerID:"",   // 
         gmail:"",         // gmail邮箱 
-        oldPartners:[]    // 此博客以前的合作者
+        oldPartners:["A019"]    // 此博客以前的合作者
     }); 
 
     _U.data.push({
