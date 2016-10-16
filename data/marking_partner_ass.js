@@ -7,7 +7,7 @@
     var _U = {};
 
     _U.UserTypes = ["official", "blogger"];
-    _U.PayWayTypes = ["支付宝", "微信", "银行卡"];
+    _U.PayWayTypes = ["支付宝", "微信", "银行卡","PayPal"];
     _U.Payments = ["P", "A+B+C", "E+C"];
     _U.KeepSecret = ["保密", "公开"];
     _U.data = [];
@@ -305,7 +305,7 @@
         QQ:"",
         email:"muhammadidrees1922@gmail.com",
         lastSignedDate:20161008,
-        payWayType:_U.PayWayTypes[1],
+        payWayType:_U.PayWayTypes[3],
         payWayAcount:"fazalrahim1420@gmail.com",
         payment:_U.Payments[2], 
         KeepSecret: _U.KeepSecret[1], // 薪资是否保密
