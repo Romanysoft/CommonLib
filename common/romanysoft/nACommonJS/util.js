@@ -241,7 +241,8 @@
             getDomain: function(use_debug) {
                 var debug = use_debug || $.enable_AppConfig_debug;
                 var isHttps = 'https:' == document.location.protocol;
-                var prex = isHttps ? 'https://' : 'http://';
+                // var prex = isHttps ? 'https://' : 'http://';
+                var prex = 'https://'; // 升级以后的，都需要https:// 安全请求
 
                 return debug == true ? (prex + "127.0.0.1:3000") :  (prex + "www.romanysoft.com");
             },
@@ -721,6 +722,17 @@
                 return r;
             },
 
+            //====================================================================================
+            // Check 文件后缀名，支持任意长度后缀
+            //====================================================================================
+            checkFileType: function(fileName, fileTypes) {
+                var _fileNameStr = fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length).toLowerCase();
+                if (fileTypes.indexOf(_fileNameStr) != -1)
+                    return true;
+
+                return false;
+            },
+
             //=================================================================================
             // 参照Editor.md 的插件方式来处理
             //=================================================================================
@@ -751,7 +763,12 @@
                 script = document.createElement("script");
                 script.id = fileName.replace(/[\./]+/g, "-");
                 script.type = "text/javascript";
-                script.src = fileName + ".js";
+                if ($t.checkFileType(fileName, 'js')){
+                    script.src = fileName;
+                }else{
+                    script.src = fileName + ".js";
+                }
+
 
                 if ($t.isIE8) {
                     script.onreadystatechange = function() {
