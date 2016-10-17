@@ -82,7 +82,7 @@
         ass:assObj,
         partnerID:"A019",   // 
         gmail:"",         // gmail邮箱 
-        oldPartners:["A019"]    // 此博客以前的合作者
+        oldPartners:[""]    // 此博客以前的合作者
     }); 
 
     _U.data.push({
