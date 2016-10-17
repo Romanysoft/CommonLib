@@ -80,7 +80,7 @@
         url:"provenuclear.tumblr.com", 
         traceid:"UA-82372746-5", 
         ass:assObj,
-        partnerID:"",   // 
+        partnerID:"A019",   // 
         gmail:"",         // gmail邮箱 
         oldPartners:["A019"]    // 此博客以前的合作者
     }); 
