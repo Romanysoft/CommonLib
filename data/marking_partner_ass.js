@@ -301,7 +301,7 @@
 
     _U.data.push(_U.tp({
         id: "A024",
-        name:"Idrees Waqar Safi",  
+        name:"Idrees Waqar Safi", // https://www.facebook.com/fazal.rahim.9889261?fref=ufi 
         QQ:"",
         email:"muhammadidrees1922@gmail.com",
         lastSignedDate:20161016,
@@ -321,7 +321,7 @@
         id: "A025",
         name:"Margaret Smith",  
         QQ:"",
-        email:"Marsmith328@gmail.com",
+        email:"Marsmith328@gmail.com", // https://www.facebook.com/Msmith328
         lastSignedDate:20161017,
         payWayType:_U.PayWayTypes[3],
         payWayAcount:"Marsmith328@gmail.com",
