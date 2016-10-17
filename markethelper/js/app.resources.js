@@ -39,7 +39,8 @@
                     model:false
                 });
 
-                $.getScript("data/google_blogger_analytics_ass.js").done(function(data, textStatus, jqxhr){
+                var url = "data/google_blogger_analytics_ass.js" + "?t=" + (new Date()).getTime();
+                $.getScript(url).done(function(data, textStatus, jqxhr){
                     var dataList = [];
                     if($.RTYUtils.isString(data)){
                         var obj = eval(data);  

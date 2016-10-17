@@ -39,7 +39,8 @@
                     model:false
                 });
 
-                $.getScript("data/marking_shares.js").done(function(data, textStatus, jqxhr){
+                var url = "data/marking_shares.js" + "?t=" + (new Date()).getTime();
+                $.getScript(url).done(function(data, textStatus, jqxhr){
                     var dataList = [];
                     var shareUnitObj = {};
                     if($.RTYUtils.isString(data)){

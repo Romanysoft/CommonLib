@@ -23,7 +23,8 @@
     /// 更新支付记录数据
     _U.reloadData = function(dateObj){
         var t$ = this;
-        $.getScript("data/marking_partner_ass.js").done(function(data, textStatus, jqxhr){
+        var url = "data/marking_partner_ass.js" + "?t=" + (new Date()).getTime();
+        $.getScript(url).done(function(data, textStatus, jqxhr){
             var partnersData = [];
             if($.RTYUtils.isString(data)){
                 var obj = eval(data);  
@@ -37,8 +38,8 @@
         });
     };
 
-    /// 计算及统计支付情况
-    _U.calculatePays = function(paysData, partnersData){
+    /// 计算及统计支付情况 for E+C and A+B+C
+    _U.calculatePaysForECABC = function(paysData, partnersData){
 
         var resultsData = [];
 
@@ -124,10 +125,56 @@
         return resultsData;
     };
 
-    _U.updateWithForE$C_ABC = function(yearMonth, partnersData){
+    /// 计算及统计支付情况 for E2
+    _U.calculatePaysForE2 = function(paysData, partnersData){
+
+        var resultsData = [];
+
+        /// 获取自己的信息
+        function getPartnerInfo(id){
+            var info = null;
+            $.each(partnersData, function(index, ele){
+                if (id === ele.id){
+                    info = ele;
+                }
+            });
+
+            return info;
+        }
+
+        /// 先整理格式化
+        $.each(paysData, function(index, ele){
+            ele.prices = 0.002;
+            ele.total_e = ele.visits * ele.prices;
+            ele.total_e = ele.total_e > 2500 ? 2500 : ele.total_e; // E2 E2最高2500
+            ele.total_c = 0;
+            ele.total = 0;
+        });
+
+        /// 获取下载总的提成
+        function getPartnersPay(payRecordObj, allPaysData){
+            var curPartnerPay = $.extend(payRecordObj, {});
+            var info = getPartnerInfo(curPartnerPay.id);
+            curPartnerPay.name = info.name;
+            curPartnerPay.referrer = info.referrer;
+            curPartnerPay.total = curPartnerPay.total_e + curPartnerPay.total_c;
+
+            return curPartnerPay; 
+        }
+
+        /// 
+        $.each(paysData, function(index, ele){
+            var newPaysRecord = getPartnersPay(ele, paysData);
+            resultsData.push(newPaysRecord);
+        });
+
+        return resultsData;
+    };    
+
+    _U.updateWithForec_ABC = function(yearMonth, partnersData){
         var t$ = this;
-        var jsfile = "data/pays/E+C_A+B+C/base_" + yearMonth + ".js";
-        var grid = $('#pays-window > .pays-grid-e$c').data('kendoGrid');
+        var jsfile = "data/pays/E+C_A+B+C/base_" + yearMonth + ".js" + "?t=" + (new Date()).getTime();
+        var grid = $('#pays-window > .pays-grid-ec').data('kendoGrid');
         while (grid.dataSource.total() > 0){
             grid.dataSource.remove(grid.dataSource.at(0));
         } 
@@ -140,7 +187,32 @@
                 paysData = obj.data;
             } 
    
-            var resultData = t$.calculatePays(paysData, partnersData);
+            var resultData = t$.calculatePaysForECABC(paysData, partnersData);
+        
+            $.each(resultData, function(index, obj){
+                grid.dataSource.add(obj);
+            })
+            
+        });
+    };
+
+    _U.updateWithForE2 = function(yearMonth, partnersData){
+        var t$ = this;
+        var jsfile = "data/pays/E2/base_" + yearMonth + ".js" + "?t=" + (new Date()).getTime();
+        var grid = $('#pays-window > .pays-grid-e2').data('kendoGrid');
+        while (grid.dataSource.total() > 0){
+            grid.dataSource.remove(grid.dataSource.at(0));
+        } 
+    
+        // For E2模式
+        $.getScript(jsfile).done(function(data, textStatus, jqxhr){
+            var paysData = [];
+            if($.RTYUtils.isString(data)){
+                var obj = eval(data);  
+                paysData = obj.data;
+            } 
+   
+            var resultData = t$.calculatePaysForE2(paysData, partnersData);
         
             $.each(resultData, function(index, obj){
                 grid.dataSource.add(obj);
@@ -152,10 +224,11 @@
     /// 更新数据
     _U.updateWith = function(yearMonth, partnersData){
         var t$ = this;
-        t$.updateWithForE$C_ABC(yearMonth, partnersData);
+        t$.updateWithForec_ABC(yearMonth, partnersData);
+        t$.updateWithForE2(yearMonth, partnersData);
     };
 
-    _U.OptionsForE$C = {
+    _U.OptionsForec = {
             dataSource: {
                 data: [],
                 schema: {
@@ -179,7 +252,7 @@
                 ], 
                 pageSize: 50
             },
-            height: 550,
+            height: 360,
             scrollable: true,
             groupable:{
                 enabled: true,
@@ -206,20 +279,20 @@
                     title: "E 部分 - 分享信息 访问人数 * 元/人",
                     columns:[
                         { field: "visits", title: "访问人数", width: "40px" },
-                        { field: "prices", title: "元/人", format: "{0:c3}", width: "36px" },
-                        { field: "total_e", title: "E总计", format: "{0:c3}", width: "40px" }
+                        { field: "prices", title: "元/人", format: "¥ {0:n3}", width: "36px" },
+                        { field: "total_e", title: "E总计", format: "¥ {0:n3}", width: "40px" }
                     ]
                 },
                 {
                     title: "C 部分 - 推荐提成",
                     columns:[
-                        { field: "total_c", title: "C总计",format: "{0:c3}", width: "50px" }    
+                        { field: "total_c", title: "C总计",format: "¥ {0:n3}", width: "50px" }    
                     ]
                 },
                 {
                     title: "总计 = E + C",
                     columns:[
-                        { field: "total", title: "E+C", format: "{0:c3}", width: "40px" }
+                        { field: "total", title: "E+C", format: "¥ {0:n3}", width: "40px" }
                     ]
                 },
                 { field: "payedState", title: "支付状态", width: "40px" }
@@ -250,7 +323,7 @@
                 ], 
                 pageSize: 50
             },
-            height: 550,
+            height: 360,
             scrollable: true,
             groupable:{
                 enabled: true,
@@ -276,8 +349,8 @@
                     title: "分享信息 访问人数 * $/人",
                     columns:[
                         { field: "visits", title: "访问人数", width: "40px" },
-                        { field: "prices", title: "$/人", format: "{0:c3}", width: "36px" },
-                        { field: "total_e", title: "总计", format: "{0:c3}", width: "40px" }
+                        { field: "prices", title: "$/人", format: "$ {0:n3}", width: "36px" },
+                        { field: "total_e", title: "总计", format: "$ {0:n3}", width: "40px" }
                     ]
                 },
                 { field: "payedState", title: "支付状态", width: "40px" }
@@ -363,7 +436,7 @@
 
 
                 /// 初始化表格
-                $('#pays-window > .pays-grid-e$c').kendoGrid(t$.OptionsForE$C);
+                $('#pays-window > .pays-grid-ec').kendoGrid(t$.OptionsForec);
                 $('#pays-window > .pays-grid-e2').kendoGrid(t$.OptionsForE2);
 
                 /// 使用默认值
