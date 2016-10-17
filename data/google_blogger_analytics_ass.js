@@ -149,7 +149,73 @@
         partnerID:"A026", // A026 
         gmail:"",         // gmail邮箱  
         oldPartners:[]    // 此博客以前的合作者
-    });         
+    });      
+
+    /////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////
+    _U.data.push({
+        type:_U.types[1], 
+        id:"0012",  
+        title:"Builder Watch",
+        url:"builderwatch-romanysoft.tumblr.com", 
+        traceid:"UA-82372746-12", 
+        ass:assObj,
+        partnerID:"",  
+        gmail:"",         
+        oldPartners:[]
+    });  
+
+    _U.data.push({
+        type:_U.types[1], 
+        id:"0013",  
+        title:"BlueSeeNews",
+        url:"blueseenews-romanysoft.tumblr.com", 
+        traceid:"UA-82372746-13", 
+        ass:assObj,
+        partnerID:"",  
+        gmail:"",         
+        oldPartners:[]
+    });    
+
+    _U.data.push({
+        type:_U.types[1], 
+        id:"0014",  
+        title:"10 Ways",
+        url:"ways10-romanysoft.tumblr.com", 
+        traceid:"UA-82372746-14", 
+        ass:assObj,
+        partnerID:"",  
+        gmail:"",         
+        oldPartners:[]
+    }); 
+
+    _U.data.push({
+        type:_U.types[1], 
+        id:"0015",  
+        title:"LiteCosts",
+        url:"litecosts-romanysoft.tumblr.com", 
+        traceid:"UA-82372746-15", 
+        ass:assObj,
+        partnerID:"",  
+        gmail:"",         
+        oldPartners:[]
+    });    
+
+    _U.data.push({
+        type:_U.types[1], 
+        id:"0016",  
+        title:"DesignLeaks",
+        url:"designleaks-romanysoft.tumblr.com", 
+        traceid:"UA-82372746-16", 
+        ass:assObj,
+        partnerID:"",  
+        gmail:"",         
+        oldPartners:[]
+    });     
+
+    /////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////      
+
 
     return _U;
 
