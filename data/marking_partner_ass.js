@@ -337,7 +337,7 @@
 
     _U.data.push(_U.tp({
         id: "A026",
-        name:"gary.requiz",  //https://www.facebook.com/gary.requiz
+        name:"Gary Requiz",  //https://www.facebook.com/gary.requiz
         QQ:"",
         email:"gargen0701@gmail.com",
         lastSignedDate:20161017,
