@@ -58,7 +58,7 @@
         url:"bigbigdatasoft.tumblr.com", 
         traceid:"UA-82372746-3", 
         ass:assObj,
-        partnerID:"A025", 
+        partnerID:"", 
         gmail:"",         
         oldPartners:["A017"]      
     });    
@@ -135,7 +135,7 @@
         url:"stanfordtweak.tumblr.com", 
         traceid:"UA-82372746-10", 
         ass:assObj,
-        partnerID:"",   // 
+        partnerID:"A025",   // 
         gmail:"",         // gmail邮箱  
         oldPartners:[]    // 此博客以前的合作者
     }); 
