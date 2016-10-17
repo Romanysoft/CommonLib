@@ -333,7 +333,25 @@
             twitter:""    
         },
         referrer:""
-    }));     
+    }));  
+
+    _U.data.push(_U.tp({
+        id: "A026",
+        name:"gary.requiz",  //https://www.facebook.com/gary.requiz
+        QQ:"",
+        email:"gargen0701@gmail.com",
+        lastSignedDate:20161017,
+        payWayType:_U.PayWayTypes[3],
+        payWayAcount:"gargen0701@gmail.com",
+        payment:_U.Payments[3], 
+        KeepSecret: _U.KeepSecret[1], // 薪资是否保密
+        assOtherAcounts:{             
+            gmail:"gargen0701@gmail.com",
+            facebook:"",
+            twitter:""    
+        },
+        referrer:""
+    }));         
 
     return _U;
 })();

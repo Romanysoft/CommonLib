@@ -146,7 +146,7 @@
         url:"happybouquetdragonfan.tumblr.com", 
         traceid:"UA-82372746-11", 
         ass:assObj,
-        partnerID:"A019",   // 
+        partnerID:"A026", // A026 
         gmail:"",         // gmail邮箱  
         oldPartners:[]    // 此博客以前的合作者
     });         
