@@ -124,15 +124,15 @@
         return resultsData;
     };
 
-    /// 更新数据
-    _U.updateWith = function(yearMonth, partnersData){
+    _U.updateWithForE$C_ABC = function(yearMonth, partnersData){
         var t$ = this;
         var jsfile = "data/pays/E+C_A+B+C/base_" + yearMonth + ".js";
-        var grid = $('#pays-window > .pays-grid').data('kendoGrid');
+        var grid = $('#pays-window > .pays-grid-e$c').data('kendoGrid');
         while (grid.dataSource.total() > 0){
             grid.dataSource.remove(grid.dataSource.at(0));
         } 
     
+        // For E+C/A+B+C模式
         $.getScript(jsfile).done(function(data, textStatus, jqxhr){
             var paysData = [];
             if($.RTYUtils.isString(data)){
@@ -149,6 +149,142 @@
         });
     };
 
+    /// 更新数据
+    _U.updateWith = function(yearMonth, partnersData){
+        var t$ = this;
+        t$.updateWithForE$C_ABC(yearMonth, partnersData);
+    };
+
+    _U.OptionsForE$C = {
+            dataSource: {
+                data: [],
+                schema: {
+                    model: {
+                        fields: {
+                            id: { type: "string" },
+                            name: { type: "string" },
+                            referrer: { type: "string" },
+                            visits: { type: "string" },
+                            prices: { type: "number" },
+                            total_e: { type: "string" },
+                            total_c: { type: "string" },
+                            total: { type: "string" },
+                            payedState: {type: "string"}
+                        }
+                    }
+                },
+                sort:[
+                    {field: "payment", dir: "asc" },
+                    {field: "id", dir: "desc" }
+                ], 
+                pageSize: 50
+            },
+            height: 550,
+            scrollable: true,
+            groupable:{
+                enabled: true,
+                showFooter: true
+            },
+            reorderable: true,
+            resizable: true,
+            filterable: true,
+            columnMenu: true,
+            pageable: {
+                input: true,
+                numeric: false
+            },
+            columns: [
+                {
+                    title: "合作者",
+                    columns:[
+                        { field: "id", title: "编号",  width: "30px" },
+                        { field: "name", title: "姓名", width: "40px" },
+                        { field: "referrer", title: "推荐人", width: "40px"}
+                    ]
+                },
+                {
+                    title: "E 部分 - 分享信息 访问人数 * 元/人",
+                    columns:[
+                        { field: "visits", title: "访问人数", width: "40px" },
+                        { field: "prices", title: "元/人", format: "{0:c3}", width: "36px" },
+                        { field: "total_e", title: "E总计", format: "{0:c3}", width: "40px" }
+                    ]
+                },
+                {
+                    title: "C 部分 - 推荐提成",
+                    columns:[
+                        { field: "total_c", title: "C总计",format: "{0:c3}", width: "50px" }    
+                    ]
+                },
+                {
+                    title: "总计 = E + C",
+                    columns:[
+                        { field: "total", title: "E+C", format: "{0:c3}", width: "40px" }
+                    ]
+                },
+                { field: "payedState", title: "支付状态", width: "40px" }
+                
+                
+            ]
+    };
+
+    _U.OptionsForE2 = {
+            dataSource: {
+                data: [],
+                schema: {
+                    model: {
+                        fields: {
+                            id: { type: "string" },
+                            name: { type: "string" },
+                            visits: { type: "string" },
+                            prices: { type: "number" },
+                            total_e: { type: "string" },
+                            total: { type: "string" },
+                            payedState: {type: "string"}
+                        }
+                    }
+                },
+                sort:[
+                    {field: "payment", dir: "asc" },
+                    {field: "id", dir: "desc" }
+                ], 
+                pageSize: 50
+            },
+            height: 550,
+            scrollable: true,
+            groupable:{
+                enabled: true,
+                showFooter: true
+            },
+            reorderable: true,
+            resizable: true,
+            filterable: true,
+            columnMenu: true,
+            pageable: {
+                input: true,
+                numeric: false
+            },
+            columns: [
+                {
+                    title: "国外合作者",
+                    columns:[
+                        { field: "id", title: "编号",  width: "30px" },
+                        { field: "name", title: "姓名", width: "40px" }
+                    ]
+                },
+                {
+                    title: "分享信息 访问人数 * $/人",
+                    columns:[
+                        { field: "visits", title: "访问人数", width: "40px" },
+                        { field: "prices", title: "$/人", format: "{0:c3}", width: "36px" },
+                        { field: "total_e", title: "总计", format: "{0:c3}", width: "40px" }
+                    ]
+                },
+                { field: "payedState", title: "支付状态", width: "40px" }
+                
+            ]
+    };    
+
     _U.launch = function () {
         var t$ = this;
 
@@ -158,7 +294,7 @@
             if (!win.data("kendoWindow")){
                 win.kendoWindow({
                     actions: ["Pin","Close"],
-                    title: "支付记录(适用于E+C模式) 每月15日前结算并支付上个月报酬",
+                    title: "支付记录(适用于E+C/E2) 每月15日前结算并支付上个月报酬",
                     width: 1280,
                     position: {
                         top: 60
@@ -227,78 +363,8 @@
 
 
                 /// 初始化表格
-                $('#pays-window > .pays-grid').kendoGrid({
-                        dataSource: {
-                            data: [],
-                            schema: {
-                                model: {
-                                    fields: {
-                                        id: { type: "string" },
-                                        name: { type: "string" },
-                                        referrer: { type: "string" },
-                                        visits: { type: "string" },
-                                        prices: { type: "number" },
-                                        total_e: { type: "string" },
-                                        total_c: { type: "string" },
-                                        total: { type: "string" },
-                                        payedState: {type: "string"}
-                                    }
-                                }
-                            },
-                            sort:[
-                                {field: "payment", dir: "asc" },
-                                {field: "id", dir: "desc" }
-                            ], 
-                            pageSize: 50
-                        },
-                        height: 550,
-                        scrollable: true,
-                        groupable:{
-                            enabled: true,
-                            showFooter: true
-                        },
-                        reorderable: true,
-                        resizable: true,
-                        filterable: true,
-                        columnMenu: true,
-                        pageable: {
-                            input: true,
-                            numeric: false
-                        },
-                        columns: [
-                            {
-                                title: "合作者",
-                                columns:[
-                                    { field: "id", title: "编号",  width: "30px" },
-                                    { field: "name", title: "姓名", width: "40px" },
-                                    { field: "referrer", title: "推荐人", width: "40px"}
-                                ]
-                            },
-                            {
-                                title: "E 部分 - 分享信息 访问人数 * 元/人",
-                                columns:[
-                                    { field: "visits", title: "访问人数", width: "40px" },
-                                    { field: "prices", title: "元/人", format: "{0:c3}", width: "36px" },
-                                    { field: "total_e", title: "E总计", format: "{0:c3}", width: "40px" }
-                                ]
-                            },
-                            {
-                                title: "C 部分 - 推荐提成",
-                                columns:[
-                                    { field: "total_c", title: "C总计",format: "{0:c3}", width: "50px" }    
-                                ]
-                            },
-                            {
-                                title: "总计 = E + C",
-                                columns:[
-                                    { field: "total", title: "E+C", format: "{0:c3}", width: "40px" }
-                                ]
-                            },
-                            { field: "payedState", title: "支付状态", width: "40px" }
-                            
-                            
-                        ]
-                });
+                $('#pays-window > .pays-grid-e$c').kendoGrid(t$.OptionsForE$C);
+                $('#pays-window > .pays-grid-e2').kendoGrid(t$.OptionsForE2);
 
                 /// 使用默认值
                 t$.reloadData(getCacleDate());

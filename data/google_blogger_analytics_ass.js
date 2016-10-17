@@ -58,7 +58,7 @@
         url:"bigbigdatasoft.tumblr.com", 
         traceid:"UA-82372746-3", 
         ass:assObj,
-        partnerID:"", 
+        partnerID:"A025", 
         gmail:"",         
         oldPartners:["A017"]      
     });    
@@ -69,7 +69,7 @@
         url:"whatsapptips.tumblr.com", 
         traceid:"UA-82372746-4", 
         ass:assObj,
-        partnerID:"", // 朱小港
+        partnerID:"A024", // 
         gmail:"",         // gmail邮箱 
         oldPartners:["A018"]    // 此博客以前的合作者
     });    

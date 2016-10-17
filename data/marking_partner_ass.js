@@ -8,7 +8,7 @@
 
     _U.UserTypes = ["official", "blogger"];
     _U.PayWayTypes = ["支付宝", "微信", "银行卡","PayPal"];
-    _U.Payments = ["P", "A+B+C", "E+C"];
+    _U.Payments = ["P", "A+B+C", "E+C", "E2"];
     _U.KeepSecret = ["保密", "公开"];
     _U.data = [];
 
@@ -304,13 +304,31 @@
         name:"Idrees Waqar Safi",  
         QQ:"",
         email:"muhammadidrees1922@gmail.com",
-        lastSignedDate:20161008,
+        lastSignedDate:20161016,
         payWayType:_U.PayWayTypes[3],
         payWayAcount:"fazalrahim1420@gmail.com",
-        payment:_U.Payments[2], 
+        payment:_U.Payments[3], 
         KeepSecret: _U.KeepSecret[1], // 薪资是否保密
         assOtherAcounts:{             
             gmail:"muhammadidrees1922@gmail.com",
+            facebook:"",
+            twitter:""    
+        },
+        referrer:""
+    }));     
+
+    _U.data.push(_U.tp({
+        id: "A025",
+        name:"Margaret Smith",  
+        QQ:"",
+        email:"Marsmith328@gmail.com",
+        lastSignedDate:20161017,
+        payWayType:_U.PayWayTypes[3],
+        payWayAcount:"Marsmith328@gmail.com",
+        payment:_U.Payments[3], 
+        KeepSecret: _U.KeepSecret[1], // 薪资是否保密
+        assOtherAcounts:{             
+            gmail:"Marsmith328@gmail.com",
             facebook:"",
             twitter:""    
         },
