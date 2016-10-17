@@ -7,9 +7,9 @@
     _U.launch = function () {
         var t$ = this;
         var urls = [
-            "http://kendo.cdn.telerik.com/2016.3.914/js/kendo.all.min.js",
-            "http://kendo.cdn.telerik.com/2016.3.914/js/messages/kendo.messages.zh-CN.min.js",
-            "http://kendo.cdn.telerik.com/2016.3.914/js/cultures/kendo.culture.zh-CN.min.js",
+            "https://kendo.cdn.telerik.com/2016.3.914/js/kendo.all.min.js",
+            "https://kendo.cdn.telerik.com/2016.3.914/js/messages/kendo.messages.zh-CN.min.js",
+            "https://kendo.cdn.telerik.com/2016.3.914/js/cultures/kendo.culture.zh-CN.min.js",
 
             //<!--App 核心-->
             "common/romanysoft/core/app.observer.js",
