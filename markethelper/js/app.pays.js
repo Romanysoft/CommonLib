@@ -276,10 +276,10 @@
                     ]
                 },
                 {
-                    title: "E 部分 - 分享信息 访问人数 * 元/人",
+                    title: "E 部分 - 分享信息 访问人数 * ¥(人民币元）/人",
                     columns:[
                         { field: "visits", title: "访问人数", width: "40px" },
-                        { field: "prices", title: "元/人", format: "¥ {0:n3}", width: "36px" },
+                        { field: "prices", title: "¥/人", format: "¥ {0:n3}", width: "36px" },
                         { field: "total_e", title: "E总计", format: "¥ {0:n3}", width: "40px" }
                     ]
                 },
@@ -346,7 +346,7 @@
                     ]
                 },
                 {
-                    title: "分享信息 访问人数 * $/人",
+                    title: "分享信息 访问人数 * $(美元)/人",
                     columns:[
                         { field: "visits", title: "访问人数", width: "40px" },
                         { field: "prices", title: "$/人", format: "$ {0:n3}", width: "36px" },
