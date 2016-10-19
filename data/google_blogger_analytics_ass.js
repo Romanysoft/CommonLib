@@ -214,8 +214,73 @@
     });     
 
     /////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////      
+    /////////////////////////////////////////////////////////////////////////   
 
+    if(0){
+        _U.data.push({
+            type:_U.types[1], 
+            id:"0017",  
+            title:"AreWe",
+            url:"arewe-romanysoft.tumblr.com", 
+            traceid:"UA-82372746-17", 
+            ass:assObj,
+            partnerID:"",  
+            gmail:"",         
+            oldPartners:[]
+        });
+
+        _U.data.push({
+            type:_U.types[1], 
+            id:"0018",  
+            title:"Haskell",
+            url:"haskell-romanysoft.tumblr.com", 
+            traceid:"UA-82372746-18", 
+            ass:assObj,
+            partnerID:"",  
+            gmail:"",         
+            oldPartners:[]
+        });    
+
+        _U.data.push({
+            type:_U.types[1], 
+            id:"0020",  
+            title:"Pods",
+            url:"pods-romanysoft.tumblr.com", 
+            traceid:"UA-82372746-20", 
+            ass:assObj,
+            partnerID:"",  
+            gmail:"",         
+            oldPartners:[]
+        });
+
+        _U.data.push({
+            type:_U.types[1], 
+            id:"0021",  
+            title:"SuperCon",
+            url:"supercon-romanysoft.tumblr.com", 
+            traceid:"UA-82372746-21", 
+            ass:assObj,
+            partnerID:"",  
+            gmail:"",         
+            oldPartners:[]
+        });   
+
+        _U.data.push({
+            type:_U.types[1], 
+            id:"0022",  
+            title:"Tracking",
+            url:"tracking-romanysoft.tumblr.com", 
+            traceid:"UA-82372746-22", 
+            ass:assObj,
+            partnerID:"",  
+            gmail:"",         
+            oldPartners:[]
+        });   
+    }   
+
+
+    /////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////               
 
     return _U;
 

@@ -38,9 +38,7 @@
             .next(function(nxt){
                 var _f = function(urls){
                     if (urls.length > 0){
-                        $.RTYUtils.loadScript(urls.shift(), function(){ 
-                            _f && _f(urls);
-                        }) 
+                        $.RTY_3rd_Ensure.ensure({js: urls.shift()}, function () {  _f && _f(urls);})
                     }else{
                         nxt && nxt();
                     }
