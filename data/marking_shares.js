@@ -17,6 +17,14 @@
         return $.extend(o, data);
     };
 
+    /// 网址
+    _U.data.push(_U.tp({
+        name: "E+C模式介绍",
+        category: _U.category[2],
+        url:"https://romanysoft.github.io/CommonLib/market-partners-ec",
+        comment:"我们的国内主要合作模式，E+C模式介绍"
+    }));
+
     /// 软件  
     _U.data.push(_U.tp({
         name: "XX-Net 桌面版本",
