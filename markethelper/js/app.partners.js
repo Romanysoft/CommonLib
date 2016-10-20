@@ -59,12 +59,12 @@
                                             payment: { type: "string" },
                                             payWayType: { type: "string" },
                                             KeepSecret: { type: "string" },
+                                            onJob:{ type: "string" }, 
                                             referrer: { type: "string" }
                                         }
                                     }
                                 },
                                 sort:[
-                                    {field: "payment", dir: "asc" },
                                     {field: "id", dir: "desc" }
                                 ], 
                                 pageSize: 50
@@ -86,13 +86,14 @@
                                 numeric: false
                             },
                             columns: [
-                                { field: "id", title: "编号",  width: "30px" },
+                                { field: "id", title: "编号",  width: "24px" },
                                 { field: "name", title: "姓名", width: "40px" },
-                                { field: "QQ", title: "QQ", width: "50px" },
-                                { field: "payment", title: "结算方式", width: "40px" },
+                                { field: "QQ", title: "QQ", width: "42px" },
+                                { field: "payment", title: "结算方式", width: "360px" },
                                 { field: "payWayType", title: "支付方式", width: "40px" },
-                                { field: "KeepSecret", title: "薪资保密", width: "40px" },
-                                { field: "referrer", title: "推荐人", width: "40px" }
+                                { field: "KeepSecret", title: "薪资保密", width: "36px" },
+                                { field: "referrer", title: "推荐人", width: "32px" },
+                                { field: "onJob", title: "状态", width: "36px" }
                             ]
                     })
                 });

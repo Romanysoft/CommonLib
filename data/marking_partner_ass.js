@@ -10,6 +10,7 @@
     _U.PayWayTypes = ["支付宝", "微信", "银行卡","PayPal"];
     _U.Payments = ["P", "A+B+C", "E+C", "E2"];
     _U.KeepSecret = ["保密", "公开"];
+    _U.JobState = ["在岗", "离岗"];
     _U.data = [];
 
     _U.tp = function(data){
@@ -19,10 +20,11 @@
             name:"name",                  // 姓名 
             qq:"qq",                      // QQ 
             email:"email",                // 电子邮件
-            onJob:true,                   // 是否在职 
+            onJob:_U.JobState[0],         // 是否在职 
             isPact:false,                 // 是否签订合同 
             pactDeadline:1,               // 合同有效期 默认为1年
             lastSignedDate:0,             // 最近一次签订合同的时间
+            regDateTime:"",               // 注册时间
             payment:_U.Payments[0],       // 合同约定结算方式
             payWayType:_U.PayWayTypes[0], // 支付方式
             payWayAcount:"",              // 支付账户
@@ -99,6 +101,7 @@
         id: "RF201603221800PTJ",
         name:"王娜",  
         QQ:"1315134***",
+        onJob:_U.JobState[1], 
         payWayType:_U.PayWayTypes[2],      
         email:"1315134***@qq.com"
     }));    
@@ -113,6 +116,7 @@
         id: "A010",
         name:"徐伟",  
         QQ:"1551975***",
+        onJob:_U.JobState[1], 
         payWayType:_U.PayWayTypes[1], 
         email:"1551975***@qq.com"
     }));
@@ -120,6 +124,7 @@
         id: "A011",
         name:"查群子",  
         QQ:"280018***",
+        onJob:_U.JobState[1], 
         payWayType:_U.PayWayTypes[0], 
         email:"280018***@qq.com"
     }));    
@@ -127,6 +132,7 @@
         id: "A012",
         name:"任海燕",  
         QQ:"84101***",
+        onJob:_U.JobState[1], 
         payWayType:_U.PayWayTypes[1], 
         email:"84101***@qq.com"
     })); 
@@ -134,6 +140,7 @@
         id: "A013",
         name:"胡小群",  
         QQ:"973042***",
+        onJob:_U.JobState[1], 
         payWayType:_U.PayWayTypes[1], 
         email:"973042***@qq.com"
     }));      
@@ -160,6 +167,7 @@
         name:"林东",  
         QQ:"1363196***",
         email:"1363196***@qq.com",
+        onJob:_U.JobState[1], 
         isPact:true,
         lastSignedDate:20160901,
         payWayType:_U.PayWayTypes[1],
@@ -178,6 +186,7 @@
         name:"李晓斌",  
         QQ:"190334***",
         email:"190334***@qq.com",
+        onJob:_U.JobState[1], 
         lastSignedDate:20160901,
         payWayType:_U.PayWayTypes[0],
         payWayAcount:"li190334262",
@@ -196,6 +205,7 @@
         name:"朱小港",  
         QQ:"2773803***",
         email:"2773803***@qq.com",
+        onJob:_U.JobState[1], 
         lastSignedDate:20160901,
         payWayType:_U.PayWayTypes[0],
         payWayAcount:"",
