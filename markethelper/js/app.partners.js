@@ -89,7 +89,7 @@
                                 { field: "id", title: "编号",  width: "24px" },
                                 { field: "name", title: "姓名", width: "40px" },
                                 { field: "QQ", title: "QQ", width: "42px" },
-                                { field: "payment", title: "结算方式", width: "360px" },
+                                { field: "payment", title: "结算方式", width: "36px" },
                                 { field: "payWayType", title: "支付方式", width: "40px" },
                                 { field: "KeepSecret", title: "薪资保密", width: "36px" },
                                 { field: "referrer", title: "推荐人", width: "32px" },
