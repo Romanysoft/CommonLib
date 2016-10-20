@@ -65,7 +65,7 @@
                                     }
                                 },
                                 sort:[
-                                    {field: "id", dir: "desc" }
+                                    {field: "id", dir: "asc" }
                                 ], 
                                 pageSize: 50
                             },
@@ -86,9 +86,9 @@
                                 numeric: false
                             },
                             columns: [
-                                { field: "id", title: "编号",  width: "24px" },
+                                { field: "id", title: "编号",  width: "30px" },
                                 { field: "name", title: "姓名", width: "40px" },
-                                { field: "QQ", title: "QQ", width: "42px" },
+                                { field: "QQ", title: "QQ", width: "48px" },
                                 { field: "payment", title: "结算方式", width: "36px" },
                                 { field: "payWayType", title: "支付方式", width: "40px" },
                                 { field: "KeepSecret", title: "薪资保密", width: "36px" },
