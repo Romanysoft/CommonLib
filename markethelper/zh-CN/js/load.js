@@ -6,18 +6,21 @@
 
     _U.launch = function () {
         var t$ = this;
+       
+       //var kendouiUrl = "common/kendoui/v2016.3.914";
 
+        var kendouiUrl = "https://kendo.cdn.telerik.com/2016.3.914";
         var cssUrls = [
-            "common/kendoui/v2016.3.914/styles/kendo.common.min.css",
-            "common/kendoui/v2016.3.914/styles/kendo.rtl.min.css",
-            "common/kendoui/v2016.3.914/styles/kendo.rtl.min.css",
+            kendouiUrl + "/styles/kendo.common.min.css",
+            kendouiUrl + "/styles/kendo.rtl.min.css",
+            kendouiUrl + "/styles/kendo.default.min.css",
 
 
             "markethelper/styles/app.css"
         ];
 
         //var kendouiUrl = "common/kendoui/v2016.3.914";
-        var kendouiUrl = "https://kendo.cdn.telerik.com/2016.3.914";
+        //var kendouiUrl = "https://kendo.cdn.telerik.com/2016.3.914";
 
         var urls = [
             kendouiUrl + "/js/kendo.all.min.js",
