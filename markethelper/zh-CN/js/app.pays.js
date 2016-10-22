@@ -72,7 +72,8 @@
         $.each(paysData, function(index, ele){
             ele.prices = 0.025;
             ele.total_e = ele.visits * ele.prices;
-            ele.total_e = ele.total_e > 10000 ? 10000 : ele.total_e; // E+C E最高1W
+            ele.total_e = ele.total_e;
+            //ele.total_e = ele.total_e > 10000 ? 10000 : ele.total_e; // E+C E最高1W
             ele.total_a = ele.total_e;
             ele.total_a = ele.total_a > 2000 ? 2000 : ele.total_a;   // A+C A最高1W
             ele.total_c = 0;
@@ -124,52 +125,6 @@
 
         return resultsData;
     };
-
-    /// 计算及统计支付情况 for E2
-    _U.calculatePaysForE2 = function(paysData, partnersData){
-
-        var resultsData = [];
-
-        /// 获取自己的信息
-        function getPartnerInfo(id){
-            var info = null;
-            $.each(partnersData, function(index, ele){
-                if (id === ele.id){
-                    info = ele;
-                }
-            });
-
-            return info;
-        }
-
-        /// 先整理格式化
-        $.each(paysData, function(index, ele){
-            ele.prices = 0.002;
-            ele.total_e = ele.visits * ele.prices;
-            ele.total_e = ele.total_e > 2500 ? 2500 : ele.total_e; // E2 E2最高2500
-            ele.total_c = 0;
-            ele.total = 0;
-        });
-
-        /// 获取下载总的提成
-        function getPartnersPay(payRecordObj, allPaysData){
-            var curPartnerPay = $.extend(payRecordObj, {});
-            var info = getPartnerInfo(curPartnerPay.id);
-            curPartnerPay.name = info.name;
-            curPartnerPay.referrer = info.referrer;
-            curPartnerPay.total = curPartnerPay.total_e + curPartnerPay.total_c;
-
-            return curPartnerPay; 
-        }
-
-        /// 
-        $.each(paysData, function(index, ele){
-            var newPaysRecord = getPartnersPay(ele, paysData);
-            resultsData.push(newPaysRecord);
-        });
-
-        return resultsData;
-    };    
 
     _U.updateWithForec_ABC = function(yearMonth, partnersData){
         var t$ = this;
@@ -263,7 +218,7 @@
                     columns:[
                         { field: "visits", title: "访客数量", width: "40px" },
                         { field: "prices", title: "¥/人", format: "¥ {0:n3}", width: "36px" },
-                        { field: "total_e", title: "E总计", format: "¥ {0:n3}", width: "40px" }
+                        { field: "total_e", title: "E总计", format: "¥ {0:n2}", width: "40px" }
                     ]
                 },
                 {
@@ -275,7 +230,7 @@
                 {
                     title: "总计 = E + C",
                     columns:[
-                        { field: "total", title: "E+C", format: "¥ {0:n3}", width: "40px" }
+                        { field: "total", title: "E+C", format: "¥ {0:n2}", width: "40px" }
                     ]
                 },
                 { field: "payedState", title: "支付状态", width: "40px" }
