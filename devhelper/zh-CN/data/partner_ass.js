@@ -1,0 +1,106 @@
+/**
+ * Created by Ian on 2016/9/16.
+ */
+(function () {
+
+    /// 本单元的处理
+    var _U = {};
+
+    _U.PayWayTypes = ["支付宝", "微信", "银行卡","PayPal"];
+    _U.JobState = ["有效", "解除"];
+    _U.data = [];
+
+    _U.tp = function(data){
+        var o = {
+            id: "id",                     // 用户ID 
+            name:"name",                  // 姓名 
+            qq:"qq",                      // QQ 
+            email:"email",                // 电子邮件
+            onJob:_U.JobState[0],         // 是否在职 
+            speciality:"",                // 特长 
+            payWayType:_U.PayWayTypes[0], // 支付方式
+            payWayAcount:"",              // 支付账户
+            assOtherAcounts:{             // 关联的其他账号信息  
+                gmail:"",
+                facebook:"",
+                twitter:""    
+            },
+            referrer:""                   // 推荐人，上线人员
+        };
+
+        return $.extend(o, data);
+    };
+
+          
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    var No = 0;
+
+    _U.data.push(_U.tp({
+        id: "D" + ++No + "150418" ,
+        name:"张鹏",  
+        QQ: "1289435xxx",
+        email:"1289435xxx*@qq.com",
+        payWayType:_U.PayWayTypes[0],
+        payWayAcount:"",
+        speciality:"前端Javascript, html, css 及C语言"
+    }));
+
+    _U.data.push(_U.tp({
+        id: "D" + ++No + "150728" ,
+        name:"李海东",  
+        QQ: "3185642xxx",
+        email:"3185642xxx*@qq.com",
+        payWayType:_U.PayWayTypes[0],
+        payWayAcount:"",
+        speciality:"前端Javascript, html, css"
+    }));
+
+    _U.data.push(_U.tp({
+        id: "D" + ++No + "150916" ,
+        name:"陈宇航",  
+        QQ: "4754798xxx",
+        email:"4754798xxx*@qq.com",
+        payWayType:_U.PayWayTypes[0],
+        payWayAcount:"",
+        speciality:"Java, Javascript, html, css"
+    }));  
+
+    _U.data.push(_U.tp({
+        id: "D" + ++No + "151112" ,
+        name:"马德明",  
+        QQ: "5855642xxx",
+        email:"5855642xxx*@qq.com",
+        payWayType:_U.PayWayTypes[0],
+        payWayAcount:"",
+        speciality:"Java, Javascript, html, css"
+    }));    
+
+    _U.data.push(_U.tp({
+        id: "D" + ++No + "151202" ,
+        name:"王志鹏",  
+        QQ: "5473623xxx",
+        email:"5473623xxx*@qq.com",
+        payWayType:_U.PayWayTypes[1],
+        payWayAcount:"",
+        speciality:"C++、C、Javascript, html, css"
+    }));     
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    _U.data.push(_U.tp({
+        id: "D" + ++No + "160908" ,
+        name:"王恒",  
+        QQ: kendo.toString(359126613/1000, "####XXXXX"),
+        email:"359126613*@qq.com",
+        payWayType:_U.PayWayTypes[1],
+        payWayAcount:"",
+        speciality:"前端Javascript, html, css 及Java语言"
+    }));
+
+ 
+
+
+
+    return _U;
+})();

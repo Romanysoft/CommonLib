@@ -1,0 +1,16 @@
+.fieldlist {
+  margin: 0 0 -1em;
+  padding: 0;
+}
+.fieldlist li {
+  list-style: none;
+  padding-bottom: 1em;
+  line-height: 3em;
+}
+#feedback-window textarea {
+  width: 100%;
+}
+#feedback-window .k-footer {
+  padding: 8px;
+  text-align: center;
+}

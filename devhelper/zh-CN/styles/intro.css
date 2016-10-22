@@ -1,0 +1,12 @@
+.fieldlist {
+  margin: 0 0 -1em;
+  padding: 0;
+}
+.fieldlist li {
+  list-style: none;
+  padding-bottom: 1em;
+  line-height: 3em;
+}
+#surface-cocoa-container {
+  cursor: pointer;
+}
