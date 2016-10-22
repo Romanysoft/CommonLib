@@ -16,8 +16,8 @@
             "markethelper/styles/app.css"
         ];
 
-        var kendouiUrl = "common/kendoui/v2016.3.914";
-        //var kendouiUrl = "http://kendo.cdn.telerik.com/2016.3.914";
+        //var kendouiUrl = "common/kendoui/v2016.3.914";
+        var kendouiUrl = "https://kendo.cdn.telerik.com/2016.3.914";
 
         var urls = [
             kendouiUrl + "/js/kendo.all.min.js",
@@ -62,7 +62,7 @@
             .next(function(nxt){
                 var _f = function(urls){
                     if (urls.length > 0){
-                        $.RTY_3rd_Ensure.ensure({js: urls.shift()}, function () {  _f && _f(urls);})
+                        $.RTY_3rd_Ensure.ensure({js: urls.shift()}, function () {  _f && _f(urls);}, function(){}, "body")
                     }else{
                         nxt && nxt();
                     }
