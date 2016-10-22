@@ -2259,9 +2259,15 @@
                     scriptTag.onerror = function () {
                         error && error(url, url + " failed to load");
                     };
-                    var head = HttpLibrary.getHead();
-                    head.appendChild(scriptTag);
 
+                    var toBody = true;
+                    if (!toBody) {
+                        var head = HttpLibrary.getHead();
+                        head.appendChild(scriptTag);
+                    } else {
+                        var body = HttpLibrary.getBody();
+                        body.appendChild(scriptTag);
+                    }
                 },
                 getHead: function () {
                     return document.getElementsByTagName("head")[0] || document.documentElement
