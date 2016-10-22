@@ -8,6 +8,11 @@
         var t$ = this;
 
         var cssUrls = [
+            "common/kendoui/v2016.3.914/styles/kendo.common.min.css",
+            "common/kendoui/v2016.3.914/styles/kendo.rtl.min.css",
+            "common/kendoui/v2016.3.914/styles/kendo.rtl.min.css",
+
+
             "markethelper/styles/app.css"
         ];
 
