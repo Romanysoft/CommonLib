@@ -12,7 +12,7 @@
             id: "",                       // 用户ID 
             visits: 0,
             referrer:"",                   // 推荐人，上线人员
-            payedState: _U.payedState[1]
+            payedState: _U.payedState[0]
         };
 
         return $.extend(o, data);
