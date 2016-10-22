@@ -30,7 +30,7 @@
                 win.kendoWindow({
                     actions: ["Pin","Close"],
                     title: "合作者名单",
-                    width: 1024,
+                    width: 1440,
                     position: {
                         top: 60
                     },                    

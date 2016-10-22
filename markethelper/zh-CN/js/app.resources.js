@@ -31,7 +31,7 @@
                 win.kendoWindow({
                     actions: ["Pin","Close"],
                     title: "E+C模式资源分配记录",
-                    width: 1024,
+                    width: 1440,
                     position: {
                         top: 70
                     },                    
