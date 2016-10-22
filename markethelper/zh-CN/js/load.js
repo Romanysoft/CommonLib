@@ -16,8 +16,8 @@
             "markethelper/styles/app.css"
         ];
 
-        //var kendouiUrl = "common/kendoui/v2016.3.914";
-        var kendouiUrl = "http://kendo.cdn.telerik.com/2016.3.914";
+        var kendouiUrl = "common/kendoui/v2016.3.914";
+        //var kendouiUrl = "http://kendo.cdn.telerik.com/2016.3.914";
 
         var urls = [
             kendouiUrl + "/js/kendo.all.min.js",
