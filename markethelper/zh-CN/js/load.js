@@ -16,10 +16,13 @@
             "markethelper/styles/app.css"
         ];
 
+        //var kendouiUrl = "common/kendoui/v2016.3.914";
+        var kendouiUrl = "http://kendo.cdn.telerik.com/2016.3.914";
+
         var urls = [
-            "common/kendoui/v2016.3.914/js/kendo.all.min.js",
-            "common/kendoui/v2016.3.914/js/messages/kendo.messages.zh-CN.min.js",
-            "common/kendoui/v2016.3.914/js/cultures/kendo.culture.zh-CN.min.js",
+            kendouiUrl + "/js/kendo.all.min.js",
+            kendouiUrl + "/js/messages/kendo.messages.zh-CN.min.js",
+            kendouiUrl + "/js/cultures/kendo.culture.zh-CN.min.js",
 
             //<!--App 核心-->
             "common/romanysoft/core/app.observer.js",

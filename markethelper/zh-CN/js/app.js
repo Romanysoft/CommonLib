@@ -13,7 +13,7 @@
     var _U =  {};
 
     _U.initTitleAndVersion = function(){
-        document.title = "Romanysoft 市场推广合作管理 (中国区) Ver 1.0" ;
+        document.title = "Romanysoft 市场推广合作管理 (中国区) Ver 1.1" ;
     };
 
     _U.launch = function () {
