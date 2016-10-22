@@ -1,0 +1,123 @@
+///
+/// 用户反馈
+
+(function () {
+    window['UI'] = window['UI'] ||  {};
+    window.UI.c$ = window.UI.c$ ||  {};
+})();
+
+(function () {
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    var c$ =  {};
+    c$ = $.extend(window.UI.c$,  {});
+    var b$ = BS.b$;
+    var _MC = c$.MessageCenter;
+
+    var _U =  {};
+
+
+    /// 加载模板
+    _U.loadTemplate = function(cb){
+        $.templateLoader.loadExtTemplate("markethelper/zh-CN/templates/tpl.app.feedback.htm", function(){
+            cb && cb();
+        })
+    };
+
+    /// 缓存记忆
+    _U.cache = {
+            key:'feedback_info',
+            current:{},
+            load:function () {
+                t$ = this;
+                var _c = window.localStorage.getItem(t$.key) || null;
+                if (_c){
+                    try{
+                        var obj = JSON.parse(_c);
+                        t$.current = obj;
+                    }catch(e){}
+                }
+            },
+            save:function () {
+                var t$ = this;
+                if (t$.current){
+                    var dataStr = JSON.stringify(t$.current);
+                    window.localStorage.setItem(t$.key, dataStr);
+                }
+            }
+    };    
+
+    /// 启动
+    _U.launch = function () {
+        var t$ = this;
+        _U.loadTemplate(function(){
+            var win = $('#feedback-window');
+            if (!win.data("kendoWindow")){
+                win.kendoWindow({
+                    actions: ["Pin","Close"],
+                    title: "提交问题",
+                    width: '540px',
+                    resizable: false,
+                    model:false
+                });
+
+                var contentTemplate = kendo.template($('#template-window-feedback').html(), {useWithBlock:false});
+                win.html(contentTemplate({}));
+
+                //初始化控件
+                _U.cache.load();
+                $('#feedback-ui-name').val(_U.cache.current.userName || "");
+                $('#feedback-ui-qq').val(_U.cache.current.qq || "");
+                $('#feedback-ui-message').val(_U.cache.current.message || "");
+
+                var validator = $("#feedbackForm").kendoValidator().data("kendoValidator"),
+                    status = $("#feedbackForm > .status");
+
+
+                $("#feedback-window > div > div.k-footer > .k-button").kendoButton({
+                    click: function() {
+                        var t$ = this;
+                        
+                        if (validator.validate()) {
+                            t$.enable(false);
+                            var userName = $('#feedback-ui-name').val();
+                            var message = $('#feedback-ui-message').val();
+                            var qq = $('#feedback-ui-qq').val();
+
+                            _U.cache.current = {
+                                userName: userName,
+                                message: message,
+                                qq: qq
+                            };
+
+                            _U.cache.save();
+
+                            /// 反馈给服务器
+                            $.feedbackInfoEx("MARKET_feedback_FROM_RS", true, _U.cache.current, function(o){
+                                if(o.success){
+                                    alert('问题已经发送成功！请等待回复！');
+                                }    
+                            });
+
+                            setTimeout(function(){
+                                t$.enable(true);
+                            },5000);                            
+                        }
+
+
+                    }
+                })                    
+
+            }
+
+            var w = win.data('kendoWindow');
+            w.center();
+            w.open();            
+        });    
+    };
+
+    //-----------------------------------------------------------------------------------------------------------------
+    //绑定可识别的消息
+    _MC.register("app.showFeedbackWindow", function(e) {_U.launch()});
+
+    window.UI.c$ = $.extend(window.UI.c$, c$);
+}());
