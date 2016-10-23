@@ -178,8 +178,7 @@
                     }
                 },
                 sort:[
-                    {field: "payment", dir: "asc" },
-                    {field: "id", dir: "desc" }
+                    {field: "end", dir: "desc" }
                 ], 
                 pageSize: 50
             },
