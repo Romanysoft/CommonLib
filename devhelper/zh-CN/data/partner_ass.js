@@ -47,12 +47,35 @@
     }));
 
     _U.data.push(_U.tp({
+        id: "D" + ++No + "150425" ,
+        name:"李晨",  
+        QQ: "98546898xxx",
+        email:"98546898xxx*@qq.com",
+        payWayType:_U.PayWayTypes[0],
+        payWayAcount:"",
+        referrer:"D1150418",
+        speciality:"前端Javascript, html, css"
+    })); 
+
+    _U.data.push(_U.tp({
+        id: "D" + ++No + "150522" ,
+        name:"韩明",  
+        QQ: "12789135xxx",
+        email:"12789135xxx*@qq.com",
+        payWayType:_U.PayWayTypes[0],
+        payWayAcount:"",
+        referrer:"D1150418",
+        speciality:"前端Javascript, html, css"
+    }));        
+
+    _U.data.push(_U.tp({
         id: "D" + ++No + "150728" ,
         name:"李海东",  
         QQ: "3185642xxx",
         email:"3185642xxx*@qq.com",
         payWayType:_U.PayWayTypes[0],
         payWayAcount:"",
+        referrer:"D1150418",
         speciality:"前端Javascript, html, css"
     }));
 
@@ -73,6 +96,7 @@
         email:"5855642xxx*@qq.com",
         payWayType:_U.PayWayTypes[0],
         payWayAcount:"",
+        referrer:"D1150418",
         speciality:"Java, Javascript, html, css"
     }));    
 
@@ -81,7 +105,7 @@
         name:"王志鹏",  
         QQ: "5473623xxx",
         email:"5473623xxx*@qq.com",
-        payWayType:_U.PayWayTypes[1],
+        payWayType:_U.PayWayTypes[0],
         payWayAcount:"",
         speciality:"C++、C、Javascript, html, css"
     }));     
@@ -91,9 +115,9 @@
     _U.data.push(_U.tp({
         id: "D" + ++No + "160908" ,
         name:"王恒",  
-        QQ: kendo.toString(359126613/1000, "####XXXXX"),
+        QQ: kendo.toString(359126613/100, "####xxx"),
         email:"359126613*@qq.com",
-        payWayType:_U.PayWayTypes[1],
+        payWayType:_U.PayWayTypes[0],
         payWayAcount:"",
         speciality:"前端Javascript, html, css 及Java语言"
     }));

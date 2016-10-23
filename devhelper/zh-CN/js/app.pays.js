@@ -39,7 +39,9 @@
     };
 
     /// 计算及统计支付情况 for E+C and A+B+C
-    _U.calculatePaysForECABC = function(paysData, partnersData){
+    _U.calculatePays = function(paysData, partnersData){
+
+        var t$ = this;
 
         var resultsData = [];
 
@@ -70,9 +72,14 @@
 
         /// 先整理格式化
         $.each(paysData, function(index, ele){
-            ele.total_e =  ele.cost;
-            ele.total_e = ele.total_e;
-            ele.total_a = ele.total_e;
+            ele.total_cr = ele.cost * ele.rate;    // 美元*汇率
+            var info = t$._prcCalc(ele.total_cr);  // 使用计算器来计算
+            
+            ele.total_e = info["shouyi"];          // 开发者直接收益
+            ele.total_e_ratio = ele.total_e*100/ele.total_cr;  // 开发者收益占比
+
+            ele.total_fc = info["fengcheng"];      //  直接推荐人能够拿到的分成
+
             ele.total_c = 0;
             ele.total = 0;
         });
@@ -102,10 +109,10 @@
                 var sum = 0;
                 $.each(linePartnersPaysData, function(index, payObj){
                     var linePartnerTotalPayObj = getPartnersPay(payObj, allPaysData);
-                    sum += linePartnerTotalPayObj.total;
+                    sum += linePartnerTotalPayObj.total_fc;
                 });
 
-                curPartnerPay.total_c = sum * 0.15;
+                curPartnerPay.total_c = sum;
                 curPartnerPay.total = curPartnerPay.total_e + curPartnerPay.total_c;
             }
 
@@ -120,6 +127,70 @@
 
         return resultsData;
     };
+
+    /// 计算器, 开发者收益, 直接推荐人收益
+    _U._prcCalc = function(RMB_total){
+        var total = RMB_total;
+
+
+        //// 开发者收益计算
+        var shouyi = 0;
+        var gs = " 0 ";
+        
+        var _b = 1000;
+        
+        var inC_List = [0, 4*_b, 6*_b, 10*_b, 20*_b, 50*_b, 200*_b, 500*_b];
+        var RatioList = [0, 0.5, 0.55, 0.6, 0.75, 0.8, 0.85, 0.9, 0.95];
+        
+        var inc_Count = inC_List.length;
+        var inC_pos = 1;
+        for(var i = 1; i < inc_Count; ++i){
+            // 大于最大值
+            if(total > inC_List[inc_Count - 1]){
+                inC_pos = inc_Count;
+                break;
+            }
+            
+            
+            if(total <= inC_List[i]){
+                inC_pos = i;
+                break;
+            }
+        }
+        
+        var total_income = 0;
+        for(var i = 0; i < inC_pos; ++i){
+            var left = i + 1;
+            var right = i;
+            
+            var inCome = 0;
+            
+
+            if(left == inC_pos){
+                inCome = (total - inC_List[right]) * RatioList[left];
+                gs += " + (" + total + " - " + inC_List[right] + ") * " + RatioList[left];
+            }else{
+                inCome = (inC_List[left] - inC_List[right]) * RatioList[left]; 
+                gs += " + (" + inC_List[left] + " - " + inC_List[right] + ") * " + RatioList[left];
+            }
+            
+            total_income += inCome;
+        }
+        
+
+        ///直接推荐人收益计算
+        var referrer_ratio = 0.07;
+        var fengcheng = (RMB_total - total_income) * referrer_ratio;
+        var gs_f = "(" + RMB_total + " - " + total_income + ") * " + referrer_ratio*100 + "%;";
+
+        return {
+            "gs":gs, 
+            "shouyi":total_income,
+            "gs_f": gs_f,
+            "fengcheng": fengcheng
+        };
+    };
+
 
     _U.updateWithForec_ABC = function(yearMonth, partnersData){
         var t$ = this;
@@ -137,7 +208,7 @@
                 paysData = obj.data;
             } 
    
-            var resultData = t$.calculatePaysForECABC(paysData, partnersData);
+            var resultData = t$.calculatePays(paysData, partnersData);
         
             $.each(resultData, function(index, obj){
                 grid.dataSource.add(obj);
@@ -163,9 +234,15 @@
                             id: { type: "string" },
                             name: { type: "string" },
                             referrer: { type: "string" },
-                            total_e: { type: "string" },
-                            total_c: { type: "string" },
-                            total: { type: "string" },
+                            cost: { type: "number" },
+                            rate: { type: "number" },
+                            total_cr: { type: "number" },
+                            total_e_ratio: { type: "number" },
+                            total_e: { type: "number" },
+                            total_fc: { type: "number" },
+                            total_c: { type: "number" },
+                            total: { type: "number" },
+                            
                             payedState: {type: "string"}
                         }
                     }
@@ -208,21 +285,26 @@
                     ]
                 },
                 {
-                    title: "合作App销售报酬",
+                    title: "E部分：合作Apps纯收入 * 开发者占比",
                     columns:[
-                        { field: "total_e", title: "总计", format: "¥ {0:n2}", width: "40px" }
+                        { field: "cost", title: "收入($)", format: "${0:n2}", width: "40px" },
+                        { field: "rate", title: "汇率", format: "{0:n2}", width: "32px" },
+                        { field: "total_cr", title: "收入(¥)", format: "¥{0:n2}", width: "40px" },
+                        { field: "total_e_ratio", title: "占比", format: "{0:n2}%", width: "32px" },
+                        { field: "total_e", title: "E收入(¥)", format: "¥{0:n2}", width: "50px" }
+                        //,{ field: "total_fc", title: "推荐人收入(¥)", format: "¥{0:n2}", width: "50px" }
                     ]
                 },
                 {
-                    title: "推荐提成报酬",
+                    title: "C部分：推荐提成",
                     columns:[
-                        { field: "total_c", title: "总计",format: "¥ {0:n3}", width: "50px" }    
+                        { field: "total_c", title: "C收入(¥)",format: "¥{0:n3}", width: "50px" }    
                     ]
                 },
                 {
-                    title: "总计= 销售 + 提成",
+                    title: "总计 = E + C",
                     columns:[
-                        { field: "total", title: "总计", format: "¥ {0:n2}", width: "40px" }
+                        { field: "total", title: "总计", format: "¥{0:n2}", width: "60px" }
                     ]
                 },
                 { field: "payedState", title: "支付状态", width: "40px" }
@@ -241,7 +323,7 @@
                 win.kendoWindow({
                     actions: ["Pin","Close"],
                     title: "支付记录",
-                    width: 1440,
+                    width: 1680,
                     position: {
                         top: 60
                     },                    

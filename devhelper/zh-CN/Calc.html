@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <title>收益计算器</title> 
+  <meta name="generator" content="WYSIWYG Web Builder 9 Trial Version - http://www.wysiwygwebbuilder.com" /> 
+  <style type="text/css">
+body
+{
+   background-color: #FFFFFF;
+   color: #000000;
+   font-family: SimSun, "宋体", sans-serif; 
+   font-size: 13px;
+   margin: 0;
+   padding: 0;
+}
+a
+{
+   color: #0000FF;
+   text-decoration: underline;
+}
+a:visited
+{
+   color: #800080;
+}
+a:active
+{
+   color: #FF0000;
+}
+a:hover
+{
+   color: #0000FF;
+   text-decoration: underline;
+}
+#wb_Text1 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text1 div
+{
+   text-align: left;
+}
+#in_put
+{
+   border: 1px #A9A9A9 solid;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-size: 13px;
+   text-align: left;
+   vertical-align: middle;
+}
+#calc
+{
+   border: 1px #A9A9A9 solid;
+   background-color: #F0F0F0;
+   color: #000000;
+   font-size: 13px;
+}
+#out
+{
+   border: 1px #A9A9A9 solid;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-size: 13px;
+   text-align: left;
+   resize: none;
+}
+#wb_uid1
+{
+   color: #000000;
+   font-size: 13px;
+}
+#wb_Text1
+{
+   position: absolute;
+   left: 52px;
+   top: 50px;
+   width: 128px;
+   height: 25px;
+   z-index: 0;
+   text-align: left;
+}
+#in_put
+{
+   position: absolute;
+   left: 172px;
+   top: 46px;
+   width: 237px;
+   height: 18px;
+   line-height: 18px;
+   z-index: 1;
+}
+#calc
+{
+   position: absolute;
+   left: 420px;
+   top: 44px;
+   width: 96px;
+   height: 25px;
+   z-index: 2;
+}
+#out
+{
+   position: absolute;
+   left: 52px;
+   top: 76px;
+   width: 80%;
+   height: 320px;
+   z-index: 3;
+}
+#wb_uid0
+{
+   color: #000000;
+   font-size: 13px;
+}
+
+
+</style> 
+ </head> 
+ <body> 
+  <div id="wb_Text1"> 
+   <span id="wb_uid0">输入App收入</span>
+   <span id="wb_uid1">(RMB):</span> 
+  </div> 
+  <input type="text" id="in_put" name="Editbox1" value="" /> 
+  <input type="button" id="calc" onclick="startCalc();" name="" value="计算" /> 
+  <textarea name="TextArea1" id="out" rows="6" cols="72"></textarea> 
+  <script>
+   function startCalc(){
+       
+	   // 输出日志
+       var ui_out = document.getElementById("out");
+	   ui_out.value = '';
+	   
+	   // 输入收入
+	   var ui_input = document.getElementById("in_put");
+	   var total = ui_input.value;
+	   
+	   // 计算开发者收益
+	   var shouyiObj = shouyiCalc(total);
+	   
+	   // 计算直接推荐者收益
+	   var fenchengObj = fenchengCalc(total);
+	   
+	   var teamShouYi = (total - shouyiObj.shouyi - fenchengObj.fencheng);
+	   
+	   var content = "================================\n\n" +
+					 "App纯收入为：" + total + " RMB \n\n" +
+	                 "1.开发者收益 = " + shouyiObj.shouyi + "  , 占总收入比例：" + (shouyiObj.shouyi * 100) / total  + "% \n" +
+					 "  计算公式 = " + shouyiObj.gs + " \n\n" + 
+					 "2.直接推荐者收益 = " + fenchengObj.fencheng + "  , 占总收入比例：" + (fenchengObj.fencheng * 100) / total  + "% \n" +
+					 "  计算公式 = " + fenchengObj.gs + " \n\n" +
+					 "3.团队收入 = " + teamShouYi + "  , 占总收入比例：" + (teamShouYi * 100) / total  + "% \n\n" +
+					 "================================\n";
+	                 
+	   ui_out.value = content;
+   }
+   
+   
+   function shouyiCalc(total) {
+    var shouyi = 0;
+	var gs = " 0 ";
+	
+	var _b = 1000;
+	
+	var inC_List = [0, 4*_b, 6*_b, 10*_b, 20*_b, 50*_b, 200*_b, 500*_b];
+	var RatioList = [0, 0.5, 0.55, 0.6, 0.75, 0.8, 0.85, 0.9, 0.95];
+	
+	var inc_Count = inC_List.length;
+	var inC_pos = 1;
+	for(var i = 1; i < inc_Count; ++i){
+		// 大于最大值
+		if(total > inC_List[inc_Count - 1]){
+			inC_pos = inc_Count;
+			break;
+		}
+		
+		
+		if(total <= inC_List[i]){
+			inC_pos = i;
+			break;
+		}
+	}
+	
+	var total_income = 0;
+	for(var i = 0; i < inC_pos; ++i){
+		var left = i + 1;
+		var right = i;
+		
+		var inCome = 0;
+		
+
+		if(left == inC_pos){
+			inCome = (total - inC_List[right]) * RatioList[left];
+			gs += " + (" + total + " - " + inC_List[right] + ") * " + RatioList[left];
+		}else{
+			inCome = (inC_List[left] - inC_List[right]) * RatioList[left]; 
+			gs += " + (" + inC_List[left] + " - " + inC_List[right] + ") * " + RatioList[left];
+		}
+		
+		total_income += inCome;
+	}
+	
+	return {"gs":gs, "shouyi":total_income};
+	
+   }
+
+   function fenchengCalc(total) {
+        var ratio = 0.07;
+		var shouyi = shouyiCalc(total).shouyi;
+		var fencheng = (total - shouyi) * ratio;
+		var gs = "(" + total + " - " + shouyi + ") * " + ratio*100 + "%;";
+		return {"gs":gs, "fencheng":fencheng};
+   }
+   </script>  
+ </body>
+</html>

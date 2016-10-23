@@ -23,7 +23,12 @@
                 { type: "button", id:'toolBtn-apply', spriteCssClass: "k-tool-icon k-font-icon k-i-plus", text: "申请加入", enable: true, click: function(){_MC.send('app.showApplyWindow');}},
                 { type: "button", id:'toolBtn-pays', spriteCssClass: "k-tool-icon k-font-icon  k-i-dollar", text: "支付记录", enable: true, click: function(){_MC.send('app.showPayHistoryWindow');}},
                 { type: "button", id:'toolBtn-partners', spriteCssClass: "k-tool-icon k-font-icon k-i-format-number", text: "合作者名单", enable: true, click: function(){_MC.send('app.showPartnersWindow');}},
-                //{ type: "button", id:'toolBtn-resources', spriteCssClass: "k-tool-icon k-font-icon  k-i-sort-asc", text: "项目记录", enable: true, click: function(){_MC.send('app.showResourcesWindow');}},
+                { type: "button", id:'toolBtn-resources', spriteCssClass: "k-tool-icon k-font-icon  k-i-sort-asc", text: "收益计算器", enable: true, click: function(){
+                    b$.App.open('Calc.html');
+                }},
+                { type: "button", id:'toolBtn-resources', spriteCssClass: "k-tool-icon k-font-icon  k-i-sort-asc", text: "合作说明", enable: true, click: function(){
+                    b$.App.open('https://github.com/Romanysoft/working/wiki/Business-Cooperation');
+                }},                
                 { type: "button", id:'toolBtn-shares', spriteCssClass: "k-tool-icon k-font-icon   k-i-insert-file", text: "共享文件", enable: true, click: function(){_MC.send('app.showSharesWindow');}},
                 { type: "separator", spriteCssClass: "flex-width" },
                 {template: tplStr }
