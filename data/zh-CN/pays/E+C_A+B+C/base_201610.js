@@ -33,6 +33,11 @@
     _U.data.push(_U.tp({id: "A023", visits: 5, start:"2016/10/22", end:"2016/10/22"}));    
 
     //2016.10.23
+    _U.data.push(_U.tp({id: "A019", visits: 356, start:"2016/10/22", end:"2016/10/23"}));  
+    _U.data.push(_U.tp({id: "A020", visits: 205, start:"2016/10/22", end:"2016/10/23"}));  
+    _U.data.push(_U.tp({id: "A021", visits: 156, start:"2016/10/22", end:"2016/10/23"}));  
+    _U.data.push(_U.tp({id: "A022", visits: 96, start:"2016/10/22", end:"2016/10/23"}));  
+    _U.data.push(_U.tp({id: "A023", visits: 3, start:"2016/10/22", end:"2016/10/23"}));      
 
 
     return _U;
