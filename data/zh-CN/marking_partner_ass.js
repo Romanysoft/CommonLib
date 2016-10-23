@@ -173,7 +173,7 @@
         onJob:_U.JobState[1], 
         isPact:true,
         lastSignedDate:20160901,
-        payWayType:_U.PayWayTypes[1],
+        payWayType:_U.PayWayTypes[0],
         payWayAcount:"a15598123598",
         payment:_U.Payments[2], 
         KeepSecret: _U.KeepSecret[1], // 薪资是否保密
@@ -228,7 +228,7 @@
         QQ:"323067***",
         email:"323067***@qq.com",
         lastSignedDate:20160905,
-        payWayType:_U.PayWayTypes[1],
+        payWayType:_U.PayWayTypes[0],
         payWayAcount:"",
         payment:_U.Payments[2], 
         KeepSecret: _U.KeepSecret[1], // 薪资是否保密
@@ -264,7 +264,7 @@
         QQ:"626087***",
         email:"626087***@qq.com",
         lastSignedDate:20160918,
-        payWayType:_U.PayWayTypes[1],
+        payWayType:_U.PayWayTypes[0],
         payWayAcount:"",
         payment:_U.Payments[2], 
         KeepSecret: _U.KeepSecret[1], // 薪资是否保密
@@ -282,7 +282,7 @@
         QQ:"175184***",
         email:"175184***@qq.com",
         lastSignedDate:20160918,
-        payWayType:_U.PayWayTypes[1],
+        payWayType:_U.PayWayTypes[0],
         payWayAcount:"",
         payment:_U.Payments[2], 
         KeepSecret: _U.KeepSecret[1], // 薪资是否保密
@@ -300,7 +300,7 @@
         QQ:"30369***",
         email:"30369***@qq.com",
         lastSignedDate:20161008,
-        payWayType:_U.PayWayTypes[1],
+        payWayType:_U.PayWayTypes[0],
         payWayAcount:"",
         payment:_U.Payments[2], 
         KeepSecret: _U.KeepSecret[1], // 薪资是否保密
