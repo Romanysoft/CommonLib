@@ -34,7 +34,7 @@
                 { type: "button", id:'toolBtn-resources', spriteCssClass: "k-tool-icon k-font-icon  k-i-sort-asc", text: "合作说明", enable: true, click: function(){
                     b$.App.open('https://github.com/Romanysoft/working/wiki/Business-Cooperation');
                 }},                
-                { type: "button", id:'toolBtn-shares', spriteCssClass: "k-tool-icon k-font-icon   k-i-insert-file", text: "共享文件", enable: true, click: function(){_MC.send('app.showSharesWindow');}},
+                //{ type: "button", id:'toolBtn-shares', spriteCssClass: "k-tool-icon k-font-icon   k-i-insert-file", text: "共享文件", enable: true, click: function(){_MC.send('app.showSharesWindow');}},
                 { type: "button", id:'toolBtn-feedback',  text: "有疑问？", enable: true, click: function(){
                     //http://shang.qq.com/v3/widget.html
                     b$.App.open("http://wpa.qq.com/msgrd?v=3&uin=34314687&site=qq&menu=yes")
