@@ -23,7 +23,8 @@
                 { type: "button", id:'toolBtn-apply', spriteCssClass: "k-tool-icon k-font-icon k-i-plus", text: "申请加入", enable: true, click: function(){
                    //_MC.send('app.showApplyWindow');
                    //<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1420836008&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2::53" alt="欢迎您咨询或申请加入我们！" title="欢迎您咨询或申请加入我们！"/></a>
-                   b$.App.open("http://wpa.qq.com/msgrd?v=3&uin=1420836008&site=qq&menu=yes")
+                  //http://shang.qq.com/v3/widget.html
+                  b$.App.open("http://wpa.qq.com/msgrd?v=3&uin=34314687&site=qq&menu=yes")
                 }},
                 { type: "button", id:'toolBtn-pays', spriteCssClass: "k-tool-icon k-font-icon  k-i-dollar", text: "支付记录", enable: true, click: function(){_MC.send('app.showPayHistoryWindow');}},
                 { type: "button", id:'toolBtn-partners', spriteCssClass: "k-tool-icon k-font-icon k-i-format-number", text: "合作者名单", enable: true, click: function(){_MC.send('app.showPartnersWindow');}},
@@ -35,7 +36,8 @@
                 }},                
                 { type: "button", id:'toolBtn-shares', spriteCssClass: "k-tool-icon k-font-icon   k-i-insert-file", text: "共享文件", enable: true, click: function(){_MC.send('app.showSharesWindow');}},
                 { type: "button", id:'toolBtn-feedback',  text: "有疑问？", enable: true, click: function(){
-                    b$.App.open("http://wpa.qq.com/msgrd?v=3&uin=1420836008&site=qq&menu=yes")
+                    //http://shang.qq.com/v3/widget.html
+                    b$.App.open("http://wpa.qq.com/msgrd?v=3&uin=34314687&site=qq&menu=yes")
                 }},
                 { type: "separator", spriteCssClass: "flex-width" },
                 {template: tplStr }
