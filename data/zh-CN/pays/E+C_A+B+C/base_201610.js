@@ -25,12 +25,14 @@
     _U.data.push(_U.tp({id: "A022", visits: 200+31847, start:"2016/10/01", end:"2016/10/21"}));  
     _U.data.push(_U.tp({id: "A023", visits: 200+53, start:"2016/10/09", end:"2016/10/21"}));
 
+    //2016.10.22
     _U.data.push(_U.tp({id: "A019", visits: 2575, start:"2016/10/22", end:"2016/10/22"}));  
     _U.data.push(_U.tp({id: "A020", visits: 3892, start:"2016/10/22", end:"2016/10/22"}));  
     _U.data.push(_U.tp({id: "A021", visits: 3106, start:"2016/10/22", end:"2016/10/22"}));  
     _U.data.push(_U.tp({id: "A022", visits: 2841, start:"2016/10/22", end:"2016/10/22"}));  
     _U.data.push(_U.tp({id: "A023", visits: 5, start:"2016/10/22", end:"2016/10/22"}));    
 
+    //2016.10.23
 
 
     return _U;

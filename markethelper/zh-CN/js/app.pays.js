@@ -192,6 +192,7 @@
             reorderable: true,
             resizable: true,
             filterable: true,
+            sortable: true,
             columnMenu: true,
             pageable: {
                 input: true,

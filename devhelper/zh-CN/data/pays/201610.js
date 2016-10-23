@@ -23,8 +23,8 @@
     _U.data.push(_U.tp({id: "D1150418", cost: 345.3*curE, start:"2016/10/01", end:"2016/10/31"}));  
     _U.data.push(_U.tp({id: "D2150728", cost: 248.5*curE, start:"2016/10/01", end:"2016/10/31"}));  
     _U.data.push(_U.tp({id: "D3150916", cost: 156.2*curE, start:"2016/10/01", end:"2016/10/31"}));  
-    _U.data.push(_U.tp({id: "D4151112", cost: 277.9*curE, start:"2016/10/09", end:"2016/10/31"}));
-    _U.data.push(_U.tp({id: "D5151202", cost: 52.5*curE, start:"2016/10/09", end:"2016/10/31"}));
+    _U.data.push(_U.tp({id: "D4151112", cost: 277.9*curE, start:"2016/10/01", end:"2016/10/31"}));
+    _U.data.push(_U.tp({id: "D5151202", cost: 52.5*curE, start:"2016/10/01", end:"2016/10/31"}));
     _U.data.push(_U.tp({id: "D6160908", cost: 2.3*curE, start:"2016/10/01", end:"2016/10/31"}));  
 
 

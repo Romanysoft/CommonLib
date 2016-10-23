@@ -184,6 +184,7 @@
             },
             reorderable: true,
             resizable: true,
+            sortable: true,
             filterable: true,
             columnMenu: true,
             pageable: {
