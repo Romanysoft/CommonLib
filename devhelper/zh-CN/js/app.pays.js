@@ -288,7 +288,7 @@
                     title: "E部分：合作Apps纯收入 * 开发者占比",
                     columns:[
                         { field: "cost", title: "收入($)", format: "${0:n2}", width: "40px" },
-                        { field: "rate", title: "汇率", format: "{0:n2}", width: "32px" },
+                        { field: "rate", title: "汇率", format: "{0:n5}", width: "40px" },
                         { field: "total_cr", title: "收入(¥)", format: "¥{0:n2}", width: "40px" },
                         { field: "total_e_ratio", title: "占比", format: "{0:n2}%", width: "32px" },
                         { field: "total_e", title: "E收入(¥)", format: "¥{0:n2}", width: "50px" }
