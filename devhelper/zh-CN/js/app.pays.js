@@ -271,15 +271,15 @@
                 {
                     title: "时间范围",
                     columns:[
-                        { field: "start", title: "开始日期",  width: "30px" },
-                        { field: "end", title: "结束日期", width: "30px" }
+                        { field: "start", title: "开始日期",  width: "44px" },
+                        { field: "end", title: "结束日期", width: "44px" }
                     ]
                 },
                 {
                     title: "合作者",
                     columns:[
                         { field: "id", title: "编号",  width: "30px" },
-                        { field: "name", title: "姓名", width: "40px" },
+                        { field: "name", title: "姓名", width: "36px" },
                         { field: "referrer", title: "推荐人", width: "40px"}
                     ]
                 },
