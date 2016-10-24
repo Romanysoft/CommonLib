@@ -32,7 +32,7 @@
     _U.data.push(_U.tp({id: "D8160908", cost: 2.3, rate: curE, start:20161001, end:20161023}));  
 
     //2016.10.24
-    if(1){
+    if(0){
         _U.data.push(_U.tp({id: "D1150418", cost: 42.7, rate: curE, start:20161024, end:20161024}));  
         _U.data.push(_U.tp({id: "D2150425", cost: 10.2, rate: curE, start:20161024, end:20161024}));  
         _U.data.push(_U.tp({id: "D3150522", cost: 13.4, rate: curE, start:20161024, end:20161024}));  
