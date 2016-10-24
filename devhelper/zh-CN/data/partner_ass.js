@@ -125,7 +125,7 @@
     
     if(1){
         _U.data.push(_U.tp({
-            id: "D" + ++No + "160908" ,
+            id: "D" + ++No + "161024" ,
             name:"刘磊",  
             QQ: kendo.toString(490908595/100, "####xxx"),
             email:"490908595@qq.com",
@@ -136,7 +136,7 @@
         }));
 
         _U.data.push(_U.tp({
-            id: "D" + ++No + "160908" ,
+            id: "D" + ++No + "161024" ,
             name:"曹亚男",  
             QQ: kendo.toString(971882727/100, "####xxx"),
             email:"971882727@qq.com",// cyn_rich@163.com
@@ -147,13 +147,13 @@
         })); 
 
         _U.data.push(_U.tp({
-            id: "D" + ++No + "160908" ,
+            id: "D" + ++No + "161024" ,
             name:"柳梦阳 ",  
             QQ: kendo.toString(1481632629/100, "####xxx"),
             email:"1481632629@qq.com",
             payWayType:_U.PayWayTypes[0],
             payWayAcount:"13520805212",
-            referrer:"D9160908",
+            referrer:"D9161024",
             speciality:"前端Html Javascript Css"
         }));               
     }
