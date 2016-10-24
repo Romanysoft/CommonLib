@@ -118,7 +118,7 @@
         QQ: kendo.toString(359126613/100, "####xxx"),
         email:"359126613*@qq.com",
         payWayType:_U.PayWayTypes[0],
-        payWayAcount:"",
+        payWayAcount:"15801493503",
         speciality:"前端Javascript, html, css 及Java语言"
     }));
 
