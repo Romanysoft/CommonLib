@@ -82,7 +82,7 @@
             }
             
             ele.total_e = info["shouyi"];          // 开发者直接收益
-            ele.total_e_ratio = ele.total_e*100/ele.total_cr;  // 开发者收益占比
+            ele.total_e_ratio =ele.total_cr === 0? 0 : ele.total_e*100/ele.total_cr;  // 开发者收益占比
 
             ele.total_fc = info["fengcheng"];      //  直接推荐人能够拿到的分成
 
@@ -106,7 +106,10 @@
                 var linePartnersPaysData = [];
                 $.each(linePartners, function(i, partner){
                     $.each(allPaysData, function(i, rec){
-                        if(rec.id === partner.id){
+                        if(rec.id === partner.id 
+                        && rec.start === payRecordObj.start
+                        && rec.end === payRecordObj.end
+                        ){
                             linePartnersPaysData.push(rec);
                         }
                     })

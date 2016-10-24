@@ -3,7 +3,7 @@
     /// 本单元的处理
     var _U = {};
 
-    _U.payedState = ["完成", "待支付", "支付失败"];
+    _U.payedState = ["完成", "待支付", "支付失败", "不用支付"];
     _U.data = [];
     _U.tp = function(data){
         var o = {
@@ -38,6 +38,9 @@
     _U.data.push(_U.tp({id: "A021", visits: 1156, start:"2016/10/22", end:"2016/10/23"}));  
     _U.data.push(_U.tp({id: "A022", visits: 96, start:"2016/10/22", end:"2016/10/23"}));  
     _U.data.push(_U.tp({id: "A023", visits: 3, start:"2016/10/22", end:"2016/10/23"}));  
+
+    //2016.10.24
+    
 
     
     return _U;

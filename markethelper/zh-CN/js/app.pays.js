@@ -98,7 +98,10 @@
                 var linePartnersPaysData = [];
                 $.each(linePartners, function(i, partner){
                     $.each(allPaysData, function(i, rec){
-                        if(rec.id === partner.id){
+                        if(rec.id === partner.id 
+                        && rec.start === payRecordObj.start
+                        && rec.end === payRecordObj.end
+                        ){
                             linePartnersPaysData.push(rec);
                         }
                     })
