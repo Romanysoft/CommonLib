@@ -139,8 +139,8 @@
         
         var _b = 1000;
         
-        var inC_List = [0, 4*_b, 6*_b, 10*_b, 20*_b, 50*_b, 200*_b, 500*_b];
-        var RatioList = [0, 0.5, 0.55, 0.6, 0.75, 0.8, 0.85, 0.9, 0.95];
+        var inC_List = [0, 4*_b, 6*_b, 10*_b, 20*_b, 50*_b, 200*_b];
+        var RatioList = [0, 0.5, 0.55, 0.6, 0.75, 0.8, 0.85, 0.9];
         
         var inc_Count = inC_List.length;
         var inC_pos = 1;
