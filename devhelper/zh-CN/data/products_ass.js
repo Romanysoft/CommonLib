@@ -10,7 +10,7 @@
     _U.types = ["上线", "Demo"]
 
     ////练习
-    if(0){
+    if(1){
         _U.data.push({
             productName:"",
             srcdir:"",
@@ -29,16 +29,6 @@
             partnerID:"D9161024"
         });        
     }
-
-
-    _U.data.push({
-        productName:"",
-        srcdir:"",
-        appstoreurl:"",
-        partnerID:"D1160908"
-    });
-
-
 
 
     return _U;
