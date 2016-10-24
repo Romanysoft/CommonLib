@@ -73,7 +73,13 @@
         /// 先整理格式化
         $.each(paysData, function(index, ele){
             ele.total_cr = ele.cost * ele.rate;    // 美元*汇率
-            var info = t$._prcCalc(ele.total_cr);  // 使用计算器来计算
+            var info;
+
+            if(ele.end - ele.start > 7) {                // 大于7天，采用月结算
+                info = t$._prcCalc(ele.total_cr, true);  // 使用计算器来计算
+            }else{
+                 info = t$._prcCalc(ele.total_cr, false);  // 使用计算器来计算
+            }
             
             ele.total_e = info["shouyi"];          // 开发者直接收益
             ele.total_e_ratio = ele.total_e*100/ele.total_cr;  // 开发者收益占比
@@ -129,7 +135,7 @@
     };
 
     /// 计算器, 开发者收益, 直接推荐人收益
-    _U._prcCalc = function(RMB_total){
+    _U._prcCalc = function(RMB_total, isMonth){
         var total = RMB_total;
 
 
@@ -139,8 +145,15 @@
         
         var _b = 1000;
         
-        var inC_List = [0, 4*_b, 6*_b, 10*_b, 20*_b, 50*_b, 200*_b];
-        var RatioList = [0, 0.5, 0.55, 0.6, 0.75, 0.8, 0.85, 0.9];
+        var inC_List, RatioList; 
+
+        if(isMonth){
+            inC_List = [0, 4*_b, 6*_b, 10*_b, 20*_b, 50*_b, 200*_b];
+            RatioList = [0, 0.5, 0.55, 0.6,    0.75,   0.8,   0.85, 0.9];
+        }else{
+            inC_List =  [0, 0.2*_b, 0.4*_b, 0.8*_b, 1.2*_b, 1.8*_b, 2.6*_b, 3.6*_b, 4.8*_b];
+            RatioList = [0,    0.5,   0.55,    0.6,    0.65,   0.7,    0.75,   0.8,    0.85,  0.9];
+        }
         
         var inc_Count = inC_List.length;
         var inC_pos = 1;

@@ -160,14 +160,23 @@ a:hover
    }
    
    
-   function shouyiCalc(total) {
+   function shouyiCalc(total, isMonth) {
     var shouyi = 0;
 	var gs = " 0 ";
 	
 	var _b = 1000;
 	
-  var inC_List = [0, 4*_b, 6*_b, 10*_b, 20*_b, 50*_b, 200*_b];
-  var RatioList = [0, 0.5, 0.55, 0.6, 0.75, 0.8, 0.85, 0.9];
+  var inC_List, RatioList; 
+
+  isMonth = true;
+
+  if(isMonth){
+      inC_List = [0, 4*_b, 6*_b, 10*_b, 20*_b, 50*_b, 200*_b];
+      RatioList = [0, 0.5, 0.55, 0.6,    0.75,   0.8,   0.85, 0.9];
+  }else{
+      inC_List =  [0, 0.2*_b, 0.4*_b, 0.8*_b, 1.2*_b, 1.8*_b, 2.6*_b, 3.6*_b, 4.8*_b];
+      RatioList = [0,    0.5,   0.55,    0.6,    0.65,   0.7,    0.75,   0.8,    0.85,  0.9];
+  }
 	
 	var inc_Count = inC_List.length;
 	var inC_pos = 1;
