@@ -75,7 +75,7 @@
             ele.total_cr = ele.cost * ele.rate;    // 美元*汇率
             var info;
 
-            if(ele.end - ele.start > 7) {                // 大于7天，采用月结算
+            if(ele.end <= 20161023) {                // 大于7天，采用月结算
                 info = t$._prcCalc(ele.total_cr, true);  // 使用计算器来计算
             }else{
                  info = t$._prcCalc(ele.total_cr, false);  // 使用计算器来计算
