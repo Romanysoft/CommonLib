@@ -13,6 +13,7 @@
         types:_U.types[0],
         productName:"WheastoneBridgeCalculator",
         srcdir:"testprj\1git_html\WheastoneBridgeCalculator",
+        devdir:"/Volumes/DataShareHFS/2013projects/Bus/p_WheastoneBridgeCalculator",
         appstoreurl:"https://itunes.apple.com/us/app/wheastonebridgecalculator/id1152151873?l=zh&ls=1&mt=12",
         demoName:"WheastoneBridgeCalculator",
         demoUrl:"http://www.99cankao.com/electronic/huisideng.php",
