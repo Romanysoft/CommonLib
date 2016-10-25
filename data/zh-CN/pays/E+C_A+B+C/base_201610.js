@@ -18,6 +18,7 @@
         return $.extend(o, data);
     };
 
+    var nowDate = 0;
 
     _U.data.push(_U.tp({id: "A019", visits: 200+16867, start:20161001, end:20161021}));  
     _U.data.push(_U.tp({id: "A020", visits: 200+68872, start:20161001, end:20161021}));  
@@ -40,7 +41,12 @@
     _U.data.push(_U.tp({id: "A023", visits: 3, start:20161023, end:20161023}));  
 
     //2016.10.24
-    
+    nowDate = 20161024;
+    _U.data.push(_U.tp({id: "A019", visits: 4318, start:nowDate, end:nowDate}));  
+    _U.data.push(_U.tp({id: "A020", visits: 2391, start:nowDate, end:nowDate}));  
+    _U.data.push(_U.tp({id: "A021", visits: 1502, start:nowDate, end:nowDate}));  
+    _U.data.push(_U.tp({id: "A022", visits: 1071, start:nowDate, end:nowDate}));  
+    _U.data.push(_U.tp({id: "A023", visits: 2, start:nowDate, end:nowDate})); 
 
     
     return _U;
