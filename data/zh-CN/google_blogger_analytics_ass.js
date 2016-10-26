@@ -135,7 +135,7 @@
         url:"stanfordtweak.tumblr.com", 
         traceid:"UA-82372746-10", 
         ass:assObj,
-        partnerID:"",   // 
+        partnerID:"A024",   // 
         gmail:"",         // gmail邮箱  
         oldPartners:[]    // 此博客以前的合作者
     }); 
