@@ -257,6 +257,9 @@
                         top: 60
                     },                    
                     resizable: true,
+                    resize: function(){
+                        $('#pays-window > .pays-grid-ec').data("kendoGrid").setOptions({height:win.height() - 64});
+                    },
                     model:false
                 });
 
