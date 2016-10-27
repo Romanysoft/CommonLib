@@ -9,6 +9,26 @@
     _U.data = [];
     _U.types = ["上线", "Demo"]
 
+    _U.data.push({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        appstoreurl:"",
+        demoName:"音箱分频器在线计算公式",
+        demoUrl:"http://www.99cankao.com/electronic/yinxiangfenpinqi.php",
+        partnerID:"D14161027"
+    });
+
+    _U.data.push({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        appstoreurl:"",
+        demoName:"玛雅日历计算器",
+        demoUrl:"http://www.99cankao.com/date/mayan-calendar.php",
+        partnerID:"D13161027"
+    });
+
 
     _U.data.push({
         types:_U.types[1],
