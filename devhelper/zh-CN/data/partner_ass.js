@@ -174,7 +174,7 @@
             QQ: kendo.toString(1262347593/100, "####xxx"),
             email:"1262347593@qq.com",
             payWayType:_U.PayWayTypes[0],
-            payWayAcount:"",
+            payWayAcount:"1262347593@qq.com",
             referrer:"D9161024",
             speciality:"前端Html Javascript Css"
         }));        
