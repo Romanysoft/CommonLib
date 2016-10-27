@@ -166,7 +166,31 @@
             payWayAcount:"18210498916",
             referrer:"D9161024",
             speciality:"前端Html Javascript Css 及Java"
-        }));            
+        }));
+
+        _U.data.push(_U.tp({
+            id: "D" + ++No + "161027" ,
+            name:"赵红云", // 河北石家庄人  
+            QQ: kendo.toString(1262347593/100, "####xxx"),
+            email:"1262347593@qq.com",
+            payWayType:_U.PayWayTypes[0],
+            payWayAcount:"",
+            referrer:"D9161024",
+            speciality:"前端Html Javascript Css"
+        }));        
+
+        _U.data.push(_U.tp({
+            id: "D" + ++No + "161027" ,
+            name:"魏鑫鑫", // 安徽人  
+            QQ: kendo.toString(1286951868/100, "####xxx"),
+            email:"1286951868@qq.com",
+            payWayType:_U.PayWayTypes[0],
+            payWayAcount:"18500404550",
+            referrer:"D9161024",
+            speciality:"前端Html Javascript Css"
+        }));           
+
+
     }
 
 
