@@ -35,8 +35,8 @@
         productName:"",
         srcdir:"",
         appstoreurl:"",
-        demoName:"孔尺寸在线计算器",
-        demoUrl:"http://www.yunsuan.org/app/4197",
+        demoName:"相近颜色取色计算器",
+        demoUrl:"http://www.99cankao.com/colorconverter/color_close.php",
         partnerID:"D9161024"
     });
 

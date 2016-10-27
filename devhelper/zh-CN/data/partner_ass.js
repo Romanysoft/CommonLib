@@ -155,7 +155,18 @@
             payWayAcount:"13520805212",
             referrer:"D9161024",
             speciality:"前端Html Javascript Css"
-        }));               
+        }));     
+
+        _U.data.push(_U.tp({
+            id: "D" + ++No + "161027" ,
+            name:"王洋", // 河北人  
+            QQ: kendo.toString(524200821/100, "####xxx"),
+            email:"524200821@qq.com",
+            payWayType:_U.PayWayTypes[0],
+            payWayAcount:"18210498916",
+            referrer:"D9161024",
+            speciality:"前端Html Javascript Css 及Java"
+        }));            
     }
 
 
