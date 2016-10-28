@@ -61,7 +61,7 @@
         types:_U.types[1],
         productName:"ComparatorHysteresesCalculator",
         srcdir:"testprj/1git_html/ComparatorHysteresesCalculator",
-        devdir:"",
+        devdir:"/Volumes/DataShareHFS2/2013projects/Bus/p_ComparatorHysteresesCalculator/",
         appstoreurl:"",
         demoName:"迟滞比较器计算",
         demoUrl:"http://www.99cankao.com/electronic/chizhi.php",

@@ -23,6 +23,7 @@
     /// 更新支付记录数据
     _U.reloadData = function(dateObj){
         var t$ = this;
+
         var url = "data/partner_ass.js" + "?t=" + (new Date()).getTime();
         $.getScript(url).done(function(data, textStatus, jqxhr){
             var partnersData = [];
@@ -378,8 +379,11 @@
                 /// 初始化表格
                 $('#pays-window > .pays-grid-ec').kendoGrid(t$.OptionsForec);
 
-                /// 使用默认值
-                t$.reloadData(getCacleDate());
+                var grid = $('#pays-window > .pays-grid-ec').data('kendoGrid');
+                grid.bind("dataBound", function(){
+                    /// 使用默认值
+                    t$.reloadData(getCacleDate());
+                });
             }
 
             var w = win.data('kendoWindow');
