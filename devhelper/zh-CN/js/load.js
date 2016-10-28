@@ -45,7 +45,6 @@
             "js/app.intro.js",
             "js/app.pays.js",
             "js/app.toolbar.js",
-            "js/app.player.js",
             "js/app.js",
 
             // <!--App 启动-->

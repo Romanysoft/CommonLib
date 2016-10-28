@@ -23,6 +23,24 @@
         })
     };
 
+    /// 更新支付记录数据
+    _U.reloadData = function(dateObj){
+        var t$ = this;
+        var url = "data/partner_ass.js" + "?t=" + (new Date()).getTime();
+        $.getScript(url).done(function(data, textStatus, jqxhr){
+            var partnersData = [];
+            if($.RTYUtils.isString(data)){
+                var obj = eval(data);  
+                partnersData = obj.data;
+            }
+
+            // 获取当前时间格式
+            var date = dateObj || new Date();
+            var curYearMonth = kendo.toString(date, "yyyyMM");
+            t$.updateWith(curYearMonth, partnersData);
+        });
+    };
+
     _U.launch = function () {
         var t$ = this;
         _U.loadTemplate(function(){
@@ -57,9 +75,12 @@
                                     model: {
                                         fields: {
                                             partnerID: { type: "string" },
+                                            partnerName: { type: "string" },
                                             productName: { type: "string" },
                                             srcdir: { type: "string" },
-                                            appstoreurl: { type: "string" }
+                                            appstoreurl: { type: "string" },
+                                            demoName: { type: "string" },
+                                            demoUrl: { type: "string" }
                                         }
                                     }
                                 },
@@ -87,7 +108,10 @@
                                 { field: "productName", title: "应用名称", width: "80px" },
                                 { field: "srcdir", title: "源码路径", width: "100px" },
                                 { field: "appstoreurl", title: "商店链接", width: "160px" },
-                                { field: "partnerID", title: "合作者",  width: "40px" }
+                                { field: "demoName", title: "Demo名称", width: "100px" },
+                                { field: "demoUrl", title: "参照", width: "100px" },
+                                { field: "partnerID", title: "合作者ID",  width: "50px" },
+                                { field: "partnerName", title: "合作者名称",  width: "50px" }
                             ]
                     })
                 });
