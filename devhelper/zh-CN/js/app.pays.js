@@ -25,18 +25,22 @@
         var t$ = this;
 
         var url = "data/partner_ass.js" + "?t=" + (new Date()).getTime();
-        $.getScript(url).done(function(data, textStatus, jqxhr){
-            var partnersData = [];
-            if($.RTYUtils.isString(data)){
-                var obj = eval(data);  
-                partnersData = obj.data;
-            }
+        $.getScript(url)
+	        .done(function(data, textStatus, jqxhr){
+	            var partnersData = [];
+	            if($.RTYUtils.isString(data)){
+	                var obj = eval(data);  
+	                partnersData = obj.data;
+	            }
 
-            // 获取当前时间格式
-            var date = dateObj || new Date();
-            var curYearMonth = kendo.toString(date, "yyyyMM");
-            t$.updateWith(curYearMonth, partnersData);
-        });
+	            // 获取当前时间格式
+	            var date = dateObj || new Date();
+	            var curYearMonth = kendo.toString(date, "yyyyMM");
+	            t$.updateWith(curYearMonth, partnersData);
+	        })
+ 	       .fail(function( jqxhr, settings, exception) {
+ 	       	   console.log("-------------------[load]Error-----------------" + url);
+ 	       });	   
     };
 
     /// 计算及统计支付情况 for E+C and A+B+C
@@ -379,8 +383,11 @@
                 /// 初始化表格
                 $('#pays-window > .pays-grid-ec').kendoGrid(t$.OptionsForec);
 
-                /// 使用默认值
-                t$.reloadData(getCacleDate());
+				setTimeout(function(){
+					/// 使用默认值
+	                t$.reloadData(getCacleDate());
+				},500);
+
             }
 
             var w = win.data('kendoWindow');

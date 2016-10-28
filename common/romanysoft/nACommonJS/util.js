@@ -48,7 +48,8 @@
         /// 统一设置ajax选项
         try {
             $.ajaxSetup({
-                timeout: 5 * 60 * 1000
+                timeout: 5 * 60 * 1000,
+                cache: true	
             });
         } catch (e) {
         }
