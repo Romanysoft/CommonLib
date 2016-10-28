@@ -292,8 +292,11 @@
                 /// 初始化表格
                 $('#pays-window > .pays-grid-ec').kendoGrid(t$.OptionsForec);
 
-                /// 使用默认值
-                t$.reloadData(getCacleDate());
+				setTimeout(function(){
+	                /// 使用默认值
+	                t$.reloadData(getCacleDate());
+				},500);
+
             }
 
             var w = win.data('kendoWindow');

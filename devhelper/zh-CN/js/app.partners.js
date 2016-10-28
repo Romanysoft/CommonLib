@@ -38,7 +38,7 @@
                     model:false
                 });
 
-                var url = "data/partner_ass.js";
+                var url = "data/partner_ass.js" + "?t=" + (new Date()).getTime();
                 $.getScript(url).done(function(data, textStatus, jqxhr){
                     var partnersData = [];
                     if($.RTYUtils.isString(data)){
