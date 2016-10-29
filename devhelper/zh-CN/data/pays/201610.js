@@ -104,7 +104,7 @@
     }
 
     //2016.10.28
-    if(1){
+    if(0){
         nowDate = 20161028;
         curE = 6.77750;
         _U.data.push(_U.tp({id: "D1150418", cost: 5.9, rate: curE, start:nowDate, end:nowDate}));  
