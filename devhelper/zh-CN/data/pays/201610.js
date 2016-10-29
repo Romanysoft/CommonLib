@@ -94,7 +94,7 @@
         _U.data.push(_U.tp({id: "D5150916", cost: 14.6, rate: curE, start:nowDate, end:nowDate}));  
         _U.data.push(_U.tp({id: "D6151112", cost: 7.3, rate: curE, start:nowDate, end:nowDate}));
         _U.data.push(_U.tp({id: "D7151202", cost: 24.7, rate: curE, start:nowDate, end:nowDate}));
-        _U.data.push(_U.tp({id: "D8160908", cost: 0.64, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));  
+        _U.data.push(_U.tp({id: "D8160908", cost: 0.64, rate: curE, start:nowDate, end:nowDate}));  
         _U.data.push(_U.tp({id: "D9161024", cost: 0, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));  
         _U.data.push(_U.tp({id: "D10161024", cost: 0, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));  
         _U.data.push(_U.tp({id: "D11161024", cost: 0, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]})); 
