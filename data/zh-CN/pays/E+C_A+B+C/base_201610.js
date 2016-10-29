@@ -84,5 +84,16 @@
     _U.data.push(_U.tp({id: "A023", visits: 1, start:nowDate, end:nowDate}));   
     _U.data.push(_U.tp({id: "A024", visits: 0, start:nowDate, end:nowDate}));  
     
+    
+    //2016.10.29
+    nowDate = 20161028;
+    _U.data.push(_U.tp({id: "A019", visits: 2925, start:nowDate, end:nowDate}));  
+    _U.data.push(_U.tp({id: "A020", visits: 2623, start:nowDate, end:nowDate}));  
+    _U.data.push(_U.tp({id: "A021", visits: 1567, start:nowDate, end:nowDate}));  
+    _U.data.push(_U.tp({id: "A022", visits: 743, start:nowDate, end:nowDate}));  
+    _U.data.push(_U.tp({id: "A023", visits: 0, start:nowDate, end:nowDate}));   
+    _U.data.push(_U.tp({id: "A024", visits: 0, start:nowDate, end:nowDate}));  
+    
+        
     return _U;
 })();
