@@ -94,6 +94,7 @@
     _U.data.push(_U.tp({id: "A023", visits: 0, start:nowDate, end:nowDate}));   
     _U.data.push(_U.tp({id: "A024", visits: 0, start:nowDate, end:nowDate}));  
     
-        
+    window["rty_pays_dataobj"] = _U;
+    
     return _U;
 })();

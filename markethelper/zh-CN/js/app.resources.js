@@ -45,9 +45,8 @@
                     if($.RTYUtils.isString(data)){
                         var obj = eval(data);  
                         dataList = obj.data;
-
-                        //格式化数据模型
-
+                    }else if(!data){
+                    	dataList = window["rty_resources_dataobj"].data;
                     }
                     /// 初始化表格
                     $('#resources-window > .resources-grid').kendoGrid({

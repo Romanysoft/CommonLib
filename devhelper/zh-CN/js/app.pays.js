@@ -31,6 +31,8 @@
 	            if($.RTYUtils.isString(data)){
 	                var obj = eval(data);  
 	                partnersData = obj.data;
+	            }else if(!data){
+	            	partnersData = 	window["rty_partners_dataobj"].data;
 	            }
 
 	            // 获取当前时间格式
@@ -227,7 +229,9 @@
             if($.RTYUtils.isString(data)){
                 var obj = eval(data);  
                 paysData = obj.data;
-            } 
+            }else if(!data){
+            	paysData = window["rty_pays_dataobj"].data;
+        	}  
    
             var resultData = t$.calculatePays(paysData, partnersData);
         

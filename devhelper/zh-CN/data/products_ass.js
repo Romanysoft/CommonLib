@@ -90,6 +90,8 @@
         partnerID:"D8160908"
     });    
 
+
+	window["rty_resources_dataobj"] = _U;
     return _U;
 
 })();

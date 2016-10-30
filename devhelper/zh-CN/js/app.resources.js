@@ -32,7 +32,9 @@
             if($.RTYUtils.isString(data)){
                 var obj = eval(data);  
                 partnersData = obj.data;
-            }
+            }else if(!data){
+	            partnersData = 	window["rty_partners_dataobj"].data;
+	        }
 
             // 获取当前时间格式
             var date = dateObj || new Date();
@@ -63,9 +65,8 @@
                     if($.RTYUtils.isString(data)){
                         var obj = eval(data);  
                         dataList = obj.data;
-
-                        //格式化数据模型
-
+                    }else if(!data){
+                    	dataList = window["rty_resources_dataobj"].data;
                     }
                     /// 初始化表格
                     $('#resources-window > .resources-grid').kendoGrid({

@@ -194,10 +194,7 @@
     }
 
 
-
- 
-
-
+	window["rty_partners_dataobj"] = _U;
 
     return _U;
 })();

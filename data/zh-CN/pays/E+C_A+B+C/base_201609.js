@@ -27,7 +27,7 @@
     _U.data.push(_U.tp({id: "A021", visits: 209546, start:"2016/09/01", end:"2016/09/30"}));  
     _U.data.push(_U.tp({id: "A022", visits: 46569, start:"2016/09/01", end:"2016/09/30"}));  
 
-
+	window["rty_pays_dataobj"] = _U;
 
     return _U;
 })();

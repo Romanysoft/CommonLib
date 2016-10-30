@@ -80,7 +80,7 @@
         content: "你每日，每周，每月QQ邮箱会收到用户数统计邮件"
     }));         
 
-                      
+    window["rty_setup_dataobj"] = _U;                  
 
     return _U;
 })();

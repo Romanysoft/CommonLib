@@ -44,7 +44,10 @@
                     if($.RTYUtils.isString(data)){
                         var obj = eval(data);  
                         dataList = obj.data;
+                    }else if(!data){
+                    	dataList = window["rty_setup_dataobj"].data;
                     }
+                    		
                     /// 初始化表格
                     $('#setups-window > .setups-grid').kendoGrid({
                             dataSource: {

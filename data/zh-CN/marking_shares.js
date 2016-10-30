@@ -62,5 +62,6 @@
         comment:"苹果手机Twitter上推广教程，包含步骤"
     }));             
 
+	window["rty_share_dataobj"] = _U;  
     return _U;
 })();

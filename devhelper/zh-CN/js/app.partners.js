@@ -44,7 +44,9 @@
                     if($.RTYUtils.isString(data)){
                         var obj = eval(data);  
                         partnersData = obj.data;
-                    }
+                    }else if(!data){
+	            		partnersData = 	window["rty_partners_dataobj"].data;
+	            	}
                     /// 初始化表格
                     $('#partner-window > .partner-grid').kendoGrid({
                             dataSource: {

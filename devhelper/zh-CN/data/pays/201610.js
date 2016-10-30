@@ -123,5 +123,7 @@
         _U.data.push(_U.tp({id: "D14161027", cost: 0, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));   
     }
 
+	window["rty_pays_dataobj"] = _U;
+	
     return _U;
 })();
