@@ -190,7 +190,16 @@
             speciality:"前端Html Javascript Css"
         }));           
 
-
+        _U.data.push(_U.tp({
+            id: "D" + ++No + "161031" ,
+            name:"陆明", // 江苏盐城 
+            QQ: kendo.toString(505846360/100, "####xxx"),
+            email:"505846360@qq.com",
+            payWayType:_U.PayWayTypes[0],
+            payWayAcount:"18618114524",
+            referrer:"D8160908",
+            speciality:"前端Html Javascript Css"
+        })); 
     }
 
 
