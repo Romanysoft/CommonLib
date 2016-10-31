@@ -86,13 +86,24 @@
     
     
     //2016.10.29
-    nowDate = 20161028;
+    nowDate = 20161029;
     _U.data.push(_U.tp({id: "A019", visits: 2925, start:nowDate, end:nowDate}));  
     _U.data.push(_U.tp({id: "A020", visits: 2623, start:nowDate, end:nowDate}));  
     _U.data.push(_U.tp({id: "A021", visits: 1567, start:nowDate, end:nowDate}));  
     _U.data.push(_U.tp({id: "A022", visits: 743, start:nowDate, end:nowDate}));  
     _U.data.push(_U.tp({id: "A023", visits: 0, start:nowDate, end:nowDate}));   
     _U.data.push(_U.tp({id: "A024", visits: 0, start:nowDate, end:nowDate}));  
+    
+    
+    //2016.10.30
+    nowDate = 20161030;
+    _U.data.push(_U.tp({id: "A019", visits: 1758, start:nowDate, end:nowDate}));  
+    _U.data.push(_U.tp({id: "A020", visits: 1024, start:nowDate, end:nowDate}));  
+    _U.data.push(_U.tp({id: "A021", visits: 684, start:nowDate, end:nowDate}));  
+    _U.data.push(_U.tp({id: "A022", visits: 325, start:nowDate, end:nowDate}));  
+    _U.data.push(_U.tp({id: "A023", visits: 1, start:nowDate, end:nowDate}));   
+    _U.data.push(_U.tp({id: "A024", visits: 0, start:nowDate, end:nowDate}));  
+    
     
     window["rty_pays_dataobj"] = _U;
     
