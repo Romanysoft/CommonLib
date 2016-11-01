@@ -128,7 +128,7 @@
             id: "D" + ++No + "161024" ,
             name:"刘磊",  
             QQ: kendo.toString(490908595/100, "####xxx"),
-            email:"490908595@qq.com",
+            email:"liuxiaoer@live.cn",
             payWayType:_U.PayWayTypes[0],
             payWayAcount:"liuxiaoer@live.cn",
             referrer:"D8160908",

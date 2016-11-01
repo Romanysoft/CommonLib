@@ -26,7 +26,7 @@
                 }},
                 { type: "button", id:'toolBtn-pays', spriteCssClass: "k-tool-icon k-font-icon  k-i-dollar", text: "支付记录", enable: true, click: function(){_MC.send('app.showPayHistoryWindow');}},
                 { type: "button", id:'toolBtn-partners', spriteCssClass: "k-tool-icon k-font-icon k-i-format-number", text: "合作者名单", enable: true, click: function(){_MC.send('app.showPartnersWindow');}},
-                { type: "button", id:'toolBtn-resources', spriteCssClass: "k-tool-icon k-font-icon  k-i-sort-asc", text: "资源分配记录", enable: true, click: function(){_MC.send('app.showResourcesWindow');}},
+                //{ type: "button", id:'toolBtn-resources', spriteCssClass: "k-tool-icon k-font-icon  k-i-sort-asc", text: "资源分配记录", enable: true, click: function(){_MC.send('app.showResourcesWindow');}},
                 { type: "button", id:'toolBtn-shares', spriteCssClass: "k-tool-icon k-font-icon   k-i-insert-file", text: "共享文件", enable: true, click: function(){_MC.send('app.showSharesWindow');}},
                 { type: "button", id:'toolBtn-feedback',  text: "有疑问？", enable: true, click: function(){
                     b$.App.open("http://wpa.qq.com/msgrd?v=3&uin=1420836008&site=qq&menu=yes")
