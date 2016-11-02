@@ -27,7 +27,8 @@
 			
 			demoName:"", 	   // 参照Demo名称
 			demoUrl:"",        // 参照Demo URL
-			partnerID:"00"     // 关联的合作者, 默认是官方的       
+			partnerID:"00",    // 关联的合作者, 默认是官方的,
+			partnerName:"00"   // 关联合作者的名称    
         };
 
         return $.extend(o, data);
@@ -57,6 +58,20 @@
 	////////////////////////////////////////////////////
 	////// 与开发者合作产品
 	////////////////////////////////////////////////////
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+		
+		/////////////////////////////////
+        demoName:"AppFinder", // find application path by name (OS X)
+        demoUrl:"https://pypi.python.org/pypi/app-find/0.0.12",
+        partnerID:"D10161024"
+    }));
+	
+	
     _U.data.push(_U.tp({
         types:_U.types[1],
         productName:"",
