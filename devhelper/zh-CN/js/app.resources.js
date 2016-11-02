@@ -169,6 +169,10 @@
                         top: 70
                     },
                     resizable: true,
+                    maxWidth: 1680,
+                    resize: function(){
+                        $('#resources-window > .resources-grid').data("kendoGrid").setOptions({height:win.height() - 64});
+                    },
                     model: false
                 });
 
@@ -204,6 +208,13 @@
                         /// 初始化表格
                         $('#resources-window > .resources-grid').kendoGrid(t$.getGridOptions(
                             dataList));
+
+                        var grid = $('#resources-window > .resources-grid').data("kendoGrid");
+
+                        var length = grid.columns.length;
+                        for(var i = 0; i < length; ++i){
+                            grid.autoFitColumn(i);
+                        }
                     });
 
 
