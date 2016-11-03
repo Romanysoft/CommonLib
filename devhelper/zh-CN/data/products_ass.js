@@ -27,6 +27,7 @@
 
 			demoName:"", 	   // 参照Demo名称
 			demoUrl:"",        // 参照Demo URL
+            reference: [],     // 参照
 			partnerID:"00",    // 关联的合作者, 默认是官方的,
 			partnerName:"00"   // 关联合作者的名称
         };
@@ -58,6 +59,58 @@
 	////////////////////////////////////////////////////
 	////// 与开发者合作产品
 	////////////////////////////////////////////////////
+	///
+	///
+	///
+	///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+
+        /////////////////////////////////
+        demoName:"Excel 修复工具，需要集成Python或者Nodejs或Go插件",
+        demoUrl:"http://www.stellarinfo.com/mac-software/pdf-repair-mac.php",
+        reference:[
+            {comment:"", url:""}
+        ]
+        partnerID:""
+    }));
+
+
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+
+        /////////////////////////////////
+        demoName:"PDF修复工具，需要集成Python或者Nodejs或Go插件",
+        demoUrl:"http://www.stellarinfo.com/mac-software/pdf-repair-mac.php",
+        reference:[
+            {comment:"C语言mupdf的修复源码", url:"https://github.com/lgchmomo/mupdf/blob/master/mupdf/pdf_repair.c"}
+        ]
+        partnerID:""
+    }));
+
+
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+
+		/////////////////////////////////
+        demoName:"基于PDF.js制作PDF工具", // find application path by name (OS X)
+        demoUrl:"https://github.com/mozilla/pdfjs-dist    https://github.com/mozilla/pdf.js/ ",
+        partnerID:""
+    }));
+
+
     _U.data.push(_U.tp({
         types:_U.types[1],
         productName:"",
