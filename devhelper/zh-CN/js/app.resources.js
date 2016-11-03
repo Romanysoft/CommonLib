@@ -46,7 +46,7 @@
                             devdir: {
                                 type: "string"
                             },
-                            appstoreurl: {
+                            appstoreUrl: {
                                 type: "string"
                             },
                             appstroePrice: {
@@ -111,7 +111,7 @@
                     title: "源码dev",
                     width: 100
                 }, {
-                    field: "appstoreurl",
+                    field: "appstoreUrl",
                     title: "商店链接",
                     width: 100
                 }, {
