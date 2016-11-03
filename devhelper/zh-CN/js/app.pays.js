@@ -29,7 +29,7 @@
 	        .done(function(data, textStatus, jqxhr){
 	            var partnersData = [];
 	            if($.RTYUtils.isString(data)){
-	                var obj = eval(data);  
+	                var obj = eval(data);
 	                partnersData = obj.data;
 	            }else if(!data){
 	            	partnersData = 	window["rty_partners_dataobj"].data;
@@ -42,7 +42,7 @@
 	        })
  	       .fail(function( jqxhr, settings, exception) {
  	       	   console.log("-------------------[load]Error-----------------" + url);
- 	       });	   
+ 	       });
     };
 
     /// 计算及统计支付情况 for E+C and A+B+C
@@ -87,7 +87,7 @@
             }else{
                  info = t$._prcCalc(ele.total_cr, false);  // 使用计算器来计算
             }
-            
+
             ele.total_e = info["shouyi"];          // 开发者直接收益
             ele.total_e_ratio =ele.total_cr === 0? 0 : ele.total_e*100/ele.total_cr;  // 开发者收益占比
 
@@ -109,11 +109,11 @@
             if (linePartners.length < 1){
                 curPartnerPay.total = curPartnerPay.total_e + curPartnerPay.total_c;
             }else{
-                
+
                 var linePartnersPaysData = [];
                 $.each(linePartners, function(i, partner){
                     $.each(allPaysData, function(i, rec){
-                        if(rec.id === partner.id 
+                        if(rec.id === partner.id
                         && rec.start === payRecordObj.start
                         && rec.end === payRecordObj.end
                         ){
@@ -132,10 +132,10 @@
                 curPartnerPay.total = curPartnerPay.total_e + curPartnerPay.total_c;
             }
 
-            return curPartnerPay; 
+            return curPartnerPay;
         }
 
-        /// 
+        ///
         $.each(paysData, function(index, ele){
             var newPaysRecord = getPartnersPay(ele, paysData);
             resultsData.push(newPaysRecord);
@@ -152,10 +152,10 @@
         //// 开发者收益计算
         var shouyi = 0;
         var gs = " 0 ";
-        
+
         var _b = 1000;
-        
-        var inC_List, RatioList; 
+
+        var inC_List, RatioList;
 
         if(isMonth){
             inC_List = [0, 4*_b, 6*_b, 10*_b, 20*_b, 50*_b, 200*_b];
@@ -164,7 +164,7 @@
             inC_List =  [0, 0.2*_b, 0.4*_b, 0.8*_b, 1.2*_b, 1.8*_b, 2.6*_b, 3.6*_b, 4.8*_b];
             RatioList = [0,    0.5,   0.55,    0.6,    0.65,   0.7,    0.75,   0.8,    0.85,  0.9];
         }
-        
+
         var inc_Count = inC_List.length;
         var inC_pos = 1;
         for(var i = 1; i < inc_Count; ++i){
@@ -173,33 +173,33 @@
                 inC_pos = inc_Count;
                 break;
             }
-            
-            
+
+
             if(total <= inC_List[i]){
                 inC_pos = i;
                 break;
             }
         }
-        
+
         var total_income = 0;
         for(var i = 0; i < inC_pos; ++i){
             var left = i + 1;
             var right = i;
-            
+
             var inCome = 0;
-            
+
 
             if(left == inC_pos){
                 inCome = (total - inC_List[right]) * RatioList[left];
                 gs += " + (" + total + " - " + inC_List[right] + ") * " + RatioList[left];
             }else{
-                inCome = (inC_List[left] - inC_List[right]) * RatioList[left]; 
+                inCome = (inC_List[left] - inC_List[right]) * RatioList[left];
                 gs += " + (" + inC_List[left] + " - " + inC_List[right] + ") * " + RatioList[left];
             }
-            
+
             total_income += inCome;
         }
-        
+
 
         ///直接推荐人收益计算
         var referrer_ratio = 0.07;
@@ -207,7 +207,7 @@
         var gs_f = "(" + RMB_total + " - " + total_income + ") * " + referrer_ratio*100 + "%;";
 
         return {
-            "gs":gs, 
+            "gs":gs,
             "shouyi":total_income,
             "gs_f": gs_f,
             "fengcheng": fengcheng
@@ -221,24 +221,24 @@
         var grid = $('#pays-window > .pays-grid-ec').data('kendoGrid');
         while (grid.dataSource.total() > 0){
             grid.dataSource.remove(grid.dataSource.at(0));
-        } 
-    
+        }
+
         // For E+C/A+B+C模式
         $.getScript(jsfile).done(function(data, textStatus, jqxhr){
             var paysData = [];
             if($.RTYUtils.isString(data)){
-                var obj = eval(data);  
+                var obj = eval(data);
                 paysData = obj.data;
             }else if(!data){
             	paysData = window["rty_pays_dataobj"].data;
-        	}  
-   
+        	}
+
             var resultData = t$.calculatePays(paysData, partnersData);
-        
+
             $.each(resultData, function(index, obj){
                 grid.dataSource.add(obj);
             })
-            
+
         });
     };
 
@@ -267,14 +267,14 @@
                             total_fc: { type: "number" },
                             total_c: { type: "number" },
                             total: { type: "number" },
-                            
+
                             payedState: {type: "string"}
                         }
                     }
                 },
                 sort:[
                     {field: "end", dir: "desc" }
-                ], 
+                ],
                 pageSize: 50
             },
             height: 540,
@@ -322,7 +322,7 @@
                 {
                     title: "C部分：推荐提成",
                     columns:[
-                        { field: "total_c", title: "C收入(¥)",format: "¥{0:n3}", width: "50px" }    
+                        { field: "total_c", title: "C收入(¥)",format: "¥{0:n3}", width: "50px" }
                     ]
                 },
                 {
@@ -332,8 +332,8 @@
                     ]
                 },
                 { field: "payedState", title: "支付状态", width: "40px" }
-                
-                
+
+
             ]
     };
 
@@ -348,9 +348,10 @@
                     actions: ["Pin","Close"],
                     title: "支付记录",
                     width: 1680,
+                    maxWidth: 1680,
                     position: {
                         top: 60
-                    },                    
+                    },
                     resizable: true,
                     resize: function(){
                         $('#pays-window > .pays-grid-ec').data("kendoGrid").setOptions({height:win.height() - 64});
@@ -359,8 +360,8 @@
                 });
 
                 kendo.culture("zh-CN");
-                
- 
+
+
                 function getCacleDate(){
                         var curDate = new Date();
                         return curDate;
@@ -395,8 +396,8 @@
             }
 
             var w = win.data('kendoWindow');
-            w.open();            
-        }); 
+            w.open();
+        });
 
     };
 
