@@ -75,7 +75,7 @@
         demoUrl:"http://www.stellarinfo.com/mac-software/pdf-repair-mac.php",
         reference:[
             {comment:"", url:""}
-        ]
+        ],
         partnerID:""
     }));
 
@@ -92,7 +92,7 @@
         demoUrl:"http://www.stellarinfo.com/mac-software/pdf-repair-mac.php",
         reference:[
             {comment:"C语言mupdf的修复源码", url:"https://github.com/lgchmomo/mupdf/blob/master/mupdf/pdf_repair.c"}
-        ]
+        ],
         partnerID:""
     }));
 
@@ -141,10 +141,16 @@
 
     _U.data.push(_U.tp({
         types:_U.types[1],
-        productName:"",
-        srcdir:"",
-        devdir:"",
+        productName:"Loudspeaker",
+        srcdir:"/d/workspace/testprj/1git_html/Loudspeaker",
+        devdir:"/Volumes/DataShareHFS2/2013projects/Bus/p_Loudspeaker/",
         appstoreUrl:"",
+        appstroePrice:3.99,
+		officialPrice:0,
+		officialUrl:"",
+		hasPromo: true,
+		platforms: _U.platform[0],
+
 
 		/////////////////////////////////
         demoName:"音箱分频器在线计算公式",
