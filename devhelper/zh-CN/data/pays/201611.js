@@ -62,6 +62,26 @@
         _U.data.push(_U.tp({id: "D15161031", cost: 0, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));
     }
 
+    if(1){
+        nowDate = 20161103;
+        curE = 6.76026;
+        _U.data.push(_U.tp({id: "D1150418", cost: 18.3, rate: curE, start:nowDate, end:nowDate}));
+        _U.data.push(_U.tp({id: "D2150425", cost: 17.1, rate: curE, start:nowDate, end:nowDate}));
+        _U.data.push(_U.tp({id: "D3150522", cost: 13.9, rate: curE, start:nowDate, end:nowDate}));
+        _U.data.push(_U.tp({id: "D4150728", cost: 11.5, rate: curE, start:nowDate, end:nowDate}));
+        _U.data.push(_U.tp({id: "D5150916", cost: 9.3, rate: curE, start:nowDate, end:nowDate}));
+        _U.data.push(_U.tp({id: "D6151112", cost: 12.8, rate: curE, start:nowDate, end:nowDate}));
+        _U.data.push(_U.tp({id: "D7151202", cost: 18.6, rate: curE, start:nowDate, end:nowDate}));
+        _U.data.push(_U.tp({id: "D8160908", cost: 0, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));
+        _U.data.push(_U.tp({id: "D9161024", cost: 0, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));
+        _U.data.push(_U.tp({id: "D10161024", cost: 0, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));
+        _U.data.push(_U.tp({id: "D11161024", cost: 0, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));
+        _U.data.push(_U.tp({id: "D12161027", cost: 0, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));
+        _U.data.push(_U.tp({id: "D13161027", cost: 0, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));
+        _U.data.push(_U.tp({id: "D14161027", cost: 0, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));
+        _U.data.push(_U.tp({id: "D15161031", cost: 0, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));
+    }
+
 	window["rty_pays_dataobj"] = _U;
 
     return _U;

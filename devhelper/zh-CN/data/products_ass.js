@@ -60,9 +60,93 @@
 	////// 与开发者合作产品
 	////////////////////////////////////////////////////
 	///
-	///
-	///
-	///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"条形码识别App, 功能：识别出条形码的类型，分解条形码各部分的内容 要求：使用nodejs来处理。后面，要对这些文字，有操作，转译或者翻译。 制作成插件，可用于自动修正，识别错误，测试等环节",
+        demoUrl:"",
+        reference:[
+            {comment:"", url:""}
+        ],
+        partnerID:""
+    }));
+
+
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"语音识别App, 功能：识别语音上的文字。 要求：使用nodejs来处理。后面，要对这些文字，有操作，转译或者翻译。 制作成插件，可用于自动修正，识别错误，测试等环节",
+        demoUrl:"",
+        reference:[
+            {comment:"", url:""}
+        ],
+        partnerID:""
+    }));
+
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"图片文字识别App, 功能：识别图片上的文字。 要求：使用nodejs来处理。后面，要对这些文字，有操作，转译或者翻译。 制作成插件，可用于自动修正，识别错误，测试等环节",
+        demoUrl:"https://github.com/naptha/tesseract.js",
+        reference:[
+            {comment:"tesseract.js 库", url:"https://github.com/naptha/tesseract.js"}
+        ],
+        partnerID:""
+    }));
+
+
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"/d/workspace/testprj/1git_html/9GridApp",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:9.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"九宫格手势生成App, 功能：随机生成，用户绘制，保存，查询, 样例库",
+        demoUrl:"http://www.jq22.com/jquery-info5351  http://www.jq22.com/jquery-info4240",
+        reference:[
+            {comment:"", url:""}
+        ],
+        partnerID:"D14161027"
+    }));
+
+
     _U.data.push(_U.tp({
         types:_U.types[1],
         productName:"",
@@ -144,7 +228,7 @@
         productName:"Loudspeaker",
         srcdir:"/d/workspace/testprj/1git_html/Loudspeaker",
         devdir:"/Volumes/DataShareHFS2/2013projects/Bus/p_Loudspeaker/",
-        appstoreUrl:"",
+        appstoreUrl:"https://itunes.apple.com/us/app/loudspeaker/id1172158307?l=zh&ls=1&mt=12",
         appstroePrice:3.99,
 		officialPrice:0,
 		officialUrl:"",
