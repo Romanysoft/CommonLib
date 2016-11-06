@@ -22,9 +22,68 @@
         })
     };
 
+    _U.getGridOptions = function(partnersData){
+        var options = {
+                dataSource: {
+                    data: partnersData,
+                    schema: {
+                        model: {
+                            fields: {
+                                id: { type: "string" },
+                                name: { type: "string" },
+                                QQ: { type: "string" },
+                                email: { type: "string" },
+                                payWayType: { type: "string" },
+                                payWayAcount: { type: "string" },
+                                onJob:{ type: "string" },
+                                referrer: { type: "string" },
+                                speciality: { type: "string" }
+                            }
+                        }
+                    },
+                    sort:[
+                        {field: "id", dir: "desc" }
+                    ],
+                    pageSize: 50
+                },
+                allowCopy: true,
+                scrollable: true,
+                groupable:{
+                    enabled: true,
+                    showFooter: true,
+                    messages: {
+                        empty: "拖拽你想分组的列到这里..."
+                    }
+                },
+                sortable: true,
+                filterable: true,
+                pageable: {
+                    input: true,
+                    numeric: false
+                },
+                columns: [
+                    { field: "id", title: "编号",  width: "30px" },
+                    { field: "name", title: "姓名", width: "40px" },
+                    { field: "QQ", title: "QQ", width: "48px" },
+                    { field: "payWayType", title: "支付方式", width: "40px" },
+
+                    { field: "referrer", title: "推荐人", width: "32px" },
+                    { field: "speciality", title: "特长", width: "200px" }
+                ]
+        };
+
+        if(window.location.host.indexOf("127.0.0.1") > -1){
+            options.columns.push({ field: "payWayAcount", title: "支付账户", width: "80px" });
+            options.columns.push({ field: "email", title: "邮箱", width: "80px" });
+
+        }
+
+        return options;
+    };
+
     _U.launch = function () {
         var t$ = this;
-        _U.loadTemplate(function(){
+        t$.loadTemplate(function(){
             var win = $('#partner-window');
             if (!win.data("kendoWindow")){
                 win.kendoWindow({
@@ -33,8 +92,9 @@
                     width: 1440,
                     position: {
                         top: 60
-                    },                    
+                    },
                     resizable: true,
+                    maxWidth: 1680,
                     model:false
                 });
 
@@ -42,68 +102,28 @@
                 $.getScript(url).done(function(data, textStatus, jqxhr){
                     var partnersData = [];
                     if($.RTYUtils.isString(data)){
-                        var obj = eval(data);  
+                        var obj = eval(data);
                         partnersData = obj.data;
                     }else if(!data){
 	            		partnersData = 	window["rty_partners_dataobj"].data;
 	            	}
                     /// 初始化表格
-                    $('#partner-window > .partner-grid').kendoGrid({
-                            dataSource: {
-                                data: partnersData,
-                                schema: {
-                                    model: {
-                                        fields: {
-                                            id: { type: "string" },
-                                            name: { type: "string" },
-                                            QQ: { type: "string" },
-                                            email: { type: "string" },
-                                            payment: { type: "string" },
-                                            payWayType: { type: "string" },
-                                            onJob:{ type: "string" }, 
-                                            referrer: { type: "string" },
-                                            speciality: { type: "string" }
-                                        }
-                                    }
-                                },
-                                sort:[
-                                    {field: "id", dir: "desc" }
-                                ], 
-                                pageSize: 50
-                            },
-                            height: 550,
-                            allowCopy: true,
-                            scrollable: true,
-                            groupable:{
-                                enabled: true,
-                                showFooter: true,
-                                messages: {
-                                    empty: "拖拽你想分组的列到这里..."
-                                }
-                            },
-                            sortable: true,
-                            filterable: true,
-                            pageable: {
-                                input: true,
-                                numeric: false
-                            },
-                            columns: [
-                                { field: "id", title: "编号",  width: "30px" },
-                                { field: "name", title: "姓名", width: "40px" },
-                                { field: "QQ", title: "QQ", width: "48px" },
-                                { field: "payWayType", title: "支付方式", width: "40px" },
-                                { field: "referrer", title: "推荐人", width: "32px" },
-                                { field: "speciality", title: "特长", width: "200px" }
-                            ]
-                    })
+                    $('#partner-window > .partner-grid').kendoGrid(t$.getGridOptions(partnersData));
+
+                    var grid = $('#partner-window > .partner-grid').data("kendoGrid");
+
+                    var length = grid.columns.length;
+                    for(var i = 0; i < length; ++i){
+                        grid.autoFitColumn(i);
+                    }
                 });
 
 
             }
 
             var w = win.data('kendoWindow');
-            w.open();            
-        }); 
+            w.open();
+        });
 
     };
 

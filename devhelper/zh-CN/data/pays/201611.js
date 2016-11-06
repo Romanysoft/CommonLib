@@ -92,8 +92,8 @@
         _U.data.push(_U.tp({id: "D5150916", cost: 14.7, rate: curE, start:nowDate, end:nowDate}));
         _U.data.push(_U.tp({id: "D6151112", cost: 20.4, rate: curE, start:nowDate, end:nowDate}));
         _U.data.push(_U.tp({id: "D7151202", cost: 11.2, rate: curE, start:nowDate, end:nowDate}));
-        _U.data.push(_U.tp({id: "D8160908", cost: 0, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));
-        _U.data.push(_U.tp({id: "D9161024", cost: 0.7, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));
+        _U.data.push(_U.tp({id: "D8160908", cost: 0, rate: curE, start:nowDate, end:nowDate}));
+        _U.data.push(_U.tp({id: "D9161024", cost: 0.7, rate: curE, start:nowDate, end:nowDate}));
         _U.data.push(_U.tp({id: "D10161024", cost: 0, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));
         _U.data.push(_U.tp({id: "D11161024", cost: 0, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));
         _U.data.push(_U.tp({id: "D12161027", cost: 0, rate: curE, start:nowDate, end:nowDate, payedState:_U.payedState[3]}));
