@@ -130,6 +130,7 @@
 
                 curPartnerPay.total_c = sum;
                 curPartnerPay.total = curPartnerPay.total_e + curPartnerPay.total_c;
+
             }
 
             return curPartnerPay;
@@ -138,6 +139,12 @@
         ///
         $.each(paysData, function(index, ele){
             var newPaysRecord = getPartnersPay(ele, paysData);
+
+            // 修正支付状态
+            if(!(newPaysRecord.payedState in ["待支付", "支付失败"] )){
+                newPaysRecord.payedState = newPaysRecord.total > 0 ?  "完成" :  "零不支付";
+            }
+
             resultsData.push(newPaysRecord);
         });
 
