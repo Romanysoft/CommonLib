@@ -203,6 +203,20 @@
     }
 
 
+    if(1){
+        _U.data.push(_U.tp({
+            id: "D" + ++No + "161109" ,
+            name:"袁成", // 江苏
+            QQ: kendo.toString(434778770/100, "####xxx"),
+            email:"yuancheng052@126.com",
+            payWayType:_U.PayWayTypes[0],
+            payWayAcount:"15101668430",
+            referrer:"D8160908",
+            speciality:"Javascript, html, css 及Java语言"
+        }));
+    }
+
+
 	window["rty_partners_dataobj"] = _U;
 
     return _U;
