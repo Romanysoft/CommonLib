@@ -580,7 +580,9 @@
         reference:[
             {comment:"", url:""}
         ],
-        partnerID:""
+        partnerID:"	D16161109",
+        remark: "分配给袁成，讨论草图，定于2016年11月21日提交Ver1.0 \n",
+        nextCTime: "20161120"
     }));
 
 
