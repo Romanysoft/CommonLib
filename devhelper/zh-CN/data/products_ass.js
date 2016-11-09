@@ -29,7 +29,9 @@
 			demoUrl:"",        // 参照Demo URL
             reference: [],     // 参照
 			partnerID:"00",    // 关联的合作者, 默认是官方的,
-			partnerName:"00"   // 关联合作者的名称
+			partnerName:"00",  // 关联合作者的名称
+            remark:"",          // 备注
+            nextCTime:""  // 下一次提交时间
         };
 
         return $.extend(o, data);
@@ -52,13 +54,448 @@
 		hasPromo: true,
 		platforms: _U.platform[0] + "," + _U.platform[1],
 
-		/////////////////////////////////
+        /////////////////////////////////
+        demoName:"SpeedTest",
+        demoUrl:""
     }));
 
 
 	////////////////////////////////////////////////////
 	////// 与开发者合作产品
 	////////////////////////////////////////////////////
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"FileDeadLine",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"损坏文件生成器. ",
+        demoUrl:"http://www.egouz.com/topics/9662.html",
+        reference:[
+            {comment:"http://www.xnet.se/fd/", url:"http://www.xnet.se/fd/"}
+        ],
+        partnerID:"",
+        remark: "",
+        nextCTime:""  // 下一次提交时间
+    }));
+    ///
+    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"iconMaker",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"ICON制作工具. ",
+        demoUrl:"http://www.egouz.com/topics/10196.html",
+        reference:[
+            {comment:"http://freeiconmaker.com/", url:"http://freeiconmaker.com/"}
+        ],
+        partnerID:"",
+        remark: "",
+        nextCTime:""  // 下一次提交时间
+    }));
+    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"EnglishAfter",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"英语语法检测工具. 有源码，服务器是java",
+        demoUrl:"http://www.egouz.com/topics/10952.html",
+        reference:[
+            {comment:"http://www.afterthedeadline.com/development.slp", url:"http://www.afterthedeadline.com/development.slp"},
+            {comment:"https://open.afterthedeadline.com/", url:"https://open.afterthedeadline.com/"}
+        ],
+        partnerID:"",
+        remark: "",
+        nextCTime:""  // 下一次提交时间
+    }));
+    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"网页,文章，PDF批注分享工具",
+        demoUrl:"http://www.egouz.com/topics/11011.html",
+        reference:[
+            {comment:"http://pith.li/", url:"http://pith.li/"}
+        ],
+        partnerID:"",
+        remark: "",
+        nextCTime:""  // 下一次提交时间
+    }));
+    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"eBookMarkr",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"eBookMarkr, 电子书转换发布平台",
+        demoUrl:"http://www.egouz.com/topics/11084.html",
+        reference:[
+            {comment:"http://www.uberflip.com/ebook", url:"http://www.uberflip.com/ebook"}
+        ],
+        partnerID:"",
+        remark: "",
+        nextCTime:""  // 下一次提交时间
+    }));
+    ///
+    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"PicsMarkr",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"PicsMarkr, 批量图片添加水印工具",
+        demoUrl:"http://www.egouz.com/topics/11107.html",
+        reference:[
+            {comment:"http://picmarkr.com/", url:"http://picmarkr.com/"}
+        ],
+        partnerID:"",
+        remark: "",
+        nextCTime:""  // 下一次提交时间
+    }));
+    ///
+    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"EveConverter",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"EveConverter, 文件类型转换器. 设置所有文件类型的转换器",
+        demoUrl:"https://cloudconvert.com/formats",
+        reference:[
+
+        ],
+        partnerID:"",
+        remark: "",
+        nextCTime:""  // 下一次提交时间
+    }));
+    ///
+    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"网站检测工具：(1) 是否宕机？ (2) 是否被墙？ 后续集成 在线网络诊断工具大全NWTools",
+        demoUrl:"http://www.egouz.com/topics/11324.html",
+        reference:[
+            {comment:"http://isup.me/", url:"http://isup.me/"},
+            {comment:"http://www.egouz.com/topics/11334.html", url:"http://www.egouz.com/topics/11334.html"},
+            {comment:"http://nwtools.com/", url:"http://nwtools.com/"},
+        ],
+        partnerID:"",
+        remark: "",
+        nextCTime:""  // 下一次提交时间
+    }));
+    ///
+    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"NumSysConverter",
+        srcdir:"/d/workspace/testprj/1git_html/NumSysConverter",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"进制相互转换工具:(1) 支持常用进制；(2) 支持指定源的进制。例如：输入源为16进制",
+        demoUrl:"http://tool.lu/hexconvert/",
+        reference:[
+        ],
+        partnerID:"D14161027",
+        remark: "已经分配给魏鑫鑫",
+        nextCTime:"20161114"  // 下一次提交时间
+    }));
+    ///
+    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"下载链接检测工具，支持链接转换，查找真实的地址。(1)种子分析  (2)后续可以集成，安全检测",
+        demoUrl:"http://tool.lu/urlconvert/",
+        reference:[
+            {comment:"在线下载链接转换，迅雷、旋风、快车", url:"http://tool.lu/urlconvert/"},
+            {comment:"种子分析 ", url:"http://tool.lu/torrent/"},
+            {comment:"Ease Link ", url:"https://addons.mozilla.org/en-US/firefox/addon/ease-link/?src=search"},
+        ],
+        partnerID:"",
+        remark: ""
+    }));
+    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"网页转换成Markdown工具: 集成：明文HTML转换成Markdown，(2)输入，打开网站，指定部分，可以转换Markdown。 （3）支持保存.md 文件",
+        demoUrl:"http://tool.lu/markdown/",
+        reference:[
+            {comment:"", url:""}
+        ],
+        partnerID:"",
+        remark: ""
+    }));
+    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"汉字拼音助手：\n 功能：集成简单的汉字转拼音，带音调，（1）可以生成拼音汉字的对应文章（可以导出）（2）具备自动校验输出的拼音的功能 （3）可以通过拼音生成文字 后续版本：（1） 集成翻译功能。 拼音翻译成自己国家的语言",
+        demoUrl:"http://tool.lu/py5bconvert/",
+        reference:[
+            {comment:"", url:""}
+        ],
+        partnerID:"",
+        remark: ""
+    }));
+    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"NumberHelper",
+        srcdir:"/d/workspace/testprj/1git_html/NumberHelper",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"数字助手。数字转本地语言。（涉及金钱、其他领域） 功能：第一版，支持中文简体、繁体、香港、澳门等地区，第二版本，其他国家，可以选择国家。",
+        demoUrl:"https://github.com/cnwhy/nzh  http://cnwhy.github.io/nzh/demo/index.html",
+        reference:[
+            {comment:"", url:""}
+        ],
+        partnerID:"D13161027",
+        remark: "分配给赵红云，讨论草图，定于2016年11月21日提交Ver1.0 \n",
+        nextCTime: "20161120"
+    }));
+
+    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"JSON Maker可视化编辑器: 集成在线代码编辑,集成新建文档,保存,打开,JSON数据校验,修复. 生成JSON数据",
+        demoUrl:"http://www.sojson.com/simple_json.html",
+        reference:[
+            {comment:"", url:""}
+        ],
+        partnerID:""
+    }));
+    ///
+    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"ico 图片生成器. 主要功能:可以自定义生成的尺寸",
+        demoUrl:"http://www.atool.org/ico.php",
+        reference:[
+            {comment:"", url:""}
+        ],
+        partnerID:""
+    }));
+    ///
+    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"Round Corner Image 透明圆角图片. ",
+        demoUrl:"http://www.atool.org/roundcorner.php",
+        reference:[
+            {comment:"", url:""}
+        ],
+        partnerID:""
+    }));
+    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"YouGet:命令行式下载工具, 功能：YouGet:命令行式下载工具. YouGet 是由一位编程高手开发的采用命令行操作来从热门的网站如youtube、Youku, Niconico等站点下载图片、视频、音频等资源，无需浏览器和软件即可快速完成下载任务。目前支持74个站点，国内和国外的站点统统都有。",
+        demoUrl:"https://you-get.org/",
+        reference:[
+            {comment:"", url:""}
+        ],
+        partnerID:""
+    }));
+	///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"",
+        srcdir:"",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:4.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"GIF Helper Pro, 功能：集成图片生成GIF, 集成Video To GIF, 集成GIF Resize, 集成GIF Crop, 集成GIF Optimizer, 集成GIF Effects, 集成GIF Splite",
+        demoUrl:"http://ezgif.com/maker", // EzGif 网站是一个提供在线编辑GIF动画图片的工具，无需安装任何软件即可在线编辑动态的GIF图片，提供创建、调整大小、剪裁、反向、优化等编辑工具，同时也支持对Gif图片的拆分服务。
+        reference:[
+            {comment:"Make a Gif", url:"http://ezgif.com/maker"},
+            {comment:"Video to Gif", url:"http://ezgif.com/video-to-gif"},
+            {comment:"GIF Resize", url:"http://ezgif.com/resize"},
+            {comment:"GIF Crop", url:"http://ezgif.com/crop"},
+            {comment:"GIF Optimizer", url:"http://ezgif.com/optimize"},
+            {comment:"GIF Effects", url:"http://ezgif.com/effects"},
+            {comment:"GIF Splite", url:"http://ezgif.com/split"},
+            {comment:"GifRun 网站", url:"https://gifrun.com/"},
+            {comment:"GIF动画导出", url:"http://gifprint.com/"},
+        ],
+        partnerID:""
+    }));
 	///
     _U.data.push(_U.tp({
         types:_U.types[1],
@@ -143,7 +580,7 @@
         reference:[
             {comment:"", url:""}
         ],
-        partnerID:"D14161027"
+        partnerID:""
     }));
 
 

@@ -81,7 +81,8 @@
                 pageSize: 50
             },
 
-            //height: 550,
+            height: 550,
+            width: 2000,
             scrollable: true,
             groupable: {
                 enabled: true,
@@ -98,7 +99,17 @@
                 input: true,
                 numeric: false
             },
-            columns: [{
+            columns: [
+                {
+                    field: "demoName",
+                    title: "Demo名称",
+                    width: 100
+                }, {
+                    field: "demoUrl",
+                    title: "参照",
+                    width: 200
+                },
+                {
                     field: "productName",
                     title: "应用",
                     width: 80
@@ -134,16 +145,6 @@
                     field: "platforms",
                     title: "平台",
                     width: 90
-                },
-
-                {
-                    field: "demoName",
-                    title: "Demo名称",
-                    width: 100
-                }, {
-                    field: "demoUrl",
-                    title: "参照",
-                    width: 200
                 }, {
                     field: "partnerID",
                     title: "合作者ID",
@@ -213,7 +214,7 @@
 
                         var length = grid.columns.length;
                         for(var i = 0; i < length; ++i){
-                            grid.autoFitColumn(i);
+                            //grid.autoFitColumn(i);
                         }
                     });
 
