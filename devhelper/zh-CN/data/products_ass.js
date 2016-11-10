@@ -78,10 +78,10 @@
     _U.data.push(_U.tp({
         types:_U.types[1],
         productName:"FileDeadLine",
-        srcdir:"",
+        srcdir:"/d/workspace/testprj/1git_html/FileDeadLine",
         devdir:"",
         appstoreUrl:"",
-        appstroePrice:4.99,
+        appstroePrice:9.99,
         officialPrice:0,
         officialUrl:"",
         hasPromo: true,

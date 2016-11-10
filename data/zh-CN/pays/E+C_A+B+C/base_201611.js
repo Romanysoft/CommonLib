@@ -85,6 +85,13 @@
     _U.data.push(_U.tp({id: "A021", visits: 1141, start:nowDate, end:nowDate}));
     _U.data.push(_U.tp({id: "A022", visits: 1253, start:nowDate, end:nowDate}));
 
+    //2016.11.09
+    nowDate = 20161109;
+    _U.data.push(_U.tp({id: "A019", visits: 1422, start:nowDate, end:nowDate}));
+    _U.data.push(_U.tp({id: "A020", visits: 1331, start:nowDate, end:nowDate}));
+    _U.data.push(_U.tp({id: "A021", visits: 1083, start:nowDate, end:nowDate}));
+    _U.data.push(_U.tp({id: "A022", visits: 1015, start:nowDate, end:nowDate}));
+
     window["rty_pays_dataobj"] = _U;
 
     return _U;
