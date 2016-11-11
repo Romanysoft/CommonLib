@@ -31,7 +31,7 @@
 			partnerID:"00",    // 关联的合作者, 默认是官方的,
 			partnerName:"00",  // 关联合作者的名称
             remark:"",          // 备注
-            nextCTime:""  // 下一次提交时间
+            nextCTime:0         // 下一次提交时间
         };
 
         return $.extend(o, data);
@@ -72,7 +72,28 @@
     ///
     ///
     ///
-    ///
+    _U.data.push(_U.tp({
+        types:_U.types[1],
+        productName:"FileLiveLine",
+        srcdir:"/d/workspace/testprj/1git_html/FileLiveLine",
+        devdir:"",
+        appstoreUrl:"",
+        appstroePrice:9.99,
+        officialPrice:0,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
+
+        /////////////////////////////////
+        demoName:"损坏文件修复工具. ",
+        demoUrl:"",
+        reference:[
+            {comment:"", url:""}
+        ],
+        partnerID:"D10161024",
+        remark: "分配给 曹亚男, 等待开始",
+        nextCTime:0   // 下一次提交时间
+    }));
     ///
     ///
     _U.data.push(_U.tp({
@@ -93,9 +114,9 @@
         reference:[
             {comment:"http://www.xnet.se/fd/", url:"http://www.xnet.se/fd/"}
         ],
-        partnerID:"",
-        remark: "",
-        nextCTime:""  // 下一次提交时间
+        partnerID:"D10161024",
+        remark: "分配给 曹亚男, 等待开始",
+        nextCTime:0   // 下一次提交时间
     }));
     ///
     ///
@@ -119,7 +140,7 @@
         ],
         partnerID:"",
         remark: "",
-        nextCTime:""  // 下一次提交时间
+        nextCTime:0  // 下一次提交时间
     }));
     ///
     _U.data.push(_U.tp({
@@ -143,7 +164,7 @@
         ],
         partnerID:"",
         remark: "",
-        nextCTime:""  // 下一次提交时间
+        nextCTime:0  // 下一次提交时间
     }));
     ///
     _U.data.push(_U.tp({
@@ -166,7 +187,7 @@
         ],
         partnerID:"",
         remark: "",
-        nextCTime:""  // 下一次提交时间
+        nextCTime:0  // 下一次提交时间
     }));
     ///
     _U.data.push(_U.tp({
@@ -189,7 +210,7 @@
         ],
         partnerID:"",
         remark: "",
-        nextCTime:""  // 下一次提交时间
+        nextCTime:0  // 下一次提交时间
     }));
     ///
     ///
@@ -213,7 +234,7 @@
         ],
         partnerID:"",
         remark: "",
-        nextCTime:""  // 下一次提交时间
+        nextCTime:0  // 下一次提交时间
     }));
     ///
     ///
@@ -237,7 +258,7 @@
         ],
         partnerID:"",
         remark: "",
-        nextCTime:""  // 下一次提交时间
+        nextCTime:0  // 下一次提交时间
     }));
     ///
     ///
@@ -263,7 +284,7 @@
         ],
         partnerID:"",
         remark: "",
-        nextCTime:""  // 下一次提交时间
+        nextCTime:0  // 下一次提交时间
     }));
     ///
     ///
@@ -286,7 +307,7 @@
         ],
         partnerID:"D14161027",
         remark: "已经分配给魏鑫鑫",
-        nextCTime:"20161114"  // 下一次提交时间
+        nextCTime:20161114  // 下一次提交时间
     }));
     ///
     ///
@@ -378,7 +399,7 @@
         ],
         partnerID:"D13161027",
         remark: "分配给赵红云，讨论草图，定于2016年11月21日提交Ver1.0 \n",
-        nextCTime: "20161120"
+        nextCTime:20161120
     }));
 
     ///
@@ -581,17 +602,22 @@
             {comment:"", url:""}
         ],
         partnerID:"	D16161109",
-        remark: "分配给袁成，讨论草图，定于2016年11月21日提交Ver1.0 \n",
-        nextCTime: "20161120"
+        remark: "分配给袁成，讨论草图，定于2016年11月29日提交Ver1.0 \n",
+        nextCTime: 20161129
     }));
 
 
     _U.data.push(_U.tp({
         types:_U.types[1],
-        productName:"",
-        srcdir:"",
+        productName:"ExcelFix",
+        srcdir:"/d/workspace/testprj/1git_html/ExcelFix",
         devdir:"",
         appstoreUrl:"",
+        appstroePrice:9.99,
+        officialPrice:9.99,
+        officialUrl:"",
+        hasPromo: true,
+        platforms: _U.platform[0],
 
         /////////////////////////////////
         demoName:"Excel 修复工具，需要集成Python或者Nodejs或Go插件",
@@ -636,8 +662,8 @@
 
     _U.data.push(_U.tp({
         types:_U.types[1],
-        productName:"",
-        srcdir:"",
+        productName:"AppFinder",
+        srcdir:"/d/workspace/testprj/1git_html/AppFinder",
         devdir:"",
         appstoreUrl:"",
 
