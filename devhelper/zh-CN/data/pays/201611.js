@@ -187,13 +187,13 @@
     if(1){
         nowDate = 20161109;
         curE = 6.77594;
-        _U.data.push(_U.tp({id: "D1150418", cost: 19.3, rate: curE, start:nowDate, end:nowDate}));
-        _U.data.push(_U.tp({id: "D2150425", cost: 43.8, rate: curE, start:nowDate, end:nowDate}));
-        _U.data.push(_U.tp({id: "D3150522", cost: 8.7, rate: curE, start:nowDate, end:nowDate}));
-        _U.data.push(_U.tp({id: "D4150728", cost: 34.6, rate: curE, start:nowDate, end:nowDate}));
-        _U.data.push(_U.tp({id: "D5150916", cost: 12.6, rate: curE, start:nowDate, end:nowDate}));
-        _U.data.push(_U.tp({id: "D6151112", cost: 20.8, rate: curE, start:nowDate, end:nowDate}));
-        _U.data.push(_U.tp({id: "D7151202", cost: 6.4, rate: curE, start:nowDate, end:nowDate}));
+        _U.data.push(_U.tp({id: "D1150418", cost: 39.3, rate: curE, start:nowDate, end:nowDate}));
+        _U.data.push(_U.tp({id: "D2150425", cost: 83.8, rate: curE, start:nowDate, end:nowDate}));
+        _U.data.push(_U.tp({id: "D3150522", cost: 48.7, rate: curE, start:nowDate, end:nowDate}));
+        _U.data.push(_U.tp({id: "D4150728", cost: 46.6, rate: curE, start:nowDate, end:nowDate}));
+        _U.data.push(_U.tp({id: "D5150916", cost: 32.6, rate: curE, start:nowDate, end:nowDate}));
+        _U.data.push(_U.tp({id: "D6151112", cost: 41.8, rate: curE, start:nowDate, end:nowDate}));
+        _U.data.push(_U.tp({id: "D7151202", cost: 17.4, rate: curE, start:nowDate, end:nowDate}));
         _U.data.push(_U.tp({id: "D8160908", cost: 0, rate: curE, start:nowDate, end:nowDate}));
         _U.data.push(_U.tp({id: "D9161024", cost: 0, rate: curE, start:nowDate, end:nowDate}));
         _U.data.push(_U.tp({id: "D10161024", cost: 0, rate: curE, start:nowDate, end:nowDate}));
