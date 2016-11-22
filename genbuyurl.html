@@ -7,6 +7,10 @@
     <title>产品代理销售在线工具</title>
     <link rel="stylesheet" href="common/bootstrap-3.3.5-dist/css/bootstrap.min.css">
     <link href="common/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" href="images/ico/logo_57.png">
+    <link rel="shortcut icon" href="images/ico/logo_64.png">
 </head>
 
 <body>
@@ -29,29 +33,29 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#nav-product-info"><span class="glyphicon glyphicon-leaf"/> 开放代理销售产品明细 <span class="sr-only">(current)</span></a></li>
         <li><a href="#nav-product-af"><span class="glyphicon glyphicon-link"/> 代理购买链接生成器</a></li>
-        <li><a href="//romanysoft.github.io/NotePublish/" target="_blank"><span class="glyphicon glyphicon-list-alt"/> 销售产品中文介绍</a></li>  
+        <li><a href="//romanysoft.github.io/NotePublish/" target="_blank"><span class="glyphicon glyphicon-list-alt"/> 销售产品中文介绍</a></li>
         <li><a href="//minisoft.logdown.com/archives" target="_blank"><span class="glyphicon glyphicon-tint"/> 产品推广博客</a></li>
-        <li><a href="//admin.mycommerce.com/app/cp/login" target="_blank"><span class="glyphicon glyphicon-search"/> 销售订单查询</a></li>  
-        <li><a href="#nav-tutorial-videos"><span class="glyphicon glyphicon-facetime-video"/> 教程视频</a></li>  
-        <li><a href="#nav-share-tools"><span class="glyphicon glyphicon-share"/> 工具分享</a></li> 
+        <li><a href="//admin.mycommerce.com/app/cp/login" target="_blank"><span class="glyphicon glyphicon-search"/> 销售订单查询</a></li>
+        <li><a href="#nav-tutorial-videos"><span class="glyphicon glyphicon-facetime-video"/> 教程视频</a></li>
+        <li><a href="#nav-share-tools"><span class="glyphicon glyphicon-share"/> 工具分享</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 <div class="panel panel-default" style="min-height: 64px !important;">
-</div>    
+</div>
 <div id="main-content" class="panel panel-default">
   <div class="panel-body">
       <div id="nav-product-info" class="panel panel-success">
       </div>
       <div id="nav-product-af" class="panel panel-info">
-      </div> 
+      </div>
       <div id="nav-tutorial-videos" class="panel panel-warning">
-      </div>  
+      </div>
       <div id="nav-share-tools" class="panel panel-warning"></div>
   </div>
 </div>
-    
+
 
 
     <script id="tmpl-nav-product-info" type="text/html">
@@ -72,16 +76,16 @@
                             <img src="{{productObj.home + '/images/logo_64.png'}}" style="width:32px">
                         {{ /if}}
                      </div>
-                    <div class="col-md-1"><a href="{{productObj.home}}" target="_blank">{{productObj.id}}</a></div> 
+                    <div class="col-md-1"><a href="{{productObj.home}}" target="_blank">{{productObj.id}}</a></div>
                     <div class="col-md-2"><a href="{{productObj.home}}" target="_blank">{{productObj.name}}</a></div>
                     <div class="col-md-1"><span style="color: red;">{{productObj.prices}}</span></div>
                     <div class="col-md-3"><a href="{{productObj.home}}" target="_blank">{{productObj.home}}</a></div>
                 </div>
                 {{/each}}
-            </div>              
+            </div>
           </div>
-    </script>    
-    
+    </script>
+
     <script id="tmpl-nav-product-af" type="text/html">
           <div class="panel-heading">代理购买链接生成器</div>
           <div class="panel-body">
@@ -119,16 +123,16 @@
                       <button type="button" id="btn-gen-onebuyurl" class="btn btn-primary">生成代理购买链接</button>
                       <button type="button" id="btn-gen-allbuyurls" class="btn btn-warning">生成所有产品的代理购买链接</button>
                       <button type="button" id="btn-clear" class="btn btn-danger">清空</button>
-                </div>   
+                </div>
                 <div class="panel">
                     <textarea id="output-buyurls" class="form-control" style="min-height: 400px !important;">
                     </textarea>
                 </div>
 
-            </div>                
+            </div>
           </div>
-    </script> 
-    
+    </script>
+
     <script id="tmpl-nav-tutorial-videos" type="text/html">
           <div class="panel-heading">教程视频<span class="badge">{{videos.Length}}</span></div>
           <div class="panel-body">
@@ -142,20 +146,20 @@
                 </div>
                 {{each videos as videoObj}}
                  <div class="row" style="padding: 16px;">
-                    <div class="col-md-1"><small>{{videoObj.category}}</small> </div> 
+                    <div class="col-md-1"><small>{{videoObj.category}}</small> </div>
                     <div class="col-md-3"><strong>{{videoObj.name}}</strong></div>
-                    <div class="col-md-2"><a href="{{videoObj.url}}" target="_blank">{{videoObj.url}}</a></div> 
-                    <div class="col-md-2">     
+                    <div class="col-md-2"><a href="{{videoObj.url}}" target="_blank">{{videoObj.url}}</a></div>
+                    <div class="col-md-2">
                         <iframe width="280" height="157" src="{{videoObj.url}}" frameborder="0" allowfullscreen>
                         </iframe>
                      </div>
                      <div class="col-md-2">{{videoObj.description}}</div>
                 </div>
                 {{/each}}
-            </div>              
+            </div>
           </div>
-    </script> 
-        
+    </script>
+
     <script id="tmpl-nav-share-tools" type="text/html">
           <div class="panel-heading">工具分享<span class="badge">{{tools.Length}}</span></div>
           <div class="panel-body">
@@ -168,16 +172,16 @@
                 </div>
                 {{each tools as toolObj}}
                  <div class="row" style="padding: 16px;">
-                    <div class="col-md-1"><small>{{toolObj.category}}</small> </div> 
+                    <div class="col-md-1"><small>{{toolObj.category}}</small> </div>
                     <div class="col-md-3"><strong>{{toolObj.name}}</strong></div>
-                    <div class="col-md-1"><a href="{{toolObj.url}}" target="_blank">下载</a></div> 
+                    <div class="col-md-1"><a href="{{toolObj.url}}" target="_blank">下载</a></div>
                      <div class="col-md-7">{{toolObj.description}}</div>
                 </div>
                 {{/each}}
-            </div>              
+            </div>
           </div>
-    </script> 
-  
+    </script>
+
     <!-- js -->
     <script src="common/js/jquery-1.12.3.min.js"></script>
     <script src="common/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
