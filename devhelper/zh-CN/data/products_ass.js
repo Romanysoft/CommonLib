@@ -676,7 +676,7 @@
 
     _U.data.push(_U.tp({
         types:_U.types[1],
-        productName:"",
+        productName:"Pixel Assistant",
         srcdir:"",
         devdir:"",
         appstoreUrl:"",
