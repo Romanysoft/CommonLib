@@ -30,7 +30,7 @@
             "55399-24": {name:"TryToAAC" + _mac, prices:"4.99", home:"https://romanysoft.github.io/TryToAAC/",  xxx:""},
 //            "55399-25": {name:"TryToAIFF" + _mac, prices:"15", home:"",  xxx:""},
 //            "55399-26": {name:"TryToALAC" + _mac, prices:"15", home:"",  xxx:""},
-//            "55399-27": {name:"TryToAMR" + _mac, prices:"15", home:"",  xxx:""},
+            "55399-27": {name:"TryToAMR" + _mac, prices:"4.99", home:"https://romanysoft.github.io/TryToAMR/",  xxx:""},
 //            "55399-28": {name:"TryToOGG" + _mac, prices:"15", home:"",  xxx:""},
 //            "55399-29": {name:"TryToOpus" + _mac, prices:"15", home:"",  xxx:""},
 //            "55399-30": {name:"TryToWMA" + _mac, prices:"15", home:"",  xxx:""},
