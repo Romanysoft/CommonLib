@@ -225,7 +225,8 @@
     _U.updateWithForec_ABC = function(yearMonth, partnersData){
         var t$ = this;
         var jsfile = "data/pays/" + yearMonth + ".js" + "?t=" + (new Date()).getTime();
-        var grid = $('#pays-window > .pays-grid-ec').data('kendoGrid');
+        var gridElement = $('#pays-window > .pays-grid-ec');
+        var grid = gridElement.data('kendoGrid');
         while (grid.dataSource.total() > 0){
             grid.dataSource.remove(grid.dataSource.at(0));
         }
@@ -244,7 +245,9 @@
 
             $.each(resultData, function(index, obj){
                 grid.dataSource.add(obj);
-            })
+            });
+
+            t$.hideLoading();
 
         });
     };
@@ -252,11 +255,25 @@
     /// 更新数据
     _U.updateWith = function(yearMonth, partnersData){
         var t$ = this;
+        t$.showLoading();
         t$.updateWithForec_ABC(yearMonth, partnersData);
     };
 
+    _U.showLoading = function(e) {
+      var gridElement = $('#pays-window > .pays-grid-ec');
+      kendo.ui.progress(gridElement, true);
+    };
+
+    _U.hideLoading = function(e){
+      var gridElement = $('#pays-window > .pays-grid-ec');
+      kendo.ui.progress(gridElement, false);
+    };
+
+
+
     _U.OptionsForec = {
             dataSource: {
+                batch: true,
                 data: [],
                 schema: {
                     model: {

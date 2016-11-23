@@ -125,7 +125,7 @@
   _U.data.push(_U.tp({
     types: _U.types[1],
     productName: "iconMaker",
-    srcdir: "",
+    srcdir: "/d/workspace/testprj/1git_html/iconMaker",
     devdir: "",
     appstoreUrl: "",
     appstroePrice: 4.99,
@@ -403,10 +403,10 @@
     types: _U.types[1],
     productName: "NumberHelper",
     srcdir: "/d/workspace/testprj/1git_html/NumberHelper",
-    devdir: "",
-    appstoreUrl: "",
+    devdir: "/Volumes/DataShareHFS2/2013projects/Bus/p_NumberHelper/",
+    appstoreUrl: "https://itunes.apple.com/us/app/numberhelper/id1178977756?l=zh&ls=1&mt=12",
     appstroePrice: 4.99,
-    officialPrice: 0,
+    officialPrice: 4.99,
     officialUrl: "",
     hasPromo: true,
     platforms: _U.platform[0],
@@ -647,7 +647,7 @@
       comment: "",
       url: ""
     }],
-    partnerID: "	D16161109",
+    partnerID: "D16161109",
     remark: "分配给袁成，讨论草图，定于2016年11月29日提交Ver1.0 \n",
     nextCTime: 20161129
   }));
