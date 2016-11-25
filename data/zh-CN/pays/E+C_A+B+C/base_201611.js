@@ -184,12 +184,19 @@
     _U.data.push(_U.tp({id: "A021", visits: 654, start:nowDate, end:nowDate}));
     _U.data.push(_U.tp({id: "A022", visits: 984, start:nowDate, end:nowDate}));
 
-    //2016.11.22
+    //2016.11.23
     nowDate = 20161123;
     _U.data.push(_U.tp({id: "A019", visits: 1483, start:nowDate, end:nowDate}));
     _U.data.push(_U.tp({id: "A020", visits: 1435, start:nowDate, end:nowDate}));
     _U.data.push(_U.tp({id: "A021", visits: 877, start:nowDate, end:nowDate}));
     _U.data.push(_U.tp({id: "A022", visits: 1147, start:nowDate, end:nowDate}));
+
+    //2016.11.24
+    nowDate = 20161124;
+    _U.data.push(_U.tp({id: "A019", visits: 2184, start:nowDate, end:nowDate}));
+    _U.data.push(_U.tp({id: "A020", visits: 1848, start:nowDate, end:nowDate}));
+    _U.data.push(_U.tp({id: "A021", visits: 2482, start:nowDate, end:nowDate}));
+    _U.data.push(_U.tp({id: "A022", visits: 1650, start:nowDate, end:nowDate}));    
 
     window["rty_pays_dataobj"] = _U;
 

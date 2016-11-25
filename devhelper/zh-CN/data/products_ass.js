@@ -142,7 +142,7 @@
       url: "http://freeiconmaker.com/"
     }],
     partnerID: "",
-    remark: "",
+    remark: "暂时先分给陆明，等待他的评估",
     nextCTime: 0 // 下一次提交时间
   }));
   ///
