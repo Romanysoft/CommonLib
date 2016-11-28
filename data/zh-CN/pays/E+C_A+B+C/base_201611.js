@@ -212,6 +212,13 @@
     _U.data.push(_U.tp({id: "A021", visits: 2985, start:nowDate, end:nowDate}));
     _U.data.push(_U.tp({id: "A022", visits: 498, start:nowDate, end:nowDate}));
 
+    //2016.11.27
+    nowDate = 20161127;
+    _U.data.push(_U.tp({id: "A019", visits: 3363, start:nowDate, end:nowDate}));
+    _U.data.push(_U.tp({id: "A020", visits: 3114, start:nowDate, end:nowDate}));
+    _U.data.push(_U.tp({id: "A021", visits: 3259, start:nowDate, end:nowDate}));
+    _U.data.push(_U.tp({id: "A022", visits: 1707, start:nowDate, end:nowDate}));
+
     window["rty_pays_dataobj"] = _U;
 
     return _U;

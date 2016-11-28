@@ -51,7 +51,6 @@
                 //{ type: "button", id:'toolBtn-shares', spriteCssClass: "k-tool-icon k-font-icon   k-i-insert-file", text: "共享文件", enable: true, click: function(){_MC.send('app.showSharesWindow');}}
                 { type: "button", id:'toolBtn-shares', spriteCssClass: "k-tool-icon k-font-icon   k-i-insert-file", text: "项目", enable: true, click: function(){_MC.send('app.showResourcesWindow');}}
             );
-
         }
 
         toolItmes.push(

@@ -297,7 +297,7 @@
                     }
                 },
                 sort:[
-                    {field: "end", dir: "desc" }，
+                    {field: "end", dir: "desc" },
                     {field: "total", dir: "desc" }
                 ],
                 pageSize: 50
