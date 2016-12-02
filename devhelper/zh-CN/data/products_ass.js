@@ -426,6 +426,31 @@
   ///
   _U.data.push(_U.tp({
     types: _U.types[1],
+    productName: "ImageDo",
+    srcdir: "/d/workspace/testprj/1git_html/ImageDo",
+    devdir: "/Volumes/DataShareHFS2/2013projects/Bus/p_ImageDo/",
+    appstoreUrl: "",
+    appstroePrice: 0,
+    officialPrice: 0,
+    officialUrl: "",
+    hasPromo: true,
+    platforms: _U.platform[0],
+
+    /////////////////////////////////
+    demoName: "图像处理，包括基本两项：（1）图像计算器；（2）图像处理，例如转换，裁剪等。",
+    demoUrl: "http://www.99cankao.com/algebragraph/parabola-graph.php",
+    reference: [{
+      comment: "",
+      url: ""
+    }],
+    partnerID: "D17161202",
+    remark: "分配给谢云鹏，先做Demo，后面陆续针对此产品进行升级，维护，开发插件 \n",
+    nextCTime: 0
+  }));
+
+  ///
+  _U.data.push(_U.tp({
+    types: _U.types[1],
     productName: "",
     srcdir: "",
     devdir: "",
