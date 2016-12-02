@@ -216,6 +216,19 @@
         }));
     }
 
+    if(1){
+        _U.data.push(_U.tp({
+            id: "D" + ++No + "161202" ,
+            name:"谢云鹏", // 广东深圳
+            QQ: kendo.toString(214066150/100, "####xxx"),
+            email:"megadron@qq.com",
+            payWayType:_U.PayWayTypes[0],
+            payWayAcount:"megadron@qq.com",
+            referrer:"",
+            speciality:"C#、HTML、Javascript"
+        }));
+    }
+
 
 	window["rty_partners_dataobj"] = _U;
 
