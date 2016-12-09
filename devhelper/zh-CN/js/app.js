@@ -13,7 +13,7 @@
     var _U =  {};
 
     _U.initTitleAndVersion = function(){
-        document.title = "Romanysoft 合作开发 (中国区) Ver 1.0" ;
+        document.title = "Romanysoft 合作开发 (中国区) Ver 1.0 2016.12" ;
     };
 
     _U.launch = function () {
