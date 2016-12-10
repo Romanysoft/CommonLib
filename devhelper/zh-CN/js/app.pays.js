@@ -223,6 +223,7 @@
 
 
     _U.updateWithForec_ABC = function(yearMonth, partnersData){
+        //console.log("updateWithForec_ABC");
         var t$ = this;
         var jsfile = "data/pays/" + yearMonth + ".js" + "?t=" + (new Date()).getTime();
         var gridElement = $('#pays-window > .pays-grid-ec');
@@ -232,8 +233,13 @@
         }
 
         // For E+C/A+B+C模式
-        $.getScript(jsfile).done(function(data, textStatus, jqxhr){
+        //console.log("jsfile = %s", jsfile);
+        $.get({
+          url:jsfile,
+          dataType: "text"
+        }).done(function(data, textStatus, jqxhr){
             var paysData = [];
+            console.log("GetData====");
             if($.RTYUtils.isString(data)){
                 var obj = eval(data);
                 paysData = obj.data;
