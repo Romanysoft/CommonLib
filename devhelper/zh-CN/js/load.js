@@ -6,9 +6,10 @@
 
     _U.launch = function () {
         var t$ = this;
-       
+
 
         var kendouiUrl = "https://kendo.cdn.telerik.com/2016.3.914";
+        kendouiUrl = "../../common/kendoui/v2016.3.914";
         if(location.href.indexOf("localhost") > -1){
             kendouiUrl = "../../common/kendoui/v2016.3.914";
         }
@@ -22,8 +23,8 @@
             "styles/app.css"
         ];
 
-        //var kendouiUrl = "common/kendoui/v2016.3.914";
-        //var kendouiUrl = "https://kendo.cdn.telerik.com/2016.3.914";
+
+
 
         var urls = [
             kendouiUrl + "/js/kendo.all.min.js",
@@ -61,8 +62,8 @@
                     }
                 };
 
-                _f(cssUrls);   
-            })        
+                _f(cssUrls);
+            })
             .next(function(nxt){
                 var _f = function(urls){
                     if (urls.length > 0){
@@ -73,11 +74,11 @@
                     }
                 };
 
-                _f(urls);   
+                _f(urls);
             })
             .done(function(nxt){
                 console.log('----------- load complate ----------------');
-            })                                                
+            })
 
     };
 
