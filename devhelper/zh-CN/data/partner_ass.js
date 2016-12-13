@@ -229,6 +229,19 @@
         }));
     }
 
+    if(1){
+        _U.data.push(_U.tp({
+            id: "D" + ++No + "161213" ,
+            name:"王丁", // 河北，目前在北京，是王恒的同事
+            QQ: kendo.toString(121824390/100, "####xxx"),
+            email:"isswhy@126.com",
+            payWayType:_U.PayWayTypes[0],
+            payWayAcount:"wangding3579@126.com",
+            referrer:"D8160908",
+            speciality:"Javascript"
+        }));
+    }
+
 
 	window["rty_partners_dataobj"] = _U;
 
