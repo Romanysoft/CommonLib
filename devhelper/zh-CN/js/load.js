@@ -9,7 +9,10 @@
 
 
         var kendouiUrl = "https://kendo.cdn.telerik.com/2016.3.914";
-        kendouiUrl = "../../common/kendoui/v2016.3.914";
+        if(window.location.host.indexOf("127.0.0.1") > -1){
+          kendouiUrl = "../../common/kendoui/v2016.3.914";
+        }
+
         if(location.href.indexOf("localhost") > -1){
             kendouiUrl = "../../common/kendoui/v2016.3.914";
         }

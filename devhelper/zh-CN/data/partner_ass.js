@@ -238,7 +238,7 @@
             payWayType:_U.PayWayTypes[0],
             payWayAcount:"wangding3579@126.com",
             referrer:"D8160908",
-            speciality:"Javascript"
+            speciality:"Javascript node python java"
         }));
     }
 
