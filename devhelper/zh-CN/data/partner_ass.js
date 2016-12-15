@@ -242,6 +242,19 @@
         }));
     }
 
+    if(1){
+        _U.data.push(_U.tp({
+            id: "D" + ++No + "161215" ,
+            name:"马泽龙", // 中国 浙江 杭州 上城区
+            QQ: kendo.toString(30819873/100, "####xxx"),
+            email:"30819873@qq.com",
+            payWayType:_U.PayWayTypes[0],
+            payWayAcount:"30819873@qq.com",
+            referrer:"",
+            speciality:"H5 Java"
+        }));
+    }
+
 
 	window["rty_partners_dataobj"] = _U;
 
