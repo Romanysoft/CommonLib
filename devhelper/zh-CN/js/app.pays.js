@@ -421,6 +421,7 @@
 
 				setTimeout(function(){
 					/// 使用默认值
+                 t$.showLoading();
 	                t$.reloadData(getCacleDate());
 				},500);
 
