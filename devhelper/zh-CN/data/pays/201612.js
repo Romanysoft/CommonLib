@@ -21,7 +21,7 @@
       };
 
       var curE = 6.76392;
-      var nowDate = 0;
+      var nowDate = 0, endDate = 0;
 
       if(1){
          nowDate = 20161201;
@@ -498,6 +498,33 @@
          _U.data.push(_U.tp({id: "D17161202", cost: 0, rate: curE, start:nowDate, end:nowDate}));
          _U.data.push(_U.tp({id: "D18161213", cost: 0, rate: curE, start:nowDate, end:nowDate}));
          _U.data.push(_U.tp({id: "D19161215", cost: 0, rate: curE, start:nowDate, end:nowDate}));
+      }
+
+
+      if(1){
+         nowDate = 20161221;
+         endDate = 20161222;
+         curE = 6.94642;
+         _U.data.push(_U.tp({id: "D1150418", cost: 56.79, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D2150425", cost: 78.23, rate: curE, start:nowDate, end:nowDate}));
+         _U.data.push(_U.tp({id: "D3150522", cost: 36.19, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D4150728", cost: 42.41, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D5150916", cost: 87.02, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D6151112", cost: 37.19, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D7151202", cost: 27.13, rate: curE, start:nowDate, end:endDate}));
+
+         _U.data.push(_U.tp({id: "D8160908", cost: 0, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D9161024", cost: 0, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D10161024", cost: 0, rate: curE, start:nowDate, end:nowDate}));
+         _U.data.push(_U.tp({id: "D11161024", cost: 0, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D12161027", cost: 0, rate: curE, start:nowDate, end:nowDate}));
+         _U.data.push(_U.tp({id: "D13161027", cost: 0, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D14161027", cost: 0, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D15161031", cost: 0.62, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D16161109", cost: 0, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D17161202", cost: 0, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D18161213", cost: 0, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D19161215", cost: 0, rate: curE, start:nowDate, end:endDate}));
       }
 
       window["rty_pays_dataobj"] = _U;

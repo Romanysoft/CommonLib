@@ -735,10 +735,15 @@
 
   _U.data.push(_U.tp({
     types: _U.types[1],
-    productName: "AppFinder",
+    productName: "AloeRs",
     srcdir: "/d/workspace/testprj/1git_html/AppFinder",
-    devdir: "",
-    appstoreUrl: "",
+    devdir: "/Volumes/DataShareHFS2/2013projects/Bus/p_AppFinder/",
+    appstoreUrl: "https://itunes.apple.com/us/app/aloers/id1185285681?l=zh&ls=1&mt=12",
+    appstroePrice: 0,
+    officialPrice: 0,
+    officialUrl: "https://romanysoft.github.io/AppFinder",
+    hasPromo: true,
+    platforms: _U.platform[0],
 
     /////////////////////////////////
     demoName: "AppFinder", // find application path by name (OS X)
