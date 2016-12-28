@@ -264,7 +264,7 @@
             payWayType:_U.PayWayTypes[0],
             payWayAcount:"15801604626 或者 niu.yan.jun@hotmail.com", //
             referrer:"D8160908",
-            speciality:"H5 技术能人  java flex js "
+            speciality:"H5 技术能人 java flex js "
         }));
     }
 
