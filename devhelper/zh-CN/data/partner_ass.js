@@ -255,6 +255,18 @@
         }));
     }
 
+    if(1){
+        _U.data.push(_U.tp({
+            id: "D" + ++No + "161228" ,
+            name:"牛延军", // 中国 河南 平顶山
+            QQ: kendo.toString(429372385/100, "####xxx"),
+            email:"429372385@qq.com",
+            payWayType:_U.PayWayTypes[0],
+            payWayAcount:"",
+            referrer:"D8160908",
+            speciality:"H5 技术能人"
+        }));
+    }
 
 	window["rty_partners_dataobj"] = _U;
 
