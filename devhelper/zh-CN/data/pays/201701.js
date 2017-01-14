@@ -153,6 +153,32 @@
          _U.data.push(_U.tp({id: "D19161215", cost: 0, rate: curE, start:nowDate, end:endDate}));
       }
 
+      if(1){
+         nowDate = 20170111;
+         endDate = 20170112;
+         curE = 6.90219;
+         _U.data.push(_U.tp({id: "D1150418", cost: 35.24, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D2150425", cost: 31.28, rate: curE, start:nowDate, end:nowDate}));
+         _U.data.push(_U.tp({id: "D3150522", cost: 17.16, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D4150728", cost: 19.37, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D5150916", cost: 32.56, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D6151112", cost: 29.71, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D7151202", cost: 43.26, rate: curE, start:nowDate, end:endDate}));
+
+         _U.data.push(_U.tp({id: "D8160908", cost: 0, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D9161024", cost: 0, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D10161024", cost: 0, rate: curE, start:nowDate, end:nowDate}));
+         _U.data.push(_U.tp({id: "D11161024", cost: 0, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D12161027", cost: 0, rate: curE, start:nowDate, end:nowDate}));
+         _U.data.push(_U.tp({id: "D13161027", cost: 0, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D14161027", cost: 0, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D15161031", cost: 0.6, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D16161109", cost: 0, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D17161202", cost: 0, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D18161213", cost: 0, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D19161215", cost: 0, rate: curE, start:nowDate, end:endDate}));
+      }
+
       window["rty_pays_dataobj"] = _U;
 
       return _U;
