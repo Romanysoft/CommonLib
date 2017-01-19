@@ -223,7 +223,7 @@
          _U.data.push(_U.tp({id: "D11161024", cost: 0, rate: curE, start:nowDate, end:endDate}));
          _U.data.push(_U.tp({id: "D12161027", cost: 0, rate: curE, start:nowDate, end:nowDate}));
          _U.data.push(_U.tp({id: "D13161027", cost: 0, rate: curE, start:nowDate, end:endDate}));
-         _U.data.push(_U.tp({id: "D14161027", cost: 0, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D14161027", cost: 0.69, rate: curE, start:nowDate, end:endDate}));
          _U.data.push(_U.tp({id: "D15161031", cost: 0, rate: curE, start:nowDate, end:endDate}));
          _U.data.push(_U.tp({id: "D16161109", cost: 0, rate: curE, start:nowDate, end:endDate}));
          _U.data.push(_U.tp({id: "D17161202", cost: 0, rate: curE, start:nowDate, end:endDate}));
