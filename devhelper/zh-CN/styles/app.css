@@ -21,3 +21,7 @@
 #surface-cocoa-container {
   cursor: pointer;
 }
+
+.k-window{
+  font-size: 10px;
+}

@@ -28,6 +28,7 @@
                     data: partnersData,
                     schema: {
                         model: {
+                            id: "id",
                             fields: {
                                 id: { type: "string" },
                                 name: { type: "string" },
@@ -35,15 +36,40 @@
                                 email: { type: "string" },
                                 payWayType: { type: "string" },
                                 payWayAcount: { type: "string" },
-                                onJob:{ type: "string" },
+                                onJob:{
+                                  type: "string",
+                                  parse: function(obj){
+                                    if($.RTYUtils.isBoolean(obj)){
+                                       if(obj) return "在岗";
+                                    }
+                                    return "离岗";
+                                  }
+                                },
                                 referrer: { type: "string" },
-                                speciality: { type: "string" }
+                                speciality: { type: "string" },
+                                qqGroups: {
+                                  type: "string",
+                                  parse: function(obj){
+                                    if($.RTYUtils.isArray(obj)){
+                                       if(obj.length > 0)
+                                          return JSON.stringify(obj);
+                                    }
+                                    return "";
+                                  }
+                                },
+                                MgrQQs:{
+                                  type: "string",
+                                  parse: function(obj){
+                                    if($.RTYUtils.isArray(obj)){
+                                       if(obj.length > 0)
+                                          return JSON.stringify(obj);
+                                    }
+                                    return "";
+                                  }
+                                }
                             }
                         }
                     },
-                    sort:[
-                        {field: "id", dir: "desc" }
-                    ],
                     pageSize: 50
                 },
                 allowCopy: true,
@@ -73,6 +99,10 @@
         };
 
         if(window.location.host.indexOf("127.0.0.1") > -1){
+            options.columns.push({ field: "onJob", title: "状态", width: "30px" });
+            options.columns.push({ field: "qqGroups", title: "所属QQ群列表", width: "60px" });
+            options.columns.push({ field: "MgrQQs", title: "主管QQ群", width: "60px" });
+            options.columns.push({ field: "hometown", title: "家乡", width: "60px" });
             options.columns.push({ field: "payWayAcount", title: "支付账户", width: "80px" });
             options.columns.push({ field: "email", title: "邮箱", width: "80px" });
 
