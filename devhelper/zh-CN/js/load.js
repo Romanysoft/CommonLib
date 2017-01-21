@@ -48,6 +48,7 @@
             "js/app.shares.js",
             "js/app.intro.js",
             "js/app.pays.js",
+            "js/app.calc.js",
             "js/app.toolbar.js",
             "js/app.js",
 

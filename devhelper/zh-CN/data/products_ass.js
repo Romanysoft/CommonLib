@@ -7,7 +7,7 @@
   /// 本单元的处理
   var _U = {};
   _U.data = [];
-  _U.types = ["上线", "Demo"];
+  _U.types = ["上线", "Demo", "下线"];
   _U.platform = ["Mac", "Win", "Linux"];
 
   _U.tp = function(data) {

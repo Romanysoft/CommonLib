@@ -44,12 +44,20 @@
                 b$.App.open('https://github.com/Romanysoft/working/wiki/Business-Cooperation');
             }}
         );
+        toolItmes.push(
+            { type: "button", id:'toolBtn-resources', spriteCssClass: "k-tool-icon k-font-icon  k-i-sort-asc", text: "AppAnnie", enable: true, click: function(){
+                b$.App.open('https://www.appannie.com/');
+            }}
+        );
 
         ///测试
         if(window.location.host.indexOf("127.0.0.1") > -1){
             toolItmes.push(
                 //{ type: "button", id:'toolBtn-shares', spriteCssClass: "k-tool-icon k-font-icon   k-i-insert-file", text: "共享文件", enable: true, click: function(){_MC.send('app.showSharesWindow');}}
                 { type: "button", id:'toolBtn-shares', spriteCssClass: "k-tool-icon k-font-icon   k-i-insert-file", text: "项目", enable: true, click: function(){_MC.send('app.showResourcesWindow');}}
+            );
+            toolItmes.push(
+                { type: "button", id:'toolBtn-shares', spriteCssClass: "k-tool-icon k-font-icon   k-i-insert-file", text: "产品收益核算", enable: true, click: function(){_MC.send('app.showCalcWindow');}}
             );
         }
 
