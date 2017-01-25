@@ -168,7 +168,7 @@
                       var id = key;
                       var earning = partnerID2Earning[key];
 
-                      var formula = "_U.data.push(_U.tp({id: \"" + id + "\", cost: " + earning +", rate: curE, start:nowDate,  end:nowDate}));\n";
+                      var formula = "_U.data.push(_U.tp({id: \"" + id + "\", cost: " + earning +", rate: curE, start:nowDate, end:endDate}));\n";
                       allFormula += formula;
                     }
                 });

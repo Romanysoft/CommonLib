@@ -284,6 +284,21 @@
 
       }
 
+      if(1){
+         nowDate = 20170122;
+         endDate = 20170123;
+         curE = 6.85592;
+         _U.data.push(_U.tp({id: "D1150418", cost: 22.7, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D2150425", cost: 56.3, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D3150522", cost: 16.7, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D4150728", cost: 31.1, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D5150916", cost: 13.9, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D6151112", cost: 32.7, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D7151202", cost: 15.4, rate: curE, start:nowDate, end:endDate}));
+
+         _U.data.push(_U.tp({id: "D13161027", cost: 0.6, rate: curE, start:nowDate, end:endDate}));
+      }
+
 
       window["rty_pays_dataobj"] = _U;
 

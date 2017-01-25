@@ -45,98 +45,180 @@
  	       });
     };
 
+    _U.id2PartnerInfo = {};  // id与合作者信息的对应关系
+    _U.id2linePartners = {}; // id 与下线合作者的对应关系
+    _U.id2qqLinePartners = {}; // id 与管理的合作者的对应关系
+    _U.idQQMgrs = [];        // id 与QQ站长的关系
+    _U.id2PaysDataObj = {};
     /// 计算及统计支付情况 for E+C and A+B+C
     _U.calculatePays = function(paysData, partnersData){
-
+        var resultsData = [];
         var t$ = this;
 
-        var resultsData = [];
+        //// 统一处理
+        $.each(partnersData, function(index, thisPartner){
+           var tID = thisPartner.id;
+
+           /// 1.id 与个人信息的对应关系
+           t$.id2PartnerInfo[tID] = thisPartner;
+           try{
+             if(ele.MgrQQs.length > 0){
+               t$.idQQMgrs.push(tID); // 添加QQ站长队列
+             }
+           }catch(e){}
+
+           /// 2. id 对应的包含的下线，管理的QQ人员关系
+           var linePartners = [];    /// 推荐下线
+           var qqLinePartners = [];  /// 管理的QQ成员
+           $.each(partnersData, function(index, ele){
+               var referrer = ele.referrer; /// 推荐者
+               if (referrer === tID){
+                   linePartners.push(ele);
+               }
+
+               var mgrQQId = ele.mgrQQId;  /// QQ管理者
+               if (mgrQQId === tID){
+                   qqLinePartners.push(ele);
+               }
+           });
+           t$.id2linePartners[tID] = linePartners; /// id 对应包含的下线
+           t$.id2qqLinePartners[tID] = qqLinePartners; /// id 对应包含管理的QQ人员
+        });
 
         /// 获取自己的下线
-        function getLinePartners(id){
-            var linePartners = [];
-            $.each(partnersData, function(index, ele){
-                var referrer = ele.referrer;
-                if (referrer === id){
-                    linePartners.push(ele);
-                }
-            });
-
-            return linePartners;
-        }
-
+        function getLinePartners(id){ return t$.id2linePartners[id];}
+        /// 获取自己的QQ群人员下线
+        function getQQLinePartners(id){ return t$.id2qqLinePartners[id];}
         /// 获取自己的信息
-        function getPartnerInfo(id){
-            var info = null;
-            $.each(partnersData, function(index, ele){
-                if (id === ele.id){
-                    info = ele;
-                }
-            });
-
-            return info;
-        }
-
-        /// 先整理格式化
-        $.each(paysData, function(index, ele){
-            ele.total_cr = ele.cost * ele.rate;    // 美元*汇率
-            var info;
-
-            if(ele.end <= 20161023) {                // 大于7天，采用月结算
-                info = t$._prcCalc(ele.total_cr, true);  // 使用计算器来计算
-            }else{
-                 info = t$._prcCalc(ele.total_cr, false);  // 使用计算器来计算
-            }
-
-            ele.total_e = info["shouyi"];          // 开发者直接收益
-            ele.total_e_ratio =ele.total_cr === 0? 0 : ele.total_e*100/ele.total_cr;  // 开发者收益占比
-
-            ele.total_fc = info["fengcheng"];      //  直接推荐人能够拿到的分成
-
-            ele.total_c = 0;
-            ele.total = 0;
-        });
+        function getPartnerInfo(id){ return t$.id2PartnerInfo[id];}
 
         /// 获取下载总的提成
         function getPartnersPay(payRecordObj, allPaysData){
             var curPartnerPay = $.extend(payRecordObj, {});
+
+            ///计算由自己推荐的下线人员的提成
+            var linePartners = getLinePartners(curPartnerPay.id);
+            var qqLinePartners = getQQLinePartners(curPartnerPay.id);
+
+            var lineSum = 0, qqLineSum = 0;
+            $.each(allPaysData, function(i, rec){
+               //1. 由自己推荐的
+               $.each(linePartners, function(li, partner){
+                 if(rec.id === partner.id
+                 && rec.start === payRecordObj.start
+                 && rec.end === payRecordObj.end
+                 ){
+                     lineSum += rec.total_fc; //由自己推荐的下线人员的提成
+                 }
+               });
+
+               //2. 由自己管理的
+               $.each(qqLinePartners, function(li, partner){
+                 if(rec.id === partner.id
+                 && rec.start === payRecordObj.start
+                 && rec.end === payRecordObj.end
+                 ){
+                     qqLineSum += (rec.total_cr - rec.total_e - rec.total_fc) * 0.1; // 10%的平台分成
+                 }
+               });
+            })
+
+            curPartnerPay.total_c = lineSum;
+            curPartnerPay.total_d = qqLineSum;
+            curPartnerPay.total_ec = curPartnerPay.total_e + curPartnerPay.total_c;
+            curPartnerPay.total = curPartnerPay.total_ec + curPartnerPay.total_d;
+
+            /// 其他信息整合进来
             var info = getPartnerInfo(curPartnerPay.id);
             curPartnerPay.name = info.name;
             curPartnerPay.referrer = info.referrer;
 
-
-            var linePartners = getLinePartners(curPartnerPay.id);
-            if (linePartners.length < 1){
-                curPartnerPay.total = curPartnerPay.total_e + curPartnerPay.total_c;
-            }else{
-
-                var linePartnersPaysData = [];
-                $.each(linePartners, function(i, partner){
-                    $.each(allPaysData, function(i, rec){
-                        if(rec.id === partner.id
-                        && rec.start === payRecordObj.start
-                        && rec.end === payRecordObj.end
-                        ){
-                            linePartnersPaysData.push(rec);
-                        }
-                    })
-                });
-
-                var sum = 0;
-                $.each(linePartnersPaysData, function(index, payObj){
-                    var linePartnerTotalPayObj = getPartnersPay(payObj, allPaysData);
-                    sum += linePartnerTotalPayObj.total_fc;
-                });
-
-                curPartnerPay.total_c = sum;
-                curPartnerPay.total = curPartnerPay.total_e + curPartnerPay.total_c;
-
-            }
-
             return curPartnerPay;
         }
 
-        ///
+        ////////////////////////////////////////////////////////////////////////////////
+        //// 处理一下对照关系, 方便后面查找
+        $.each(paysData, function(index, payObj){
+           var key = JSON.stringify({
+             id: payObj.id, rate: payObj.rate, start:payObj.start, end:payObj.end
+           });
+           t$.id2PaysDataObj[key] = payObj;
+        });
+
+        /// Step1: 先整理格式化, (1)已经存在记录的人;(2)统计出有哪些推荐人
+        var pays_referrerMap = {}, pays_qqMgrMap = {}; // 临时推荐人列表, 临时QQ站长列表
+        $.each(paysData, function(index, ele){
+
+            var partnerInfo = getPartnerInfo(ele.id);
+            if($.trim(partnerInfo.referrer).length > 0){
+              var keyObj = {id: partnerInfo.referrer, rate: ele.rate, start:ele.start, end:ele.end};
+              var keyStr = JSON.stringify(keyObj);
+              if(!pays_referrerMap[keyStr]){
+                pays_referrerMap[keyStr] = keyObj;
+              }
+            }
+
+            if($.trim(partnerInfo.mgrQQId).length > 0) {
+              var keyObj = {id: partnerInfo.mgrQQId, rate: ele.rate, start:ele.start, end:ele.end};
+              var keyStr = JSON.stringify(keyObj);
+              if(!pays_qqMgrMap[keyStr]){
+                pays_qqMgrMap[keyStr] = keyObj;
+              }
+            }
+        });
+
+        /// 快速比对，没有的话，创建新对象来处理(处理临时推荐人)
+        $.each(Object.keys(pays_referrerMap), function(index, keyStr){
+           // 查找是否存在？
+           if(!t$.id2PaysDataObj[keyStr]){
+              var obj = JSON.parse(keyStr);
+              obj.cost = 0;
+              paysData.push(obj);
+              t$.id2PaysDataObj[keyStr] = obj;
+           }
+        });
+
+        /// 快速比对，没有的话，创建新对象来处理(处理QQ站长)
+        $.each(Object.keys(pays_qqMgrMap), function(index, keyStr){
+           // 查找是否存在？
+           if(!t$.id2PaysDataObj[keyStr]){
+              var obj = JSON.parse(keyStr);
+              obj.cost = 0;
+              paysData.push(obj);
+              t$.id2PaysDataObj[keyStr] = obj;
+           }
+        });
+
+        /////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////
+        $.each(paysData, function(index, ele){
+            ele.total_cr = ele.cost * ele.rate;    // 美元*汇率(总收入)
+            var info, partnerInfo;
+            partnerInfo = getPartnerInfo(ele.id);
+
+            if(ele.end <= 20161023) {                // 大于7天，采用月结算
+                info = t$._prcCalc(ele.total_cr, true);  // 使用计算器来计算
+            }else{
+                info = t$._prcCalc(ele.total_cr, false);  // 使用计算器来计算
+            }
+
+            ele.total_e = info["shouyi"];          // 开发者直接收益
+            ele.total_e_ratio = (ele.total_cr === 0? 0 : ele.total_e*100/ele.total_cr);  // 开发者收益占比
+
+            ele.total_fc = info["fengcheng"];      //  直接推荐人能够拿到的分成
+            ele.has_fc = false;  /// 检测是否有分成
+            if($.trim(partnerInfo.referrer).length > 0){
+              ele.has_fc = true;
+            }
+
+            ele.total_c = 0;
+            ele.total_d = 0;                      //  QQ站长分成计算
+            ele.total_ec = 0;                     // 自己产品及推荐下线的收益和 ele.total_e + ele.total_c
+            ele.total = 0;
+        });
+
+        ////////////////////////////////////////////////////////////////////////////////
+        /// 获取所有结果
         $.each(paysData, function(index, ele){
             var newPaysRecord = getPartnersPay(ele, paysData);
 
@@ -145,8 +227,14 @@
                 newPaysRecord.payedState = newPaysRecord.total > 0 ?  "完成" :  "零不支付";
             }
 
-            resultsData.push(newPaysRecord);
+            // 是否显示不在此列表中的
+            if(newPaysRecord.total > 0){
+              resultsData.push(newPaysRecord);
+            }
         });
+
+
+
 
         return resultsData;
     };
@@ -296,6 +384,7 @@
                             total_e: { type: "number" },
                             total_fc: { type: "number" },
                             total_c: { type: "number" },
+                            total_d: { type: "number" },
                             total: { type: "number" },
 
                             payedState: {type: "string"}
@@ -342,24 +431,30 @@
                 {
                     title: "E部分：合作Apps纯收入 * 开发者占比",
                     columns:[
-                        { field: "cost", title: "收入($)", format: "${0:n2}", width: "40px" },
+                        { field: "cost", title: "收入($)", format: "$ {0:n2}", width: "40px" },
                         { field: "rate", title: "汇率", format: "{0:n5}", width: "40px" },
-                        { field: "total_cr", title: "收入(¥)", format: "¥{0:n2}", width: "40px" },
+                        { field: "total_cr", title: "收入(¥)", format: "¥ {0:n2}", width: "40px" },
                         { field: "total_e_ratio", title: "占比", format: "{0:n2}%", width: "32px" },
-                        { field: "total_e", title: "E收入(¥)", format: "¥{0:n2}", width: "50px" }
+                        { field: "total_e", title: "E收入(¥)", format: "¥ {0:n2}", width: "50px" }
                         //,{ field: "total_fc", title: "推荐人收入(¥)", format: "¥{0:n2}", width: "50px" }
                     ]
                 },
                 {
                     title: "C部分：推荐提成",
                     columns:[
-                        { field: "total_c", title: "C收入(¥)",format: "¥{0:n3}", width: "50px" }
+                        { field: "total_c", title: "C收入(¥)",format: "¥ {0:n3}", width: "50px" }
                     ]
                 },
                 {
-                    title: "总计 = E + C",
+                    title: "D部分：站长提成",
                     columns:[
-                        { field: "total", title: "总计", format: "¥{0:n2}", width: "60px" }
+                        { field: "total_d", title: "D收入(¥)",format: "¥ {0:n3}", width: "50px" }
+                    ]
+                },
+                {
+                    title: "总计 = E + C + D",
+                    columns:[
+                        { field: "total", title: "总计", format: "¥ {0:n2}", width: "60px" }
                     ]
                 },
                 { field: "payedState", title: "支付状态", width: "40px" }

@@ -27,8 +27,9 @@
                 twitter:""
             },
             qqGroups:[],                   // 所属QQ群列表
-            MgrQQs:[],                    // 主管QQ群
-            referrer:""                   // 推荐人，上线人员
+            MgrQQs:[],                     // 主管QQ群
+            mgrQQId:"",                    // QQ站长ID
+            referrer:""                    // 推荐人，上线人员
         };
 
         return $.extend(o, data);
@@ -118,7 +119,7 @@
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     _U.data.push(_U.tp({
-        id: "D" + ++No + "160908" ,
+        id: "D" + 8 + "160908" ,
         name:"王恒",
         QQ: kendo.toString(359126613/100, "####xxx"),
         email:"359126613*@qq.com",
@@ -140,6 +141,7 @@
             payWayAcount:"liuxiaoer@live.cn",
             referrer:"D8160908",
             qqGroups:["LabsRS-Dev①"],        // 所属QQ群
+            mgrQQId:"D8160908",
             speciality:"Javascript, Java"
         }));
 
@@ -152,6 +154,7 @@
             payWayAcount:"cyn.cto@gmail.com",
             referrer:"D8160908",
             qqGroups:["LabsRS-Dev①"],        // 所属QQ群
+            mgrQQId:"D8160908",
             speciality:"前端Html Javascript Css 及Java Python "
         }));
 
@@ -166,6 +169,7 @@
               payWayAcount:"13520805212",
               referrer:"D9161024",
               qqGroups:["LabsRS-Dev①"],        // 所属QQ群
+              mgrQQId:"D8160908",
               speciality:"前端Html Javascript Css"
           }));
         }
@@ -180,6 +184,7 @@
             payWayAcount:"18210498916",
             referrer:"D9161024",
             qqGroups:["LabsRS-Dev①"],        // 所属QQ群
+            mgrQQId:"D8160908",
             speciality:"前端Html Javascript Css 及Java"
         }));
 
@@ -193,6 +198,7 @@
             payWayAcount:"1262347593@qq.com",
             referrer:"D9161024",
             qqGroups:["LabsRS-Dev①"],        // 所属QQ群
+            mgrQQId:"D8160908",
             speciality:"前端Html Javascript Css"
         }));
 
@@ -206,6 +212,7 @@
             payWayAcount:"18500404550",
             referrer:"D9161024",
             qqGroups:["LabsRS-Dev①"],        // 所属QQ群
+            mgrQQId:"D8160908",
             speciality:"前端Html Javascript Css"
         }));
 
@@ -219,6 +226,7 @@
             payWayAcount:"18618114524",
             referrer:"D8160908",
             qqGroups:["LabsRS-Dev①"],        // 所属QQ群
+            mgrQQId:"D8160908",
             speciality:"前端Html Javascript Css"
         }));
     }
@@ -235,6 +243,7 @@
             payWayAcount:"15101668430",
             referrer:"D8160908",
             qqGroups:["LabsRS-Dev①","LabsRS-Dev③"],        // 所属QQ群
+            mgrQQId:"D8160908",
             MgrQQs:["LabsRS-Dev③"],        // 管理QQ群站长
             speciality:"Javascript, html, css 及Java语言"
         }));
@@ -251,6 +260,7 @@
             payWayAcount:"megadron@qq.com",
             referrer:"",
             qqGroups:["LabsRS-Dev①"],        // 所属QQ群
+            mgrQQId:"D8160908",
             speciality:"C#、HTML、Javascript"
         }));
     }
@@ -266,6 +276,7 @@
             payWayAcount:"wangding3579@126.com",
             referrer:"D8160908",
             qqGroups:["LabsRS-Dev①"],        // 所属QQ群
+            mgrQQId:"D8160908",
             speciality:"Javascript node python java"
         }));
     }
@@ -281,6 +292,7 @@
             payWayAcount:"30819873@qq.com",
             referrer:"",
             qqGroups:["LabsRS-Dev①"],        // 所属QQ群长
+            mgrQQId:"D8160908",
             speciality:"H5 Java"
         }));
     }
@@ -296,6 +308,7 @@
             payWayAcount:"15801604626 或者 niu.yan.jun@hotmail.com", //
             referrer:"D8160908",
             qqGroups:["LabsRS-Dev①"],        // 所属QQ群
+            mgrQQId:"D8160908",
             speciality:"H5 技术能人 java flex js "
         }));
     }
