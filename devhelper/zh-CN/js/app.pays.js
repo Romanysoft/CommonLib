@@ -446,7 +446,7 @@
                     ]
                 },
                 {
-                    title: "D部分：站长提成",
+                    title: "D部分：QQ站长提成",
                     columns:[
                         { field: "total_d", title: "D收入(¥)",format: "¥ {0:n3}", width: "50px" }
                     ]
