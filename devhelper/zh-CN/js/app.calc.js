@@ -55,7 +55,11 @@
               dataTextField: "productName",
               //dataValueField: "partnerID",
               dataValueField: "productName",
-              dataSource: _U.apps2partnerID
+              dataSource: new kendo.data.DataSource({
+                 data:_U.apps2partnerID,
+                 sort:{field:"productName", dir:"asc"}
+              })
+
           });
     }
 
@@ -157,7 +161,10 @@
 
                     // 获取合作者ID
                     var partnerID = _U.appsMap[name];
-                    partnerID2Earning[partnerID] = partnerID2Earning[partnerID] || 0 + earning;
+                    if(partnerID){
+                      partnerID2Earning[partnerID] = partnerID2Earning[partnerID] || 0 + earning;
+                    }
+
                 });
 
                 //输出公式
