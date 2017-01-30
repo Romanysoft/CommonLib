@@ -325,6 +325,19 @@
          _U.data.push(_U.tp({id: "D7151202", cost: 31.7, rate: curE, start:nowDate, end:endDate}));
       }
 
+      if(1){
+         nowDate = 20170128;
+         endDate = 20170128;
+         curE = 6.87987;
+         _U.data.push(_U.tp({id: "D1150418", cost: 9.4, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D2150425", cost: 12.7, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D3150522", cost: 3.7, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D4150728", cost: 15.8, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D5150916", cost: 10.4, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D6151112", cost: 3.7, rate: curE, start:nowDate, end:endDate}));
+         _U.data.push(_U.tp({id: "D7151202", cost: 11.8, rate: curE, start:nowDate, end:endDate}));
+      }
+
 
       window["rty_pays_dataobj"] = _U;
 
