@@ -12,6 +12,7 @@
 
   _U.tp = function(data) {
     var o = {
+      createDate: "",     // 创建时间
       types: _U.types[1], // 是否上线
       id: "", // 产品唯一ID
       productName: "", // 产品名称
@@ -69,7 +70,45 @@
   ///
   ///
   ///
-  ///
+  /// Dove品牌，
+  if(1){
+    _U.data.push(_U.tp({
+      createDate:"2017年2月3日21:16:22",
+      types: _U.types[1],
+      productName: "DoveSvg",
+      srcdir: "/d/workspace/testprj/0git_html/DoveSvg",
+      devdir: "",
+      appstoreUrl: "",
+      appstroePrice: 9.99,
+      officialPrice: 0,
+      officialUrl: "",
+      hasPromo: true,
+      platforms: _U.platform[0],
+
+      /////////////////////////////////
+      demoName: "Image转换SVG工具. ",
+      demoUrl: "",
+      reference: [
+        {
+          comment: "在线PNG、JPEG、JPG、GIF转换SVG",
+          url: "http://pngtosvg.com/"
+        },
+        {
+          comment: "PRODUCT DESIGNER TOOL",
+          url: "https://inkxe.com/"
+        }
+      ],
+      partnerID: "00",
+      remark: "",
+      nextCTime: 0 // 下一次提交时间
+    }));
+  }
+
+
+
+
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ///
   ///
   _U.data.push(_U.tp({
