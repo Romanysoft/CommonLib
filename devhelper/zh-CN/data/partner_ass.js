@@ -122,6 +122,7 @@
         id: "D" + 8 + "160908" ,
         name:"王恒",
         QQ: kendo.toString(359126613/100, "####xxx"),
+        hometown: "北京",
         email:"359126613*@qq.com",
         payWayType:_U.PayWayTypes[0],
         payWayAcount:"15801493503",
