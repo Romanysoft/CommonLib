@@ -18,6 +18,7 @@
       productName: "", // 产品名称
       srcdir: "", // Public开发路径
       devdir: "", // Xcode 源码开发路径
+      github: "", // github 源码
       appstoreUrl: "", // 苹果应用商店链接
       appstroePrice: 0, // 苹果应用商店价格
       officialPrice: 0, // 官方售价
@@ -104,9 +105,36 @@
     }));
   }
 
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  if(1){
+    _U.data.push(_U.tp({
+      createDate:"2017年2月17日10:49:57",
+      types: _U.types[1],
+      productName: "AiTictactoe",
+      srcdir: "/d/workspace/testprj/0git_html/AiTictactoe",
+      devdir: "",
+      github: "https://github.com/LabsRS-Dev/AiTictactoe",
+      appstoreUrl: "",
+      appstroePrice: 0.99,
+      officialPrice: 0,
+      officialUrl: "",
+      hasPromo: true,
+      platforms: _U.platform[0],
 
-
-
+      /////////////////////////////////
+      demoName: "井字游戏. ",
+      demoUrl: "",
+      reference: [
+        {
+          comment: "在线井字棋(三子棋)人机对战 超强AI - aTool在线工具",
+          url: "http://www.atool.org/tictactoe.php"
+        }
+      ],
+      partnerID: "D21170217",
+      remark: "",
+      nextCTime: 0 // 下一次提交时间
+    }));
+  }
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ///
