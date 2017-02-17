@@ -314,6 +314,22 @@
         }));
     }
 
+    if(1){
+        _U.data.push(_U.tp({
+            id: "D" + 21 + "170217" ,
+            name:"张立伟", // 中国 河南 平顶山
+            QQ: kendo.toString(325816535/100, "####xxx"),
+            email:"zlwoip@126.com",
+            hometown:"山东青岛",
+            payWayType:_U.PayWayTypes[0],
+            payWayAcount:"13335009812", //
+            referrer:"D8160908",
+            qqGroups:["LabsRS-Dev①"],        // 所属QQ群
+            mgrQQId:"D8160908",
+            speciality:"H5 Java nodejs "
+        }));
+    }
+
 	window["rty_partners_dataobj"] = _U;
 
     return _U;
