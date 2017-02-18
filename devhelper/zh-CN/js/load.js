@@ -27,8 +27,6 @@
         ];
 
 
-
-
         var urls = [
             kendouiUrl + "/js/kendo.all.min.js",
             kendouiUrl + "/js/messages/kendo.messages.zh-CN.min.js",
@@ -55,9 +53,14 @@
             // <!--App 启动-->
             "js/main.js",
         ];
+
+
+
+
         $.RTYUtils.queue()
             .next(function(nxt){
                 var _f = function(urls){
+                    console.log("urls count :", urls.length);
                     if (urls.length > 0){
                         var _fc = function () {  _f && _f(urls);};
                         $.RTY_3rd_Ensure.ensure({css: urls.shift()}, _fc, _fc)
@@ -70,6 +73,7 @@
             })
             .next(function(nxt){
                 var _f = function(urls){
+                  console.log("urls count :", urls.length);
                     if (urls.length > 0){
                         var _fc = function () {  _f && _f(urls);};
                         $.RTY_3rd_Ensure.ensure({js: urls.shift()}, _fc, _fc)
