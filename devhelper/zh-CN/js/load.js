@@ -28,7 +28,8 @@
 
 
         var urls = [
-            kendouiUrl + "/js/kendo.all.min.js",
+            kendouiUrl + "/js/kendo.web.min.js",
+
             kendouiUrl + "/js/messages/kendo.messages.zh-CN.min.js",
             kendouiUrl + "/js/cultures/kendo.culture.zh-CN.min.js",
 
