@@ -330,6 +330,22 @@
         }));
     }
 
+    if(1){
+        _U.data.push(_U.tp({
+            id: "D" + 22 + "170223" ,
+            name:"曾向英",
+            QQ: kendo.toString(13365597/100, "####xxx"),
+            email:"cosck@163.com",
+            hometown:"广州",
+            payWayType:_U.PayWayTypes[0],
+            payWayAcount:"cosck@163.com", //
+            referrer:"D8160908",
+            qqGroups:["LabsRS-Dev①"],        // 所属QQ群
+            mgrQQId:"D8160908",
+            speciality:"c#  js"
+        }));
+    }
+
 	window["rty_partners_dataobj"] = _U;
 
     return _U;

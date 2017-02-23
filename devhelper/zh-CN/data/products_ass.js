@@ -112,7 +112,7 @@
       types: _U.types[1],
       productName: "AiTictactoe",
       srcdir: "/d/workspace/testprj/0git_html/AiTictactoe",
-      devdir: "",
+      devdir: "/Volumes/DataShareHFS2/2013projects/Bus/p_AiTictactoe/",
       github: "https://github.com/LabsRS-Dev/AiTictactoe",
       appstoreUrl: "",
       appstroePrice: 0.99,
