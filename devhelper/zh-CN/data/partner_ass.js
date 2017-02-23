@@ -226,7 +226,7 @@
             payWayType:_U.PayWayTypes[0],
             payWayAcount:"18618114524",
             referrer:"D8160908",
-            qqGroups:["LabsRS-Dev①"],        // 所属QQ群
+            qqGroups:["LabsRS-Dev①","LabsRS-Dev②"],        // 所属QQ群
             mgrQQId:"D8160908",
             speciality:"前端Html Javascript Css"
         }));
