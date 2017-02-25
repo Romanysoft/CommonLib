@@ -105,6 +105,14 @@
     }));
   }
 
+
+
+
+
+
+
+
+
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   if(1){
     _U.data.push(_U.tp({
@@ -115,20 +123,16 @@
       devdir: "/Volumes/DataShareHFS2/2013projects/Bus/p_AiTictactoe/",
       github: "https://github.com/LabsRS-Dev/AiTictactoe",
       appstoreUrl: "",
-      appstroePrice: 0.99,
+      appstroePrice: 5.99,
       officialPrice: 0,
       officialUrl: "",
       hasPromo: true,
       platforms: _U.platform[0],
 
       /////////////////////////////////
-      demoName: "井字游戏. ",
+      demoName: "命令文档助手",
       demoUrl: "",
       reference: [
-        {
-          comment: "在线井字棋(三子棋)人机对战 超强AI - aTool在线工具",
-          url: "http://www.atool.org/tictactoe.php"
-        }
       ],
       partnerID: "D21170217",
       remark: "",
