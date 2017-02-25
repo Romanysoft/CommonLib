@@ -105,13 +105,63 @@
     }));
   }
 
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  if(1){
+    _U.data.push(_U.tp({
+      createDate:"2017年2月25日09:53:59",
+      types: _U.types[1],
+      productName: "AiEXifCool",
+      srcdir: "/d/workspace/testprj/0git_html/AiEXifCool",
+      devdir: "/Volumes/DataShareHFS2/2013projects/Bus/p_AiEXifCool/",
+      github: "https://github.com/LabsRS-Dev/AiEXifCool",
+      appstoreUrl: "",
+      appstroePrice: 5.99,
+      officialPrice: 0,
+      officialUrl: "",
+      hasPromo: true,
+      platforms: _U.platform[0],
+
+      /////////////////////////////////
+      demoName: "Image 的EXIF数据处理工具",
+      demoUrl: "",
+      reference: [
+        "https://www.macupdate.com/app/mac/34209/setexifdata",
+        "http://www.sno.phy.queensu.ca/~phil/exiftool/install.html#OSX",
+        "http://www.sno.phy.queensu.ca/~phil/exiftool/index.html"
+      ],
+      partnerID: "",
+      remark: "",
+      nextCTime: 0 // 下一次提交时间
+    }));
+  }
 
 
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  if(1){
+    _U.data.push(_U.tp({
+      createDate:"2017年2月17日10:49:57",
+      types: _U.types[1],
+      productName: "AiTictactoe",
+      srcdir: "/d/workspace/testprj/0git_html/AiTictactoe",
+      devdir: "/Volumes/DataShareHFS2/2013projects/Bus/p_AiTictactoe/",
+      github: "https://github.com/LabsRS-Dev/AiTictactoe",
+      appstoreUrl: "",
+      appstroePrice: 5.99,
+      officialPrice: 0,
+      officialUrl: "",
+      hasPromo: true,
+      platforms: _U.platform[0],
 
-
-
-
-
+      /////////////////////////////////
+      demoName: "命令文档助手",
+      demoUrl: "",
+      reference: [
+      ],
+      partnerID: "D21170217",
+      remark: "",
+      nextCTime: 0 // 下一次提交时间
+    }));
+  }
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   if(1){
