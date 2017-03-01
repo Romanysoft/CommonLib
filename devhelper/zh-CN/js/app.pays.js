@@ -25,24 +25,31 @@
         var t$ = this;
 
         var url = "data/partner_ass.js" + "?t=" + (new Date()).getTime();
-        $.getScript(url)
-	        .done(function(data, textStatus, jqxhr){
-	            var partnersData = [];
-	            if($.RTYUtils.isString(data)){
-	                var obj = eval(data);
-	                partnersData = obj.data;
-	            }else if(!data){
-	            	partnersData = 	window["rty_partners_dataobj"].data;
-	            }
+        function tryLoad(url, cb) {
+          $.getScript(url)
+  	        .done(function(data, textStatus, jqxhr){
+  	            var partnersData = [];
+  	            if($.RTYUtils.isString(data)){
+  	                var obj = eval(data);
+  	                partnersData = obj.data;
+  	            }else if(!data){
+  	            	partnersData = 	window["rty_partners_dataobj"].data;
+  	            }
 
-	            // 获取当前时间格式
-	            var date = dateObj || new Date();
-	            var curYearMonth = kendo.toString(date, "yyyyMM");
-	            t$.updateWith(curYearMonth, partnersData);
-	        })
- 	       .fail(function( jqxhr, settings, exception) {
- 	       	   console.log("-------------------[load]Error-----------------" + url);
- 	       });
+  	            // 获取当前时间格式
+  	            var date = dateObj || new Date();
+  	            var curYearMonth = kendo.toString(date, "yyyyMM");
+  	            t$.updateWith(curYearMonth, partnersData);
+  	        })
+   	       .fail(function( jqxhr, settings, exception) {
+   	       	   console.log("-------------------[load]Error-----------------" + url);
+               cb && cb();
+   	       });
+        }
+
+        tryLoad(url, function(){
+        })
+
     };
 
     _U.id2PartnerInfo = {};  // id与合作者信息的对应关系
@@ -309,6 +316,27 @@
         };
     };
 
+    /// 获取上个月
+    _U._getLastYearMonth = function () {
+       var currentDate = new Date();
+
+       var currentMonth = currentDate.getMonth();
+       var currentYear = currentDate.getFullYear();
+
+       if(currentMonth === 0){
+          currentMonth = 11
+          currentYear--;
+       }else {
+          currentMonth--;
+       }
+
+       var oldDate = new Date();
+       oldDate.setFullYear(currentYear);
+       oldDate.setMonth(currentMonth);
+       oldDate.setDate(1);
+
+       return kendo.toString(oldDate, "yyyyMM");
+    }
 
     _U.updateWithForec_ABC = function(yearMonth, partnersData){
         //console.log("updateWithForec_ABC");
@@ -322,28 +350,41 @@
 
         // For E+C/A+B+C模式
         //console.log("jsfile = %s", jsfile);
-        $.get({
-          url:jsfile,
-          dataType: "text"
-        }).done(function(data, textStatus, jqxhr){
-            var paysData = [];
-            console.log("GetData====");
-            if($.RTYUtils.isString(data)){
-                var obj = eval(data);
-                paysData = obj.data;
-            }else if(!data){
-            	paysData = window["rty_pays_dataobj"].data;
-        	}
 
-            var resultData = t$.calculatePays(paysData, partnersData);
+        function tryLoad(jsfile, cb) {
+          $.get({
+            url:jsfile,
+            dataType: "text"
+          }).done(function(data, textStatus, jqxhr){
+              var paysData = [];
+              console.log("GetData====");
+              if($.RTYUtils.isString(data)){
+                  var obj = eval(data);
+                  paysData = obj.data;
+              }else if(!data){
+              	paysData = window["rty_pays_dataobj"].data;
+          	}
 
-            $.each(resultData, function(index, obj){
-                grid.dataSource.add(obj);
-            });
+              var resultData = t$.calculatePays(paysData, partnersData);
 
-            t$.hideLoading();
+              $.each(resultData, function(index, obj){
+                  grid.dataSource.add(obj);
+              });
 
-        });
+              t$.hideLoading();
+
+          }).fail(function() {
+             cb && cb();
+          });
+        }
+
+        tryLoad(jsfile, function(){
+           var newJsFile = "data/pays/" + t$._getLastYearMonth() + ".js" + "?t=" + (new Date()).getTime();
+           tryLoad(newJsFile);
+        })
+
+
+
     };
 
     /// 更新数据
